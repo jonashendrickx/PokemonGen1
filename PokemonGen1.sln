@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7B52BC4B-C120-4B30-B6A0-1031AA5CF74E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGen1.Core", "src\PokemonGen1.Core\PokemonGen1.Core.csproj", "{A48FF2FE-5B74-4C58-9B99-F25B640E34F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGen1.Game", "src\PokemonGen1.Game\PokemonGen1.Game.csproj", "{64AD549A-A579-4916-AADE-F3F87455B6F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EE7B742D-2DB0-4B3F-85B8-EE536DE1D9C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGen1.Core.Tests", "tests\PokemonGen1.Core.Tests\PokemonGen1.Core.Tests.csproj", "{2B7160D9-FE74-497A-B883-D2FFB0E6E4B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A48FF2FE-5B74-4C58-9B99-F25B640E34F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A48FF2FE-5B74-4C58-9B99-F25B640E34F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A48FF2FE-5B74-4C58-9B99-F25B640E34F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A48FF2FE-5B74-4C58-9B99-F25B640E34F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64AD549A-A579-4916-AADE-F3F87455B6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64AD549A-A579-4916-AADE-F3F87455B6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64AD549A-A579-4916-AADE-F3F87455B6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64AD549A-A579-4916-AADE-F3F87455B6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7160D9-FE74-497A-B883-D2FFB0E6E4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7160D9-FE74-497A-B883-D2FFB0E6E4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7160D9-FE74-497A-B883-D2FFB0E6E4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7160D9-FE74-497A-B883-D2FFB0E6E4B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A48FF2FE-5B74-4C58-9B99-F25B640E34F2} = {7B52BC4B-C120-4B30-B6A0-1031AA5CF74E}
+		{64AD549A-A579-4916-AADE-F3F87455B6F6} = {7B52BC4B-C120-4B30-B6A0-1031AA5CF74E}
+		{2B7160D9-FE74-497A-B883-D2FFB0E6E4B5} = {EE7B742D-2DB0-4B3F-85B8-EE536DE1D9C9}
+	EndGlobalSection
+EndGlobal

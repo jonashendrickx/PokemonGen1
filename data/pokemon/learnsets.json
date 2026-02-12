@@ -1,0 +1,137 @@
+{
+  "1": [
+    {"level": 1, "moveId": 33},
+    {"level": 1, "moveId": 45},
+    {"level": 7, "moveId": 73},
+    {"level": 13, "moveId": 22},
+    {"level": 20, "moveId": 77},
+    {"level": 27, "moveId": 75},
+    {"level": 34, "moveId": 74},
+    {"level": 41, "moveId": 76},
+    {"level": 48, "moveId": 80}
+  ],
+  "4": [
+    {"level": 1, "moveId": 10},
+    {"level": 1, "moveId": 45},
+    {"level": 9, "moveId": 52},
+    {"level": 15, "moveId": 43},
+    {"level": 22, "moveId": 99},
+    {"level": 30, "moveId": 163},
+    {"level": 38, "moveId": 53},
+    {"level": 46, "moveId": 126}
+  ],
+  "7": [
+    {"level": 1, "moveId": 33},
+    {"level": 1, "moveId": 39},
+    {"level": 8, "moveId": 145},
+    {"level": 15, "moveId": 55},
+    {"level": 22, "moveId": 44},
+    {"level": 28, "moveId": 110},
+    {"level": 35, "moveId": 163},
+    {"level": 42, "moveId": 56}
+  ],
+  "25": [
+    {"level": 1, "moveId": 84},
+    {"level": 1, "moveId": 45},
+    {"level": 9, "moveId": 86},
+    {"level": 16, "moveId": 98},
+    {"level": 26, "moveId": 129},
+    {"level": 33, "moveId": 97},
+    {"level": 43, "moveId": 85},
+    {"level": 50, "moveId": 87}
+  ],
+  "74": [
+    {"level": 1, "moveId": 33},
+    {"level": 11, "moveId": 111},
+    {"level": 16, "moveId": 88},
+    {"level": 21, "moveId": 120},
+    {"level": 26, "moveId": 106},
+    {"level": 31, "moveId": 89},
+    {"level": 36, "moveId": 153}
+  ],
+  "6": [
+    {"level": 1, "moveId": 10},
+    {"level": 1, "moveId": 45},
+    {"level": 1, "moveId": 52},
+    {"level": 1, "moveId": 43},
+    {"level": 36, "moveId": 163},
+    {"level": 46, "moveId": 53},
+    {"level": 55, "moveId": 126}
+  ],
+  "9": [
+    {"level": 1, "moveId": 33},
+    {"level": 1, "moveId": 39},
+    {"level": 1, "moveId": 145},
+    {"level": 1, "moveId": 55},
+    {"level": 36, "moveId": 44},
+    {"level": 42, "moveId": 110},
+    {"level": 52, "moveId": 56}
+  ],
+  "3": [
+    {"level": 1, "moveId": 33},
+    {"level": 1, "moveId": 45},
+    {"level": 1, "moveId": 73},
+    {"level": 1, "moveId": 22},
+    {"level": 32, "moveId": 77},
+    {"level": 39, "moveId": 75},
+    {"level": 49, "moveId": 76},
+    {"level": 55, "moveId": 80}
+  ],
+  "150": [
+    {"level": 1, "moveId": 93},
+    {"level": 1, "moveId": 50},
+    {"level": 1, "moveId": 129},
+    {"level": 1, "moveId": 94},
+    {"level": 63, "moveId": 112},
+    {"level": 66, "moveId": 94},
+    {"level": 70, "moveId": 105},
+    {"level": 75, "moveId": 54},
+    {"level": 81, "moveId": 133}
+  ],
+  "151": [
+    {"level": 1, "moveId": 1},
+    {"level": 10, "moveId": 144},
+    {"level": 20, "moveId": 5},
+    {"level": 30, "moveId": 118},
+    {"level": 40, "moveId": 94}
+  ],
+  "149": [
+    {"level": 1, "moveId": 35},
+    {"level": 1, "moveId": 43},
+    {"level": 1, "moveId": 86},
+    {"level": 1, "moveId": 97},
+    {"level": 55, "moveId": 63}
+  ],
+  "94": [
+    {"level": 1, "moveId": 122},
+    {"level": 1, "moveId": 109},
+    {"level": 1, "moveId": 101},
+    {"level": 29, "moveId": 95},
+    {"level": 38, "moveId": 138}
+  ],
+  "130": [
+    {"level": 1, "moveId": 44},
+    {"level": 20, "moveId": 82},
+    {"level": 25, "moveId": 43},
+    {"level": 32, "moveId": 56},
+    {"level": 41, "moveId": 63}
+  ],
+  "143": [
+    {"level": 1, "moveId": 29},
+    {"level": 1, "moveId": 133},
+    {"level": 1, "moveId": 156},
+    {"level": 35, "moveId": 34},
+    {"level": 41, "moveId": 106},
+    {"level": 48, "moveId": 63}
+  ],
+  "65": [
+    {"level": 1, "moveId": 100},
+    {"level": 1, "moveId": 93},
+    {"level": 1, "moveId": 50},
+    {"level": 16, "moveId": 93},
+    {"level": 20, "moveId": 60},
+    {"level": 27, "moveId": 105},
+    {"level": 31, "moveId": 94},
+    {"level": 38, "moveId": 115}
+  ]
+}

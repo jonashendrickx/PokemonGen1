@@ -1,0 +1,2 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/Users/jonas/src/pokemon-gen-1/src/PokemonGen1.Game/Content/PokemonFont.spritefont","/Users/jonas/src/pokemon-gen-1/src/PokemonGen1.Game/Content/bin/DesktopGL/Content/PokemonFont.xnb","FontDescriptionProcessor","SpriteFontContent",473,13337,0.569833
