@@ -6,7 +6,7 @@ public enum TrainerClass
     Burglar, Engineer, Fisherman, Swimmer, CueBall, Gambler, Beauty,
     Psychic, Rocker, Juggler, Tamer, Birdkeeper, Blackbelt, Scientist,
     Gentleman, Rival, ProfOak, Champion, EliteFour, GymLeader,
-    Channeler, RocketGrunt, CoolTrainer, SuperNerd, PokéManiac
+    Channeler, RocketGrunt, CoolTrainer, SuperNerd, PokeManiac
 }
 
 public enum AIBehavior { Random, Smart, GymLeader, EliteFour, Champion }
@@ -24,6 +24,9 @@ public class TrainerData
     public bool IsGymLeader { get; set; }
     public int? BadgeIndex { get; set; }
     public AIBehavior AiBehavior { get; set; }
+    public string? AreaId { get; set; }
+    public string? RequiredFlag { get; set; }
+    public string? SetsFlag { get; set; }
 }
 
 public class TrainerPokemon

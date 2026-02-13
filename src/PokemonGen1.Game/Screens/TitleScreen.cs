@@ -1,8 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonGen1.Core.Battle;
-using PokemonGen1.Core.Pokemon;
-using PokemonGen1.Core.Trainers;
+using PokemonGen1.Core.Save;
 using PokemonGen1.Game.Input;
 
 namespace PokemonGen1.Game.Screens;
@@ -36,7 +34,7 @@ public class TitleScreen : IScreen
 
         if (input.IsPressed(InputAction.Confirm) || input.IsPressed(InputAction.Start))
         {
-            StartBattleDemo();
+            StartNewGame();
         }
     }
 
@@ -93,55 +91,9 @@ public class TitleScreen : IScreen
         }
     }
 
-    private void StartBattleDemo()
+    private void StartNewGame()
     {
-        // Create a demo battle: Pikachu vs Geodude
-        var pikachu = _game.GameData.GetSpecies(25);
-        var geodude = _game.GameData.GetSpecies(74);
-
-        var playerPokemon = PokemonInstance.Create(pikachu, 25);
-        playerPokemon.Nickname = null;
-        playerPokemon.OtName = "RED";
-        // Give Pikachu some moves
-        playerPokemon.Moves = _game.GameData.GetDefaultMoves(25, 25);
-        // If no moves from learnset, give some manually
-        if (playerPokemon.Moves.Length == 0)
-        {
-            playerPokemon.Moves = new[]
-            {
-                new Core.Moves.MoveInstance { MoveId = 85, CurrentPP = 15, MaxPP = 15 },  // Thunderbolt
-                new Core.Moves.MoveInstance { MoveId = 98, CurrentPP = 30, MaxPP = 30 },  // Quick Attack
-                new Core.Moves.MoveInstance { MoveId = 86, CurrentPP = 20, MaxPP = 20 },  // Thunder Wave
-                new Core.Moves.MoveInstance { MoveId = 57, CurrentPP = 15, MaxPP = 15 },  // Surf
-            };
-        }
-        playerPokemon.CurrentHp = playerPokemon.MaxHp(pikachu);
-
-        var wildPokemon = PokemonInstance.Create(geodude, 22);
-        wildPokemon.Moves = _game.GameData.GetDefaultMoves(74, 22);
-        if (wildPokemon.Moves.Length == 0)
-        {
-            wildPokemon.Moves = new[]
-            {
-                new Core.Moves.MoveInstance { MoveId = 33, CurrentPP = 35, MaxPP = 35 },  // Tackle
-                new Core.Moves.MoveInstance { MoveId = 111, CurrentPP = 40, MaxPP = 40 }, // Defense Curl (Harden-like)
-                new Core.Moves.MoveInstance { MoveId = 88, CurrentPP = 15, MaxPP = 15 },  // Rock Throw
-                new Core.Moves.MoveInstance { MoveId = 89, CurrentPP = 10, MaxPP = 10 },  // Earthquake
-            };
-        }
-        wildPokemon.CurrentHp = wildPokemon.MaxHp(geodude);
-
-        var battleState = new BattleState
-        {
-            Type = BattleType.Wild,
-            PlayerParty = new[] { playerPokemon },
-            PlayerActiveIndex = 0,
-            PlayerActive = new BattlePokemon(playerPokemon, pikachu),
-            OpponentParty = new[] { wildPokemon },
-            OpponentActiveIndex = 0,
-            OpponentActive = new BattlePokemon(wildPokemon, geodude)
-        };
-
-        _manager.Replace(new BattleScreen(_game, battleState));
+        var save = new SaveData();
+        _manager.Replace(new StarterSelectScreen(_game, save));
     }
 }

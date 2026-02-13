@@ -1,0 +1,7316 @@
+[
+  {
+    "id": 1,
+    "areaId": "pewter_gym",
+    "name": "Brock",
+    "class": "GymLeader",
+    "title": "Pewter City Gym Leader",
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 12
+      },
+      {
+        "speciesId": 95,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 1386,
+    "beforeBattleDialog": [
+      "I'm Brock! I'm Pewter's Gym Leader!",
+      "My rock-hard willpower is evident in my Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Taken for granite, as it were!",
+      "Here, take the Boulder Badge!"
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 0,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_boulder"
+  },
+  {
+    "id": 2,
+    "areaId": "cerulean_gym",
+    "name": "Misty",
+    "class": "GymLeader",
+    "title": "Cerulean City Gym Leader",
+    "party": [
+      {
+        "speciesId": 120,
+        "level": 18
+      },
+      {
+        "speciesId": 121,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 2772,
+    "beforeBattleDialog": [
+      "I'm the Cerulean City Gym Leader!",
+      "My water-type Pokemon are ready to make a splash!"
+    ],
+    "afterBattleDialog": [
+      "Wow! You're too much! Here's the Cascade Badge!"
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 1,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_cascade"
+  },
+  {
+    "id": 3,
+    "areaId": "vermilion_gym",
+    "name": "Lt. Surge",
+    "class": "GymLeader",
+    "title": "Vermilion City Gym Leader",
+    "party": [
+      {
+        "speciesId": 100,
+        "level": 21
+      },
+      {
+        "speciesId": 25,
+        "level": 18
+      },
+      {
+        "speciesId": 26,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 2376,
+    "beforeBattleDialog": [
+      "Hey kid! What do you think you're doing here?",
+      "You won't live long in combat! Not with your Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Now that's a Pokemon Trainer! Here, take the Thunder Badge!"
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 2,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_thunder"
+  },
+  {
+    "id": 4,
+    "areaId": "celadon_gym",
+    "name": "Erika",
+    "class": "GymLeader",
+    "title": "Celadon City Gym Leader",
+    "party": [
+      {
+        "speciesId": 114,
+        "level": 29
+      },
+      {
+        "speciesId": 71,
+        "level": 24
+      },
+      {
+        "speciesId": 45,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 2772,
+    "beforeBattleDialog": [
+      "Hello... Nice Pokemon you have.",
+      "I am Erika, the Gym Leader here."
+    ],
+    "afterBattleDialog": [
+      "Oh! I concede defeat. Here, take the Rainbow Badge."
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 3,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_rainbow"
+  },
+  {
+    "id": 5,
+    "areaId": "fuchsia_gym",
+    "name": "Koga",
+    "class": "GymLeader",
+    "title": "Fuchsia City Gym Leader",
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 37
+      },
+      {
+        "speciesId": 89,
+        "level": 39
+      },
+      {
+        "speciesId": 109,
+        "level": 37
+      },
+      {
+        "speciesId": 110,
+        "level": 43
+      }
+    ],
+    "rewardMoney": 4042,
+    "beforeBattleDialog": [
+      "Fwahahaha! A mere child dares to challenge me?",
+      "I shall show you true terror!"
+    ],
+    "afterBattleDialog": [
+      "Humph! You have proven your worth! Here, take the Soul Badge!"
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 4,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_soul"
+  },
+  {
+    "id": 6,
+    "areaId": "saffron_gym",
+    "name": "Sabrina",
+    "class": "GymLeader",
+    "title": "Saffron City Gym Leader",
+    "party": [
+      {
+        "speciesId": 64,
+        "level": 38
+      },
+      {
+        "speciesId": 122,
+        "level": 37
+      },
+      {
+        "speciesId": 49,
+        "level": 38
+      },
+      {
+        "speciesId": 65,
+        "level": 43
+      }
+    ],
+    "rewardMoney": 4042,
+    "beforeBattleDialog": [
+      "I had a vision of your arrival!",
+      "I have had psychic powers since I was a child."
+    ],
+    "afterBattleDialog": [
+      "Your power far exceeds what I foresaw. The Marsh Badge is yours."
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 5,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_marsh"
+  },
+  {
+    "id": 7,
+    "areaId": "cinnabar_gym",
+    "name": "Blaine",
+    "class": "GymLeader",
+    "title": "Cinnabar Island Gym Leader",
+    "party": [
+      {
+        "speciesId": 58,
+        "level": 42
+      },
+      {
+        "speciesId": 77,
+        "level": 40
+      },
+      {
+        "speciesId": 78,
+        "level": 42
+      },
+      {
+        "speciesId": 59,
+        "level": 47
+      }
+    ],
+    "rewardMoney": 4653,
+    "beforeBattleDialog": [
+      "Hah! I'm Blaine, the red-hot Leader of Cinnabar Gym!",
+      "My fiery Pokemon are all fired up!"
+    ],
+    "afterBattleDialog": [
+      "I have burned down to nothing! You earned the Volcano Badge!"
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 6,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": null,
+    "setsFlag": "badge_volcano"
+  },
+  {
+    "id": 8,
+    "areaId": "viridian_gym",
+    "name": "Giovanni",
+    "class": "GymLeader",
+    "title": "Viridian City Gym Leader",
+    "party": [
+      {
+        "speciesId": 111,
+        "level": 45
+      },
+      {
+        "speciesId": 31,
+        "level": 42
+      },
+      {
+        "speciesId": 112,
+        "level": 44
+      },
+      {
+        "speciesId": 51,
+        "level": 43
+      },
+      {
+        "speciesId": 112,
+        "level": 50
+      }
+    ],
+    "rewardMoney": 4950,
+    "beforeBattleDialog": [
+      "So! You have come this far!",
+      "I am the Leader of Team Rocket!"
+    ],
+    "afterBattleDialog": [
+      "Ha! That was a truly intense fight! Here, take the Earth Badge!"
+    ],
+    "isGymLeader": true,
+    "badgeIndex": 7,
+    "aiBehavior": "GymLeader",
+    "requiredFlag": "badge_earth_unlocked",
+    "setsFlag": "badge_earth"
+  },
+  {
+    "id": 9,
+    "areaId": "indigo_plateau",
+    "name": "Lorelei",
+    "class": "EliteFour",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 87,
+        "level": 52
+      },
+      {
+        "speciesId": 91,
+        "level": 51
+      },
+      {
+        "speciesId": 80,
+        "level": 52
+      },
+      {
+        "speciesId": 124,
+        "level": 54
+      },
+      {
+        "speciesId": 131,
+        "level": 54
+      }
+    ],
+    "rewardMoney": 5346,
+    "beforeBattleDialog": [
+      "Welcome to the Pokemon League!",
+      "I am Lorelei of the Elite Four.",
+      "No one can best my icy Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "You're better than I thought! Go on ahead!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "EliteFour",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 10,
+    "areaId": "indigo_plateau",
+    "name": "Bruno",
+    "class": "EliteFour",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 95,
+        "level": 51
+      },
+      {
+        "speciesId": 107,
+        "level": 53
+      },
+      {
+        "speciesId": 95,
+        "level": 54
+      },
+      {
+        "speciesId": 106,
+        "level": 55
+      },
+      {
+        "speciesId": 68,
+        "level": 56
+      }
+    ],
+    "rewardMoney": 5544,
+    "beforeBattleDialog": [
+      "I am Bruno of the Elite Four!",
+      "My fighting Pokemon will crush you!"
+    ],
+    "afterBattleDialog": [
+      "My Pokemon have lost! But I will not give up!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "EliteFour",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 11,
+    "areaId": "indigo_plateau",
+    "name": "Agatha",
+    "class": "EliteFour",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 94,
+        "level": 54
+      },
+      {
+        "speciesId": 42,
+        "level": 54
+      },
+      {
+        "speciesId": 93,
+        "level": 53
+      },
+      {
+        "speciesId": 24,
+        "level": 56
+      },
+      {
+        "speciesId": 94,
+        "level": 58
+      }
+    ],
+    "rewardMoney": 5742,
+    "beforeBattleDialog": [
+      "I am Agatha of the Elite Four!",
+      "Oak and I were rivals long ago."
+    ],
+    "afterBattleDialog": [
+      "You win! I see what Oak sees in you now."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "EliteFour",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 12,
+    "areaId": "indigo_plateau",
+    "name": "Lance",
+    "class": "EliteFour",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 130,
+        "level": 56
+      },
+      {
+        "speciesId": 148,
+        "level": 54
+      },
+      {
+        "speciesId": 148,
+        "level": 54
+      },
+      {
+        "speciesId": 142,
+        "level": 58
+      },
+      {
+        "speciesId": 149,
+        "level": 60
+      }
+    ],
+    "rewardMoney": 5940,
+    "beforeBattleDialog": [
+      "I am Lance, the Dragon Trainer!",
+      "Dragons are mythical Pokemon! Their powers are superior!"
+    ],
+    "afterBattleDialog": [
+      "I still can't believe my Dragons lost! You are now the Pokemon League Champion!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "EliteFour",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 13,
+    "areaId": "indigo_plateau",
+    "name": "Blue",
+    "class": "Champion",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 59
+      },
+      {
+        "speciesId": 65,
+        "level": 57
+      },
+      {
+        "speciesId": 112,
+        "level": 59
+      },
+      {
+        "speciesId": 103,
+        "level": 61
+      },
+      {
+        "speciesId": 59,
+        "level": 61
+      },
+      {
+        "speciesId": 130,
+        "level": 63
+      }
+    ],
+    "rewardMoney": 6300,
+    "beforeBattleDialog": [
+      "Hey! I was looking forward to seeing you!",
+      "My Pokemon have grown strong!"
+    ],
+    "afterBattleDialog": [
+      "NO! That can't be! You beat my best!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Champion",
+    "requiredFlag": null,
+    "setsFlag": "champion_defeated"
+  },
+  {
+    "id": 100,
+    "areaId": "route_22",
+    "name": "Blue",
+    "class": "Rival",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 16,
+        "level": 9
+      },
+      {
+        "speciesId": 63,
+        "level": 7
+      }
+    ],
+    "rewardMoney": 630,
+    "beforeBattleDialog": [
+      "Hey! You're going to the Pokemon League?",
+      "Forget it! You probably don't have any Badges!"
+    ],
+    "afterBattleDialog": [
+      "Tch! I'll get you next time!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 101,
+    "areaId": "route_22",
+    "name": "Blue",
+    "class": "Rival",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 19
+      },
+      {
+        "speciesId": 20,
+        "level": 18
+      },
+      {
+        "speciesId": 56,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 1520,
+    "beforeBattleDialog": [
+      "Well well! Look who's here!",
+      "Let me see how good you've gotten!"
+    ],
+    "afterBattleDialog": [
+      "Hmm, not bad. But don't get cocky!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": "badge_boulder",
+    "setsFlag": null
+  },
+  {
+    "id": 102,
+    "areaId": "cerulean_city",
+    "name": "Blue",
+    "class": "Rival",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 19
+      },
+      {
+        "speciesId": 20,
+        "level": 16
+      },
+      {
+        "speciesId": 63,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 1800,
+    "beforeBattleDialog": [
+      "Hey! What a surprise to see you here!"
+    ],
+    "afterBattleDialog": [
+      "Hmph! At least you're keeping me on my toes!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 103,
+    "areaId": "ss_anne",
+    "name": "Blue",
+    "class": "Rival",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 25
+      },
+      {
+        "speciesId": 20,
+        "level": 23
+      },
+      {
+        "speciesId": 64,
+        "level": 22
+      },
+      {
+        "speciesId": 57,
+        "level": 22
+      }
+    ],
+    "rewardMoney": 2300,
+    "beforeBattleDialog": [
+      "Boarded the S.S. Anne, did you?",
+      "Good timing, let's battle!"
+    ],
+    "afterBattleDialog": [
+      "Well, at least I still have my Pokemon's trust!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 104,
+    "areaId": "pokemon_tower",
+    "name": "Blue",
+    "class": "Rival",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 31
+      },
+      {
+        "speciesId": 130,
+        "level": 30
+      },
+      {
+        "speciesId": 57,
+        "level": 29
+      },
+      {
+        "speciesId": 64,
+        "level": 30
+      },
+      {
+        "speciesId": 103,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 3000,
+    "beforeBattleDialog": [
+      "Yo! What's up?",
+      "I just caught some strong Pokemon! Want to see?"
+    ],
+    "afterBattleDialog": [
+      "Argh! I can't believe I lost!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 105,
+    "areaId": "silph_co",
+    "name": "Blue",
+    "class": "Rival",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 40
+      },
+      {
+        "speciesId": 130,
+        "level": 38
+      },
+      {
+        "speciesId": 57,
+        "level": 37
+      },
+      {
+        "speciesId": 65,
+        "level": 38
+      },
+      {
+        "speciesId": 103,
+        "level": 38
+      },
+      {
+        "speciesId": 59,
+        "level": 40
+      }
+    ],
+    "rewardMoney": 4000,
+    "beforeBattleDialog": [
+      "You again! My Pokemon are way stronger than before!"
+    ],
+    "afterBattleDialog": [
+      "What!? How can this be!?"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 200,
+    "areaId": "viridian_forest",
+    "name": "Rick",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 13,
+        "level": 6
+      },
+      {
+        "speciesId": 10,
+        "level": 6
+      }
+    ],
+    "rewardMoney": 72,
+    "beforeBattleDialog": [
+      "Hey! You have Pokemon! Come on, let's battle!"
+    ],
+    "afterBattleDialog": [
+      "No! My bugs!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 201,
+    "areaId": "viridian_forest",
+    "name": "Doug",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 13,
+        "level": 7
+      },
+      {
+        "speciesId": 14,
+        "level": 7
+      },
+      {
+        "speciesId": 13,
+        "level": 7
+      }
+    ],
+    "rewardMoney": 84,
+    "beforeBattleDialog": [
+      "Yo! You can't jam through here without a fight!"
+    ],
+    "afterBattleDialog": [
+      "Argh! You're good!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 202,
+    "areaId": "viridian_forest",
+    "name": "Sammy",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 10,
+        "level": 9
+      }
+    ],
+    "rewardMoney": 108,
+    "beforeBattleDialog": [
+      "Hey, wait up! What's the hurry?"
+    ],
+    "afterBattleDialog": [
+      "Whoa! You're strong!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 203,
+    "areaId": "pewter_gym",
+    "name": "Liam",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 9
+      },
+      {
+        "speciesId": 27,
+        "level": 11
+      }
+    ],
+    "rewardMoney": 220,
+    "beforeBattleDialog": [
+      "Stop right there! Brock is the Gym Leader here!"
+    ],
+    "afterBattleDialog": [
+      "Darn! You're good!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 204,
+    "areaId": "route_3",
+    "name": "Ben",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 11
+      },
+      {
+        "speciesId": 21,
+        "level": 11
+      }
+    ],
+    "rewardMoney": 176,
+    "beforeBattleDialog": [
+      "Hi! I like shorts! They're comfy and easy to wear!"
+    ],
+    "afterBattleDialog": [
+      "I lost, but at least I'm comfortable!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 205,
+    "areaId": "route_3",
+    "name": "Calvin",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 21,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 224,
+    "beforeBattleDialog": [
+      "Hey! Come back here and fight me!"
+    ],
+    "afterBattleDialog": [
+      "Ugh, I lost!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 206,
+    "areaId": "route_3",
+    "name": "Josh",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 10,
+        "level": 10
+      },
+      {
+        "speciesId": 11,
+        "level": 10
+      },
+      {
+        "speciesId": 10,
+        "level": 10
+      }
+    ],
+    "rewardMoney": 120,
+    "beforeBattleDialog": [
+      "Go, my bugs!"
+    ],
+    "afterBattleDialog": [
+      "My precious bugs..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 207,
+    "areaId": "route_3",
+    "name": "Robin",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 29,
+        "level": 11
+      },
+      {
+        "speciesId": 32,
+        "level": 11
+      }
+    ],
+    "rewardMoney": 176,
+    "beforeBattleDialog": [
+      "Let me show you how to battle!"
+    ],
+    "afterBattleDialog": [
+      "Oh my! You're quite good!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 208,
+    "areaId": "route_3",
+    "name": "Colton",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 13,
+        "level": 11
+      },
+      {
+        "speciesId": 14,
+        "level": 11
+      }
+    ],
+    "rewardMoney": 132,
+    "beforeBattleDialog": [
+      "I just caught some new bugs!"
+    ],
+    "afterBattleDialog": [
+      "My bugs got squashed!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 209,
+    "areaId": "route_3",
+    "name": "Greg",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 10
+      },
+      {
+        "speciesId": 16,
+        "level": 10
+      },
+      {
+        "speciesId": 19,
+        "level": 10
+      }
+    ],
+    "rewardMoney": 160,
+    "beforeBattleDialog": [
+      "Are you a new Pokemon Trainer too?"
+    ],
+    "afterBattleDialog": [
+      "You're better than me!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 210,
+    "areaId": "route_3",
+    "name": "Janice",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 43,
+        "level": 12
+      },
+      {
+        "speciesId": 35,
+        "level": 12
+      }
+    ],
+    "rewardMoney": 192,
+    "beforeBattleDialog": [
+      "I love my Pokemon! Do you love yours?"
+    ],
+    "afterBattleDialog": [
+      "Oh no! My Pokemon!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 211,
+    "areaId": "route_3",
+    "name": "Kent",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 11,
+        "level": 9
+      },
+      {
+        "speciesId": 15,
+        "level": 12
+      },
+      {
+        "speciesId": 14,
+        "level": 9
+      }
+    ],
+    "rewardMoney": 108,
+    "beforeBattleDialog": [
+      "My Beedrill will sting you!"
+    ],
+    "afterBattleDialog": [
+      "Ow! That stings worse!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 212,
+    "areaId": "mt_moon_1f",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 41,
+        "level": 13
+      },
+      {
+        "speciesId": 19,
+        "level": 13
+      }
+    ],
+    "rewardMoney": 390,
+    "beforeBattleDialog": [
+      "Stop! We're Team Rocket! Get out!"
+    ],
+    "afterBattleDialog": [
+      "Urgh! You won't get away with this!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 213,
+    "areaId": "mt_moon_1f",
+    "name": "Marco",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 81,
+        "level": 12
+      },
+      {
+        "speciesId": 100,
+        "level": 12
+      },
+      {
+        "speciesId": 81,
+        "level": 12
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "I came here to find rare fossils!"
+    ],
+    "afterBattleDialog": [
+      "My rare Pokemon!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 214,
+    "areaId": "mt_moon_1f",
+    "name": "Jess",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 35,
+        "level": 14
+      },
+      {
+        "speciesId": 35,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 224,
+    "beforeBattleDialog": [
+      "Aren't Clefairy just the cutest?"
+    ],
+    "afterBattleDialog": [
+      "My Clefairy!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 215,
+    "areaId": "mt_moon_1f",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 14
+      },
+      {
+        "speciesId": 23,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 420,
+    "beforeBattleDialog": [
+      "Don't mess with Team Rocket!"
+    ],
+    "afterBattleDialog": [
+      "I'll remember this!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 216,
+    "areaId": "mt_moon_b2f",
+    "name": "Miguel",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 12
+      },
+      {
+        "speciesId": 100,
+        "level": 12
+      },
+      {
+        "speciesId": 81,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 336,
+    "beforeBattleDialog": [
+      "I need these fossils for my research!"
+    ],
+    "afterBattleDialog": [
+      "My research! Ruined!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 217,
+    "areaId": "mt_moon_b2f",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 27,
+        "level": 14
+      },
+      {
+        "speciesId": 41,
+        "level": 14
+      },
+      {
+        "speciesId": 19,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 420,
+    "beforeBattleDialog": [
+      "Team Rocket will take over the world!"
+    ],
+    "afterBattleDialog": [
+      "Blast! You're tougher than you look!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 218,
+    "areaId": "mt_moon_b2f",
+    "name": "Morris",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 15
+      },
+      {
+        "speciesId": 95,
+        "level": 13
+      }
+    ],
+    "rewardMoney": 540,
+    "beforeBattleDialog": [
+      "Hiker power! My rock Pokemon are tough!"
+    ],
+    "afterBattleDialog": [
+      "Rocks crumble..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 219,
+    "areaId": "mt_moon_b2f",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 15
+      },
+      {
+        "speciesId": 41,
+        "level": 15
+      },
+      {
+        "speciesId": 20,
+        "level": 15
+      }
+    ],
+    "rewardMoney": 450,
+    "beforeBattleDialog": [
+      "You again? Team Rocket doesn't lose twice!"
+    ],
+    "afterBattleDialog": [
+      "Ugh... we do lose twice..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 220,
+    "areaId": "cerulean_gym",
+    "name": "Luis",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 116,
+        "level": 16
+      },
+      {
+        "speciesId": 118,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 320,
+    "beforeBattleDialog": [
+      "I swim every day! My Pokemon do too!"
+    ],
+    "afterBattleDialog": [
+      "I need to train harder!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 221,
+    "areaId": "cerulean_gym",
+    "name": "Diana",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 118,
+        "level": 19
+      }
+    ],
+    "rewardMoney": 380,
+    "beforeBattleDialog": [
+      "I trained under Misty! Prepare yourself!"
+    ],
+    "afterBattleDialog": [
+      "You're even stronger than Misty said!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 222,
+    "areaId": "route_24",
+    "name": "Ethan",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 10,
+        "level": 14
+      },
+      {
+        "speciesId": 21,
+        "level": 14
+      }
+    ],
+    "rewardMoney": 224,
+    "beforeBattleDialog": [
+      "Nugget Bridge challenge! Beat five trainers!"
+    ],
+    "afterBattleDialog": [
+      "One down, four to go!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 223,
+    "areaId": "route_24",
+    "name": "Fiona",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 16,
+        "level": 16
+      },
+      {
+        "speciesId": 29,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 256,
+    "beforeBattleDialog": [
+      "I'm the second trainer! Ready?"
+    ],
+    "afterBattleDialog": [
+      "Good luck with the rest!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 224,
+    "areaId": "route_24",
+    "name": "Jordan",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 16
+      },
+      {
+        "speciesId": 23,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 256,
+    "beforeBattleDialog": [
+      "Number three! Think you can keep going?"
+    ],
+    "afterBattleDialog": [
+      "Wow, you're really good!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 225,
+    "areaId": "route_24",
+    "name": "Cassie",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 43,
+        "level": 16
+      },
+      {
+        "speciesId": 69,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 256,
+    "beforeBattleDialog": [
+      "I'm the fourth challenger!"
+    ],
+    "afterBattleDialog": [
+      "So close to the end!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 226,
+    "areaId": "route_24",
+    "name": "Derek",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 56,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 360,
+    "beforeBattleDialog": [
+      "I'm the final trainer! You won't beat me!"
+    ],
+    "afterBattleDialog": [
+      "You beat all five! Amazing!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 227,
+    "areaId": "route_24",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 23,
+        "level": 15
+      },
+      {
+        "speciesId": 41,
+        "level": 15
+      },
+      {
+        "speciesId": 20,
+        "level": 17
+      }
+    ],
+    "rewardMoney": 510,
+    "beforeBattleDialog": [
+      "Congratulations! You cleared Nugget Bridge!",
+      "As a reward... join Team Rocket!"
+    ],
+    "afterBattleDialog": [
+      "Rats! You refused AND beat me!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 228,
+    "areaId": "route_25",
+    "name": "Nob",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 17
+      },
+      {
+        "speciesId": 95,
+        "level": 17
+      }
+    ],
+    "rewardMoney": 612,
+    "beforeBattleDialog": [
+      "I'm training my rock Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Rock solid loss..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 229,
+    "areaId": "route_25",
+    "name": "Haley",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 29,
+        "level": 16
+      },
+      {
+        "speciesId": 30,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "My Nidoran are growing stronger!"
+    ],
+    "afterBattleDialog": [
+      "They weren't strong enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 230,
+    "areaId": "route_25",
+    "name": "Wayne",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 20,
+        "level": 18
+      },
+      {
+        "speciesId": 21,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "The sea is just ahead! But first, battle me!"
+    ],
+    "afterBattleDialog": [
+      "I should go swimming to cool off..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 231,
+    "areaId": "route_25",
+    "name": "Grunt",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 81,
+        "level": 18
+      },
+      {
+        "speciesId": 81,
+        "level": 18
+      },
+      {
+        "speciesId": 100,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 432,
+    "beforeBattleDialog": [
+      "I'm conducting field research here!"
+    ],
+    "afterBattleDialog": [
+      "Back to the lab..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 232,
+    "areaId": "route_25",
+    "name": "Ellen",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 35,
+        "level": 19
+      }
+    ],
+    "rewardMoney": 304,
+    "beforeBattleDialog": [
+      "Clefairy! Use your charm!"
+    ],
+    "afterBattleDialog": [
+      "My Clefairy's charm failed!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 233,
+    "areaId": "route_25",
+    "name": "Chad",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 23,
+        "level": 17
+      },
+      {
+        "speciesId": 27,
+        "level": 17
+      }
+    ],
+    "rewardMoney": 272,
+    "beforeBattleDialog": [
+      "I've been training here all day!"
+    ],
+    "afterBattleDialog": [
+      "Time for a break..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 234,
+    "areaId": "route_25",
+    "name": "Hannah",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 16,
+        "level": 18
+      },
+      {
+        "speciesId": 43,
+        "level": 18
+      },
+      {
+        "speciesId": 118,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 360,
+    "beforeBattleDialog": [
+      "The path to Bill's house goes through me!"
+    ],
+    "afterBattleDialog": [
+      "Bill's just up ahead..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 235,
+    "areaId": "route_25",
+    "name": "Clark",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 19
+      },
+      {
+        "speciesId": 74,
+        "level": 19
+      },
+      {
+        "speciesId": 75,
+        "level": 19
+      }
+    ],
+    "rewardMoney": 684,
+    "beforeBattleDialog": [
+      "My Graveler will flatten you!"
+    ],
+    "afterBattleDialog": [
+      "I got flattened instead!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 236,
+    "areaId": "route_6",
+    "name": "Dave",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 12,
+        "level": 16
+      },
+      {
+        "speciesId": 15,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 192,
+    "beforeBattleDialog": [
+      "My fully evolved bugs are unstoppable!"
+    ],
+    "afterBattleDialog": [
+      "They stopped!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 237,
+    "areaId": "route_6",
+    "name": "Tommy",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 16,
+        "level": 18
+      },
+      {
+        "speciesId": 27,
+        "level": 17
+      }
+    ],
+    "rewardMoney": 272,
+    "beforeBattleDialog": [
+      "Route 6 is my turf!"
+    ],
+    "afterBattleDialog": [
+      "Okay, it's your turf too..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 238,
+    "areaId": "route_6",
+    "name": "Alice",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 29,
+        "level": 18
+      },
+      {
+        "speciesId": 43,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "Are you heading to Vermilion City too?"
+    ],
+    "afterBattleDialog": [
+      "Maybe I'll go back to Cerulean..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 239,
+    "areaId": "route_6",
+    "name": "Carlos",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 16
+      },
+      {
+        "speciesId": 16,
+        "level": 16
+      },
+      {
+        "speciesId": 21,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 320,
+    "beforeBattleDialog": [
+      "I'm training hard for the Pokemon League!"
+    ],
+    "afterBattleDialog": [
+      "I've got a long way to go..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 240,
+    "areaId": "route_6",
+    "name": "Trent",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 20,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "My Raticate is really strong!"
+    ],
+    "afterBattleDialog": [
+      "It wasn't strong enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 241,
+    "areaId": "route_6",
+    "name": "Mira",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 32,
+        "level": 16
+      },
+      {
+        "speciesId": 30,
+        "level": 16
+      }
+    ],
+    "rewardMoney": 256,
+    "beforeBattleDialog": [
+      "I love Nidoran! They're so cute!"
+    ],
+    "afterBattleDialog": [
+      "My poor Nidoran!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 242,
+    "areaId": "vermilion_gym",
+    "name": "Spark",
+    "class": "Gentleman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 100,
+        "level": 21
+      },
+      {
+        "speciesId": 25,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 1512,
+    "beforeBattleDialog": [
+      "Lt. Surge is a strong leader! Can you beat his troops first?"
+    ],
+    "afterBattleDialog": [
+      "Shocking! You're powerful!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 243,
+    "areaId": "vermilion_gym",
+    "name": "Tucker",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 25,
+        "level": 21
+      },
+      {
+        "speciesId": 25,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 672,
+    "beforeBattleDialog": [
+      "I served with Lt. Surge in the war!"
+    ],
+    "afterBattleDialog": [
+      "We've been outranked!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 244,
+    "areaId": "vermilion_gym",
+    "name": "Bolt",
+    "class": "Engineer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 100,
+        "level": 21
+      },
+      {
+        "speciesId": 81,
+        "level": 21
+      },
+      {
+        "speciesId": 100,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 1008,
+    "beforeBattleDialog": [
+      "Electric Pokemon are the future!"
+    ],
+    "afterBattleDialog": [
+      "Power outage!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 245,
+    "areaId": "ss_anne",
+    "name": "Sailor Bob",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 18
+      },
+      {
+        "speciesId": 72,
+        "level": 18
+      },
+      {
+        "speciesId": 116,
+        "level": 20
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "I've sailed around the world!"
+    ],
+    "afterBattleDialog": [
+      "Maybe I should stay in port!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 246,
+    "areaId": "ss_anne",
+    "name": "Arthur",
+    "class": "Gentleman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 58,
+        "level": 19
+      },
+      {
+        "speciesId": 77,
+        "level": 19
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "I travel first class! My Pokemon are first class too!"
+    ],
+    "afterBattleDialog": [
+      "Second class performance!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 247,
+    "areaId": "ss_anne",
+    "name": "Sailor Dylan",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 66,
+        "level": 20
+      },
+      {
+        "speciesId": 56,
+        "level": 20
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "All hands on deck! Time to battle!"
+    ],
+    "afterBattleDialog": [
+      "Man overboard!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 248,
+    "areaId": "ss_anne",
+    "name": "Emily",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 29,
+        "level": 18
+      },
+      {
+        "speciesId": 30,
+        "level": 18
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "I'm on vacation! But I never stop training!"
+    ],
+    "afterBattleDialog": [
+      "Vacation ruined!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 249,
+    "areaId": "ss_anne",
+    "name": "Sailor Phil",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 66,
+        "level": 20
+      },
+      {
+        "speciesId": 90,
+        "level": 20
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "I'm the toughest sailor on this ship!"
+    ],
+    "afterBattleDialog": [
+      "Not so tough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 250,
+    "areaId": "ss_anne",
+    "name": "Gerald",
+    "class": "Gentleman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 58,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 1512,
+    "beforeBattleDialog": [
+      "I'm enjoying the cruise. Care for a battle?"
+    ],
+    "afterBattleDialog": [
+      "Splendid battle, old chap!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 251,
+    "areaId": "ss_anne",
+    "name": "Hiro",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 129,
+        "level": 15
+      },
+      {
+        "speciesId": 129,
+        "level": 15
+      },
+      {
+        "speciesId": 129,
+        "level": 15
+      },
+      {
+        "speciesId": 129,
+        "level": 15
+      }
+    ],
+    "rewardMoney": 540,
+    "beforeBattleDialog": [
+      "I love Magikarp! I have a whole bunch!"
+    ],
+    "afterBattleDialog": [
+      "My Magikarp army fell!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 252,
+    "areaId": "ss_anne",
+    "name": "Jill",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 16,
+        "level": 19
+      },
+      {
+        "speciesId": 29,
+        "level": 19
+      }
+    ],
+    "rewardMoney": 304,
+    "beforeBattleDialog": [
+      "The S.S. Anne is so luxurious!"
+    ],
+    "afterBattleDialog": [
+      "Not a luxury to lose!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 253,
+    "areaId": "ss_anne",
+    "name": "Sailor Pete",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 66,
+        "level": 18
+      },
+      {
+        "speciesId": 66,
+        "level": 18
+      },
+      {
+        "speciesId": 67,
+        "level": 20
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "These muscles aren't just for show!"
+    ],
+    "afterBattleDialog": [
+      "Okay, maybe they are!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 254,
+    "areaId": "ss_anne",
+    "name": "Travis",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 19
+      },
+      {
+        "speciesId": 21,
+        "level": 19
+      },
+      {
+        "speciesId": 16,
+        "level": 19
+      }
+    ],
+    "rewardMoney": 380,
+    "beforeBattleDialog": [
+      "I'm going to be a great trainer someday!"
+    ],
+    "afterBattleDialog": [
+      "Someday, but not today!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 255,
+    "areaId": "ss_anne",
+    "name": "Captain",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 66,
+        "level": 22
+      },
+      {
+        "speciesId": 67,
+        "level": 22
+      },
+      {
+        "speciesId": 68,
+        "level": 22
+      }
+    ],
+    "rewardMoney": 704,
+    "beforeBattleDialog": [
+      "I'm the ship's battle champion!"
+    ],
+    "afterBattleDialog": [
+      "You're the new champion!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": "has_ss_ticket"
+  },
+  {
+    "id": 256,
+    "areaId": "route_11",
+    "name": "Yasu",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 21
+      },
+      {
+        "speciesId": 20,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 336,
+    "beforeBattleDialog": [
+      "I'm training to enter the Pokemon League!"
+    ],
+    "afterBattleDialog": [
+      "I need more training!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 257,
+    "areaId": "route_11",
+    "name": "Dave",
+    "class": "Gambler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 100,
+        "level": 22
+      },
+      {
+        "speciesId": 25,
+        "level": 22
+      }
+    ],
+    "rewardMoney": 1584,
+    "beforeBattleDialog": [
+      "Want to make a bet? I bet I'll beat you!"
+    ],
+    "afterBattleDialog": [
+      "I lost my bet and my battle!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 258,
+    "areaId": "route_11",
+    "name": "Eddie",
+    "class": "Engineer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 81,
+        "level": 21
+      },
+      {
+        "speciesId": 81,
+        "level": 21
+      },
+      {
+        "speciesId": 82,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 1008,
+    "beforeBattleDialog": [
+      "I work at the Power Plant! My Pokemon are charged up!"
+    ],
+    "afterBattleDialog": [
+      "Short circuit!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 259,
+    "areaId": "route_11",
+    "name": "Philip",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 27,
+        "level": 21
+      },
+      {
+        "speciesId": 23,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 336,
+    "beforeBattleDialog": [
+      "I found these Pokemon right here on Route 11!"
+    ],
+    "afterBattleDialog": [
+      "They need more training!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 260,
+    "areaId": "route_11",
+    "name": "Amber",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 30,
+        "level": 22
+      },
+      {
+        "speciesId": 43,
+        "level": 22
+      }
+    ],
+    "rewardMoney": 352,
+    "beforeBattleDialog": [
+      "I'm so strong now!"
+    ],
+    "afterBattleDialog": [
+      "I was wrong!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 261,
+    "areaId": "route_11",
+    "name": "Pete",
+    "class": "Gambler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 100,
+        "level": 24
+      },
+      {
+        "speciesId": 100,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 1728,
+    "beforeBattleDialog": [
+      "I'll bet big on this battle!"
+    ],
+    "afterBattleDialog": [
+      "There goes my savings!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 262,
+    "areaId": "route_11",
+    "name": "Bob",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 23,
+        "level": 23
+      },
+      {
+        "speciesId": 27,
+        "level": 23
+      }
+    ],
+    "rewardMoney": 368,
+    "beforeBattleDialog": [
+      "I'm exploring the wilderness!"
+    ],
+    "afterBattleDialog": [
+      "I should stick to town..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 263,
+    "areaId": "route_11",
+    "name": "Karen",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 69,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 384,
+    "beforeBattleDialog": [
+      "My Bellsprout is well trained!"
+    ],
+    "afterBattleDialog": [
+      "Oh no, my Bellsprout!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 264,
+    "areaId": "route_11",
+    "name": "Stan",
+    "class": "Gambler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 56,
+        "level": 22
+      },
+      {
+        "speciesId": 57,
+        "level": 22
+      }
+    ],
+    "rewardMoney": 1584,
+    "beforeBattleDialog": [
+      "I gamble, and I battle! Life's a game!"
+    ],
+    "afterBattleDialog": [
+      "The house always loses..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 265,
+    "areaId": "route_11",
+    "name": "Tony",
+    "class": "Sailor",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 21
+      },
+      {
+        "speciesId": 86,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 672,
+    "beforeBattleDialog": [
+      "I've sailed the seven seas! Now I battle on land!"
+    ],
+    "afterBattleDialog": [
+      "I should go back to sea..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 266,
+    "areaId": "route_9",
+    "name": "Ray",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 25
+      },
+      {
+        "speciesId": 74,
+        "level": 25
+      },
+      {
+        "speciesId": 75,
+        "level": 25
+      }
+    ],
+    "rewardMoney": 900,
+    "beforeBattleDialog": [
+      "The path ahead is rough! Like my Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Rough loss..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 267,
+    "areaId": "route_9",
+    "name": "Nina",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 32,
+        "level": 24
+      },
+      {
+        "speciesId": 30,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 480,
+    "beforeBattleDialog": [
+      "Route 9 is hard to get through!"
+    ],
+    "afterBattleDialog": [
+      "I see why you made it!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 268,
+    "areaId": "route_9",
+    "name": "Cal",
+    "class": "BugCatcher",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 12,
+        "level": 24
+      },
+      {
+        "speciesId": 15,
+        "level": 24
+      },
+      {
+        "speciesId": 49,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 288,
+    "beforeBattleDialog": [
+      "My bug collection is complete!"
+    ],
+    "afterBattleDialog": [
+      "Squashed again!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 269,
+    "areaId": "route_9",
+    "name": "Allen",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 25
+      },
+      {
+        "speciesId": 95,
+        "level": 25
+      }
+    ],
+    "rewardMoney": 900,
+    "beforeBattleDialog": [
+      "I spend my days in the mountains!"
+    ],
+    "afterBattleDialog": [
+      "Even mountains crumble!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 270,
+    "areaId": "route_9",
+    "name": "Lana",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 30,
+        "level": 26
+      },
+      {
+        "speciesId": 33,
+        "level": 26
+      }
+    ],
+    "rewardMoney": 416,
+    "beforeBattleDialog": [
+      "I love training on this route!"
+    ],
+    "afterBattleDialog": [
+      "I need to find a new spot!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 271,
+    "areaId": "route_9",
+    "name": "Gene",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 26
+      },
+      {
+        "speciesId": 81,
+        "level": 26
+      }
+    ],
+    "rewardMoney": 624,
+    "beforeBattleDialog": [
+      "My Pokemon are scientifically superior!"
+    ],
+    "afterBattleDialog": [
+      "The data was wrong!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 272,
+    "areaId": "route_9",
+    "name": "Mike",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 75,
+        "level": 27
+      }
+    ],
+    "rewardMoney": 972,
+    "beforeBattleDialog": [
+      "Graveler is the toughest Pokemon around!"
+    ],
+    "afterBattleDialog": [
+      "Maybe not the toughest..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 273,
+    "areaId": "route_9",
+    "name": "Rose",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 44,
+        "level": 26
+      },
+      {
+        "speciesId": 17,
+        "level": 26
+      }
+    ],
+    "rewardMoney": 780,
+    "beforeBattleDialog": [
+      "I'm a Cool Trainer! Can you keep up?"
+    ],
+    "afterBattleDialog": [
+      "You're even cooler!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 274,
+    "areaId": "route_9",
+    "name": "Joel",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 27,
+        "level": 24
+      },
+      {
+        "speciesId": 20,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 384,
+    "beforeBattleDialog": [
+      "I've been training here for weeks!"
+    ],
+    "afterBattleDialog": [
+      "Weeks wasted!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 275,
+    "areaId": "rock_tunnel_1f",
+    "name": "Lenny",
+    "class": "PokeManiac",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 104,
+        "level": 29
+      },
+      {
+        "speciesId": 79,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 696,
+    "beforeBattleDialog": [
+      "It's dark in here! Watch your step!"
+    ],
+    "afterBattleDialog": [
+      "I should watch my battles instead!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 276,
+    "areaId": "rock_tunnel_1f",
+    "name": "Oliver",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 28
+      },
+      {
+        "speciesId": 74,
+        "level": 28
+      },
+      {
+        "speciesId": 75,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 1008,
+    "beforeBattleDialog": [
+      "I know these tunnels like the back of my hand!"
+    ],
+    "afterBattleDialog": [
+      "I didn't see that coming!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 277,
+    "areaId": "rock_tunnel_1f",
+    "name": "Dana",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 43,
+        "level": 28
+      },
+      {
+        "speciesId": 44,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 560,
+    "beforeBattleDialog": [
+      "I got lost in here! Battle me while I figure out the way!"
+    ],
+    "afterBattleDialog": [
+      "Still lost..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 278,
+    "areaId": "rock_tunnel_1f",
+    "name": "Dustin",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 95,
+        "level": 28
+      },
+      {
+        "speciesId": 74,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 1008,
+    "beforeBattleDialog": [
+      "My Onix can see in the dark!"
+    ],
+    "afterBattleDialog": [
+      "But it couldn't see your attacks!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 279,
+    "areaId": "rock_tunnel_b1f",
+    "name": "Allen",
+    "class": "PokeManiac",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 111,
+        "level": 29
+      },
+      {
+        "speciesId": 104,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 696,
+    "beforeBattleDialog": [
+      "The deeper you go, the stronger we get!"
+    ],
+    "afterBattleDialog": [
+      "Not strong enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 280,
+    "areaId": "rock_tunnel_b1f",
+    "name": "Eric",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 74,
+        "level": 28
+      },
+      {
+        "speciesId": 95,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 1080,
+    "beforeBattleDialog": [
+      "You won't find the exit without beating me!"
+    ],
+    "afterBattleDialog": [
+      "Fine, the exit is that way..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 281,
+    "areaId": "rock_tunnel_b1f",
+    "name": "Leah",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 17,
+        "level": 29
+      },
+      {
+        "speciesId": 79,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 870,
+    "beforeBattleDialog": [
+      "Training in the dark sharpens my senses!"
+    ],
+    "afterBattleDialog": [
+      "My senses failed me!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 282,
+    "areaId": "rock_tunnel_b1f",
+    "name": "Bruce",
+    "class": "Hiker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 75,
+        "level": 30
+      },
+      {
+        "speciesId": 75,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 1080,
+    "beforeBattleDialog": [
+      "Two Gravelers! Double trouble!"
+    ],
+    "afterBattleDialog": [
+      "Double defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 283,
+    "areaId": "pokemon_tower",
+    "name": "Mary",
+    "class": "Channeler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 92,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 768,
+    "beforeBattleDialog": [
+      "The spirits are restless..."
+    ],
+    "afterBattleDialog": [
+      "The spirits have calmed..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 284,
+    "areaId": "pokemon_tower",
+    "name": "Ruth",
+    "class": "Channeler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 92,
+        "level": 24
+      },
+      {
+        "speciesId": 92,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 768,
+    "beforeBattleDialog": [
+      "Can you feel the ghost Pokemon?"
+    ],
+    "afterBattleDialog": [
+      "They've disappeared..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 285,
+    "areaId": "pokemon_tower",
+    "name": "Carly",
+    "class": "Channeler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 93,
+        "level": 27
+      }
+    ],
+    "rewardMoney": 864,
+    "beforeBattleDialog": [
+      "Haunter haunts this tower!"
+    ],
+    "afterBattleDialog": [
+      "The haunting has ended!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 286,
+    "areaId": "pokemon_tower",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 41,
+        "level": 27
+      },
+      {
+        "speciesId": 109,
+        "level": 27
+      },
+      {
+        "speciesId": 20,
+        "level": 27
+      }
+    ],
+    "rewardMoney": 810,
+    "beforeBattleDialog": [
+      "Team Rocket is capturing the ghost Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Foiled again!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 287,
+    "areaId": "pokemon_tower",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 28
+      },
+      {
+        "speciesId": 20,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 840,
+    "beforeBattleDialog": [
+      "You can't stop Team Rocket!"
+    ],
+    "afterBattleDialog": [
+      "Okay, maybe you can..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": "has_poke_flute"
+  },
+  {
+    "id": 288,
+    "areaId": "route_8",
+    "name": "Rich",
+    "class": "Gambler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 58,
+        "level": 29
+      },
+      {
+        "speciesId": 77,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 2088,
+    "beforeBattleDialog": [
+      "I bet all my winnings on this battle!"
+    ],
+    "afterBattleDialog": [
+      "I should quit gambling..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 289,
+    "areaId": "route_8",
+    "name": "Lisa",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 35,
+        "level": 27
+      },
+      {
+        "speciesId": 36,
+        "level": 27
+      }
+    ],
+    "rewardMoney": 432,
+    "beforeBattleDialog": [
+      "My Clefable evolved with a Moon Stone!"
+    ],
+    "afterBattleDialog": [
+      "Even evolution wasn't enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 290,
+    "areaId": "route_8",
+    "name": "Stan",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 28
+      },
+      {
+        "speciesId": 110,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 672,
+    "beforeBattleDialog": [
+      "Poison gas attacks are fascinating!"
+    ],
+    "afterBattleDialog": [
+      "Fascinating defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 291,
+    "areaId": "route_8",
+    "name": "Jake",
+    "class": "Gambler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 100,
+        "level": 29
+      },
+      {
+        "speciesId": 101,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 2088,
+    "beforeBattleDialog": [
+      "My Electrode is the fastest Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Fast, but not fast enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 292,
+    "areaId": "route_8",
+    "name": "Lynn",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 49,
+        "level": 30
+      },
+      {
+        "speciesId": 45,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 900,
+    "beforeBattleDialog": [
+      "Cool Trainers train cool Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Your Pokemon are cooler!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 293,
+    "areaId": "route_8",
+    "name": "Tim",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 81,
+        "level": 28
+      },
+      {
+        "speciesId": 82,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 672,
+    "beforeBattleDialog": [
+      "I built a device to boost my Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Device malfunction!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 294,
+    "areaId": "route_8",
+    "name": "Megan",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 37,
+        "level": 28
+      },
+      {
+        "speciesId": 38,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 480,
+    "beforeBattleDialog": [
+      "My Ninetales is elegant and powerful!"
+    ],
+    "afterBattleDialog": [
+      "Elegantly defeated!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 295,
+    "areaId": "route_8",
+    "name": "Dirk",
+    "class": "Gambler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 56,
+        "level": 29
+      },
+      {
+        "speciesId": 57,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 2088,
+    "beforeBattleDialog": [
+      "Double or nothing!"
+    ],
+    "afterBattleDialog": [
+      "Nothing it is!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 296,
+    "areaId": "celadon_gym",
+    "name": "Violet",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 69,
+        "level": 24
+      },
+      {
+        "speciesId": 70,
+        "level": 26
+      }
+    ],
+    "rewardMoney": 416,
+    "beforeBattleDialog": [
+      "Erika's gym specializes in grass Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Even grass gets cut down!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 297,
+    "areaId": "celadon_gym",
+    "name": "Lisa",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 114,
+        "level": 26
+      },
+      {
+        "speciesId": 43,
+        "level": 26
+      }
+    ],
+    "rewardMoney": 1820,
+    "beforeBattleDialog": [
+      "Grass Pokemon are beautiful!"
+    ],
+    "afterBattleDialog": [
+      "Beauty fades!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 298,
+    "areaId": "celadon_gym",
+    "name": "Bridget",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 43,
+        "level": 24
+      },
+      {
+        "speciesId": 44,
+        "level": 24
+      },
+      {
+        "speciesId": 70,
+        "level": 24
+      }
+    ],
+    "rewardMoney": 480,
+    "beforeBattleDialog": [
+      "I'm training to be like Erika!"
+    ],
+    "afterBattleDialog": [
+      "I have a long way to go!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 299,
+    "areaId": "celadon_gym",
+    "name": "Tamia",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 71,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 1960,
+    "beforeBattleDialog": [
+      "My Victreebel will swallow you whole!"
+    ],
+    "afterBattleDialog": [
+      "Spit back up!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 300,
+    "areaId": "celadon_gym",
+    "name": "Rosa",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 44,
+        "level": 26
+      },
+      {
+        "speciesId": 45,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 448,
+    "beforeBattleDialog": [
+      "The perfume of grass Pokemon is intoxicating!"
+    ],
+    "afterBattleDialog": [
+      "The sweet smell of defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 301,
+    "areaId": "celadon_gym",
+    "name": "Nicole",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 114,
+        "level": 28
+      },
+      {
+        "speciesId": 45,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 840,
+    "beforeBattleDialog": [
+      "I'm Erika's top student!"
+    ],
+    "afterBattleDialog": [
+      "The student has been schooled!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 302,
+    "areaId": "rocket_hideout",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 19,
+        "level": 21
+      },
+      {
+        "speciesId": 41,
+        "level": 21
+      }
+    ],
+    "rewardMoney": 630,
+    "beforeBattleDialog": [
+      "Welcome to Team Rocket's secret hideout!"
+    ],
+    "afterBattleDialog": [
+      "It's not so secret anymore!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 303,
+    "areaId": "rocket_hideout",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 27,
+        "level": 21
+      },
+      {
+        "speciesId": 23,
+        "level": 21
+      },
+      {
+        "speciesId": 20,
+        "level": 23
+      }
+    ],
+    "rewardMoney": 690,
+    "beforeBattleDialog": [
+      "How did you find this place?"
+    ],
+    "afterBattleDialog": [
+      "I'll never tell!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 304,
+    "areaId": "rocket_hideout",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 23
+      },
+      {
+        "speciesId": 41,
+        "level": 23
+      }
+    ],
+    "rewardMoney": 690,
+    "beforeBattleDialog": [
+      "Intruder! Get them!"
+    ],
+    "afterBattleDialog": [
+      "I got got!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 305,
+    "areaId": "rocket_hideout",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 20,
+        "level": 23
+      },
+      {
+        "speciesId": 42,
+        "level": 23
+      }
+    ],
+    "rewardMoney": 690,
+    "beforeBattleDialog": [
+      "Team Rocket is invincible!"
+    ],
+    "afterBattleDialog": [
+      "Apparently not!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 306,
+    "areaId": "rocket_hideout",
+    "name": "Giovanni",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 95,
+        "level": 25
+      },
+      {
+        "speciesId": 111,
+        "level": 24
+      },
+      {
+        "speciesId": 34,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 870,
+    "beforeBattleDialog": [
+      "So you've made it this far.",
+      "I am the leader of Team Rocket!"
+    ],
+    "afterBattleDialog": [
+      "Blast! You ruined my plans!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": "has_silph_scope"
+  },
+  {
+    "id": 307,
+    "areaId": "saffron_gym",
+    "name": "Johan",
+    "class": "Psychic",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 64,
+        "level": 34
+      },
+      {
+        "speciesId": 97,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 816,
+    "beforeBattleDialog": [
+      "I can read your mind! You're going to lose!"
+    ],
+    "afterBattleDialog": [
+      "I didn't see that coming!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 308,
+    "areaId": "saffron_gym",
+    "name": "Tyron",
+    "class": "Psychic",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 122,
+        "level": 33
+      },
+      {
+        "speciesId": 64,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 792,
+    "beforeBattleDialog": [
+      "Psychic powers are the strongest!"
+    ],
+    "afterBattleDialog": [
+      "Strength isn't everything!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 309,
+    "areaId": "saffron_gym",
+    "name": "Preston",
+    "class": "Psychic",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 79,
+        "level": 34
+      },
+      {
+        "speciesId": 80,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 816,
+    "beforeBattleDialog": [
+      "My Slowbro is slower but smarter!"
+    ],
+    "afterBattleDialog": [
+      "Not smart enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 310,
+    "areaId": "saffron_gym",
+    "name": "Amanda",
+    "class": "Channeler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 93,
+        "level": 34
+      },
+      {
+        "speciesId": 94,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1088,
+    "beforeBattleDialog": [
+      "Ghost and Psychic make a great combo!"
+    ],
+    "afterBattleDialog": [
+      "Not this time!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 311,
+    "areaId": "saffron_gym",
+    "name": "Franklin",
+    "class": "Psychic",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 96,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 864,
+    "beforeBattleDialog": [
+      "My psychic powers will overwhelm you!"
+    ],
+    "afterBattleDialog": [
+      "Overwhelmed by defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 312,
+    "areaId": "saffron_gym",
+    "name": "Laura",
+    "class": "Psychic",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 63,
+        "level": 33
+      },
+      {
+        "speciesId": 64,
+        "level": 33
+      },
+      {
+        "speciesId": 65,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 840,
+    "beforeBattleDialog": [
+      "The evolution of Abra is fascinating!"
+    ],
+    "afterBattleDialog": [
+      "Evolution couldn't save me!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 313,
+    "areaId": "saffron_gym",
+    "name": "Rodney",
+    "class": "Channeler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 92,
+        "level": 33
+      },
+      {
+        "speciesId": 93,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 1120,
+    "beforeBattleDialog": [
+      "The spirits guide my Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "The spirits led me to defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 314,
+    "areaId": "silph_co",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 24,
+        "level": 33
+      },
+      {
+        "speciesId": 42,
+        "level": 33
+      },
+      {
+        "speciesId": 20,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 990,
+    "beforeBattleDialog": [
+      "Silph Co. belongs to Team Rocket now!"
+    ],
+    "afterBattleDialog": [
+      "You'll never stop the boss!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 315,
+    "areaId": "silph_co",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 33
+      },
+      {
+        "speciesId": 110,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 990,
+    "beforeBattleDialog": [
+      "Get out of Silph Co.!"
+    ],
+    "afterBattleDialog": [
+      "How did you get past security?"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 316,
+    "areaId": "silph_co",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 41,
+        "level": 33
+      },
+      {
+        "speciesId": 42,
+        "level": 33
+      },
+      {
+        "speciesId": 20,
+        "level": 33
+      },
+      {
+        "speciesId": 24,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 990,
+    "beforeBattleDialog": [
+      "Team Rocket will rule the world!"
+    ],
+    "afterBattleDialog": [
+      "Our plans!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 317,
+    "areaId": "silph_co",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 89,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 1050,
+    "beforeBattleDialog": [
+      "My Muk will dissolve you!"
+    ],
+    "afterBattleDialog": [
+      "Dissolved dreams!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 318,
+    "areaId": "silph_co",
+    "name": "Dr. Keys",
+    "class": "Scientist",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 82,
+        "level": 34
+      },
+      {
+        "speciesId": 101,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1632,
+    "beforeBattleDialog": [
+      "I'm studying the Silph Scope for Team Rocket!"
+    ],
+    "afterBattleDialog": [
+      "My research is ruined!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 319,
+    "areaId": "silph_co",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 24,
+        "level": 35
+      },
+      {
+        "speciesId": 110,
+        "level": 35
+      },
+      {
+        "speciesId": 34,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 1050,
+    "beforeBattleDialog": [
+      "I'm guarding the boss! You won't get past me!"
+    ],
+    "afterBattleDialog": [
+      "The boss is on his own now!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": "has_tea"
+  },
+  {
+    "id": 323,
+    "areaId": "route_12",
+    "name": "Andrew",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 129,
+        "level": 27
+      },
+      {
+        "speciesId": 129,
+        "level": 27
+      },
+      {
+        "speciesId": 130,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 1188,
+    "beforeBattleDialog": [
+      "My Magikarp evolved! Fear my Gyarados!"
+    ],
+    "afterBattleDialog": [
+      "Maybe I should catch more Magikarp!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 324,
+    "areaId": "route_12",
+    "name": "Benny",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 60,
+        "level": 28
+      },
+      {
+        "speciesId": 61,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 1008,
+    "beforeBattleDialog": [
+      "The fishing here is great!"
+    ],
+    "afterBattleDialog": [
+      "Better luck next time!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 325,
+    "areaId": "route_12",
+    "name": "Hal",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 118,
+        "level": 30
+      },
+      {
+        "speciesId": 119,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 1080,
+    "beforeBattleDialog": [
+      "I catch rare fish Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "My fish flopped!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 326,
+    "areaId": "route_12",
+    "name": "Taro",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 30
+      },
+      {
+        "speciesId": 116,
+        "level": 30
+      },
+      {
+        "speciesId": 118,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 1080,
+    "beforeBattleDialog": [
+      "Three water types! Can you handle them?"
+    ],
+    "afterBattleDialog": [
+      "You handled them!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 327,
+    "areaId": "route_12",
+    "name": "Nina",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 17,
+        "level": 30
+      },
+      {
+        "speciesId": 43,
+        "level": 30
+      },
+      {
+        "speciesId": 25,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 600,
+    "beforeBattleDialog": [
+      "Route 12 is quiet and peaceful!"
+    ],
+    "afterBattleDialog": [
+      "Not so peaceful anymore!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 328,
+    "areaId": "route_12",
+    "name": "Warren",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 129,
+        "level": 25
+      },
+      {
+        "speciesId": 129,
+        "level": 25
+      },
+      {
+        "speciesId": 129,
+        "level": 25
+      },
+      {
+        "speciesId": 130,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 1260,
+    "beforeBattleDialog": [
+      "I have the ULTIMATE fishing strategy!"
+    ],
+    "afterBattleDialog": [
+      "Strategy failed!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 329,
+    "areaId": "route_13",
+    "name": "Benny",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 21,
+        "level": 29
+      },
+      {
+        "speciesId": 22,
+        "level": 29
+      },
+      {
+        "speciesId": 84,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 580,
+    "beforeBattleDialog": [
+      "Birds are the fastest Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Not fast enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 330,
+    "areaId": "route_13",
+    "name": "Mary",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 43,
+        "level": 32
+      },
+      {
+        "speciesId": 44,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 2240,
+    "beforeBattleDialog": [
+      "Beauty is power!"
+    ],
+    "afterBattleDialog": [
+      "Power failed!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 331,
+    "areaId": "route_13",
+    "name": "Dan",
+    "class": "Youngster",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 20,
+        "level": 30
+      },
+      {
+        "speciesId": 57,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 480,
+    "beforeBattleDialog": [
+      "I've come a long way since Route 1!"
+    ],
+    "afterBattleDialog": [
+      "Maybe not far enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 332,
+    "areaId": "route_13",
+    "name": "Wanda",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 44,
+        "level": 30
+      },
+      {
+        "speciesId": 44,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 480,
+    "beforeBattleDialog": [
+      "Double Gloom! Double trouble!"
+    ],
+    "afterBattleDialog": [
+      "Double defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 333,
+    "areaId": "route_13",
+    "name": "Roger",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 22,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "My Fearow rules the skies!"
+    ],
+    "afterBattleDialog": [
+      "Grounded!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 334,
+    "areaId": "route_13",
+    "name": "Julia",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 37,
+        "level": 32
+      },
+      {
+        "speciesId": 38,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 2240,
+    "beforeBattleDialog": [
+      "My Ninetales has nine beautiful tails!"
+    ],
+    "afterBattleDialog": [
+      "Not beautiful enough to win!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 335,
+    "areaId": "route_13",
+    "name": "Lola",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 25,
+        "level": 31
+      },
+      {
+        "speciesId": 35,
+        "level": 31
+      }
+    ],
+    "rewardMoney": 496,
+    "beforeBattleDialog": [
+      "Pikachu and Clefairy make the cutest pair!"
+    ],
+    "afterBattleDialog": [
+      "Cute but defeated!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 336,
+    "areaId": "route_13",
+    "name": "Earl",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 17,
+        "level": 29
+      },
+      {
+        "speciesId": 22,
+        "level": 29
+      },
+      {
+        "speciesId": 85,
+        "level": 31
+      }
+    ],
+    "rewardMoney": 620,
+    "beforeBattleDialog": [
+      "I have three different bird Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Three birds, one stone!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 337,
+    "areaId": "route_13",
+    "name": "Patty",
+    "class": "JrTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 33
+      },
+      {
+        "speciesId": 45,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "I've been training hard!"
+    ],
+    "afterBattleDialog": [
+      "Not hard enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 338,
+    "areaId": "route_13",
+    "name": "Henry",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 129,
+        "level": 27
+      },
+      {
+        "speciesId": 129,
+        "level": 27
+      },
+      {
+        "speciesId": 129,
+        "level": 27
+      }
+    ],
+    "rewardMoney": 972,
+    "beforeBattleDialog": [
+      "Magikarp will rule the world!"
+    ],
+    "afterBattleDialog": [
+      "The world is safe from Magikarp..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 339,
+    "areaId": "route_14",
+    "name": "Gerald",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 84,
+        "level": 33
+      },
+      {
+        "speciesId": 85,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "Doduo and Dodrio are underrated!"
+    ],
+    "afterBattleDialog": [
+      "Maybe so, but they lost!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 340,
+    "areaId": "route_14",
+    "name": "Val",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 124,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 2450,
+    "beforeBattleDialog": [
+      "Jynx is my favorite Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Even favorites lose sometimes!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 341,
+    "areaId": "route_14",
+    "name": "Pedro",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 22,
+        "level": 33
+      },
+      {
+        "speciesId": 18,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "Sky Attack is my specialty!"
+    ],
+    "afterBattleDialog": [
+      "Your attack fell flat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 342,
+    "areaId": "route_14",
+    "name": "Cathy",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 30,
+        "level": 33
+      },
+      {
+        "speciesId": 31,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 528,
+    "beforeBattleDialog": [
+      "My Nidoqueen is fearsome!"
+    ],
+    "afterBattleDialog": [
+      "Not fearsome enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 343,
+    "areaId": "route_14",
+    "name": "Nick",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 32
+      },
+      {
+        "speciesId": 22,
+        "level": 32
+      },
+      {
+        "speciesId": 18,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "My birds will peck you to pieces!"
+    ],
+    "afterBattleDialog": [
+      "Pecking order established!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 344,
+    "areaId": "route_14",
+    "name": "Wendy",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 49,
+        "level": 34
+      },
+      {
+        "speciesId": 71,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1020,
+    "beforeBattleDialog": [
+      "I'm training for the Pokemon League!"
+    ],
+    "afterBattleDialog": [
+      "I'll see you there!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 345,
+    "areaId": "route_14",
+    "name": "Bob",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 17,
+        "level": 30
+      },
+      {
+        "speciesId": 17,
+        "level": 30
+      },
+      {
+        "speciesId": 18,
+        "level": 32
+      },
+      {
+        "speciesId": 22,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "I have a whole flock of birds!"
+    ],
+    "afterBattleDialog": [
+      "Flock off!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 346,
+    "areaId": "route_14",
+    "name": "Rosa",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 38,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 2450,
+    "beforeBattleDialog": [
+      "My Ninetales is a natural beauty!"
+    ],
+    "afterBattleDialog": [
+      "Natural defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 347,
+    "areaId": "route_14",
+    "name": "Tim",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 85,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "Dodrio is the fastest bird!"
+    ],
+    "afterBattleDialog": [
+      "Speed isn't everything!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 348,
+    "areaId": "route_14",
+    "name": "Amy",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 36,
+        "level": 34
+      },
+      {
+        "speciesId": 40,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1020,
+    "beforeBattleDialog": [
+      "Normal types are actually really strong!"
+    ],
+    "afterBattleDialog": [
+      "Strong, but not strong enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 349,
+    "areaId": "route_15",
+    "name": "Bea",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 35,
+        "level": 33
+      },
+      {
+        "speciesId": 36,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 2310,
+    "beforeBattleDialog": [
+      "My Pokemon are gorgeous!"
+    ],
+    "afterBattleDialog": [
+      "Gorgeous but defeated!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 350,
+    "areaId": "route_15",
+    "name": "Ollie",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 17,
+        "level": 29
+      },
+      {
+        "speciesId": 22,
+        "level": 31
+      },
+      {
+        "speciesId": 18,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "My bird Pokemon fly high!"
+    ],
+    "afterBattleDialog": [
+      "Shot down!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 351,
+    "areaId": "route_15",
+    "name": "Fred",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 34,
+        "level": 33
+      },
+      {
+        "speciesId": 31,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 990,
+    "beforeBattleDialog": [
+      "Nidoking and Nidoqueen - a royal pair!"
+    ],
+    "afterBattleDialog": [
+      "Dethroned!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 352,
+    "areaId": "route_15",
+    "name": "Maria",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 37,
+        "level": 32
+      },
+      {
+        "speciesId": 38,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 512,
+    "beforeBattleDialog": [
+      "My fire foxes are so pretty!"
+    ],
+    "afterBattleDialog": [
+      "Pretty sad they lost!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 353,
+    "areaId": "route_15",
+    "name": "Rex",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 84,
+        "level": 32
+      },
+      {
+        "speciesId": 85,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "Three heads are better than one!"
+    ],
+    "afterBattleDialog": [
+      "But not better than you!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 354,
+    "areaId": "route_15",
+    "name": "Sophie",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 113,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 1050,
+    "beforeBattleDialog": [
+      "My Chansey has tons of HP!"
+    ],
+    "afterBattleDialog": [
+      "All that HP wasn't enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 355,
+    "areaId": "route_15",
+    "name": "Jake",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 18,
+        "level": 34
+      },
+      {
+        "speciesId": 22,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "My birds are well trained!"
+    ],
+    "afterBattleDialog": [
+      "Not well enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 356,
+    "areaId": "route_15",
+    "name": "Laura",
+    "class": "Beauty",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 44,
+        "level": 33
+      },
+      {
+        "speciesId": 45,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 2310,
+    "beforeBattleDialog": [
+      "Vileplume smells wonderful!"
+    ],
+    "afterBattleDialog": [
+      "The smell of defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 357,
+    "areaId": "route_15",
+    "name": "Mark",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 78,
+        "level": 34
+      },
+      {
+        "speciesId": 59,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1020,
+    "beforeBattleDialog": [
+      "Fire types burn the competition!"
+    ],
+    "afterBattleDialog": [
+      "Burned out!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 358,
+    "areaId": "route_15",
+    "name": "Tracy",
+    "class": "Lass",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 25,
+        "level": 33
+      },
+      {
+        "speciesId": 26,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 528,
+    "beforeBattleDialog": [
+      "Raichu is so powerful!"
+    ],
+    "afterBattleDialog": [
+      "Shocked by defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 359,
+    "areaId": "route_17",
+    "name": "Hank",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 28
+      },
+      {
+        "speciesId": 110,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 560,
+    "beforeBattleDialog": [
+      "Get off the road, punk!"
+    ],
+    "afterBattleDialog": [
+      "Fine, I'll move!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 360,
+    "areaId": "route_17",
+    "name": "Ruben",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 108,
+        "level": 29
+      },
+      {
+        "speciesId": 108,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 580,
+    "beforeBattleDialog": [
+      "The Cycling Road is our turf!"
+    ],
+    "afterBattleDialog": [
+      "It's all yours!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 361,
+    "areaId": "route_17",
+    "name": "Joel",
+    "class": "CueBall",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 57,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 720,
+    "beforeBattleDialog": [
+      "I'm the toughest guy on Cycling Road!"
+    ],
+    "afterBattleDialog": [
+      "Maybe second toughest..."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 362,
+    "areaId": "route_17",
+    "name": "Zeke",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 28
+      },
+      {
+        "speciesId": 108,
+        "level": 28
+      },
+      {
+        "speciesId": 110,
+        "level": 28
+      }
+    ],
+    "rewardMoney": 560,
+    "beforeBattleDialog": [
+      "My poison Pokemon will wreck you!"
+    ],
+    "afterBattleDialog": [
+      "Wrecked!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 363,
+    "areaId": "route_17",
+    "name": "Lao",
+    "class": "CueBall",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 56,
+        "level": 29
+      },
+      {
+        "speciesId": 57,
+        "level": 29
+      }
+    ],
+    "rewardMoney": 696,
+    "beforeBattleDialog": [
+      "Ready for a knuckle sandwich?"
+    ],
+    "afterBattleDialog": [
+      "I got served!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 364,
+    "areaId": "route_17",
+    "name": "Ivan",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 30
+      },
+      {
+        "speciesId": 110,
+        "level": 30
+      },
+      {
+        "speciesId": 89,
+        "level": 30
+      }
+    ],
+    "rewardMoney": 600,
+    "beforeBattleDialog": [
+      "Cycling Road belongs to bikers!"
+    ],
+    "afterBattleDialog": [
+      "Rode off!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 365,
+    "areaId": "route_17",
+    "name": "Kyle",
+    "class": "CueBall",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 57,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 792,
+    "beforeBattleDialog": [
+      "I'll clobber you!"
+    ],
+    "afterBattleDialog": [
+      "Got clobbered!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 366,
+    "areaId": "route_17",
+    "name": "Zed",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 108,
+        "level": 31
+      },
+      {
+        "speciesId": 89,
+        "level": 31
+      }
+    ],
+    "rewardMoney": 620,
+    "beforeBattleDialog": [
+      "Smell my Muk! Actually, don't."
+    ],
+    "afterBattleDialog": [
+      "Phew!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 367,
+    "areaId": "route_17",
+    "name": "Rocky",
+    "class": "CueBall",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 56,
+        "level": 31
+      },
+      {
+        "speciesId": 57,
+        "level": 31
+      },
+      {
+        "speciesId": 68,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 792,
+    "beforeBattleDialog": [
+      "I punch first, ask questions later!"
+    ],
+    "afterBattleDialog": [
+      "Should've asked questions first!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 368,
+    "areaId": "route_17",
+    "name": "Luca",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 110,
+        "level": 33
+      },
+      {
+        "speciesId": 110,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "Double Weezing! Double the smoke!"
+    ],
+    "afterBattleDialog": [
+      "Smoked out!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 369,
+    "areaId": "route_18",
+    "name": "Bruno",
+    "class": "CueBall",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 57,
+        "level": 33
+      },
+      {
+        "speciesId": 106,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 792,
+    "beforeBattleDialog": [
+      "Fighting types are the way to go!"
+    ],
+    "afterBattleDialog": [
+      "Fighting a losing battle!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 370,
+    "areaId": "route_18",
+    "name": "Carl",
+    "class": "Birdkeeper",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 22,
+        "level": 33
+      },
+      {
+        "speciesId": 84,
+        "level": 33
+      },
+      {
+        "speciesId": 85,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "Birds of the southern route!"
+    ],
+    "afterBattleDialog": [
+      "Flightless!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 371,
+    "areaId": "route_18",
+    "name": "Phil",
+    "class": "Biker",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 89,
+        "level": 33
+      },
+      {
+        "speciesId": 110,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "End of the road, kid!"
+    ],
+    "afterBattleDialog": [
+      "I've been roadkilled!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 372,
+    "areaId": "fuchsia_gym",
+    "name": "Phil",
+    "class": "Juggler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 96,
+        "level": 34
+      },
+      {
+        "speciesId": 96,
+        "level": 34
+      },
+      {
+        "speciesId": 49,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1224,
+    "beforeBattleDialog": [
+      "Watch me juggle and battle at the same time!"
+    ],
+    "afterBattleDialog": [
+      "I dropped the ball!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 373,
+    "areaId": "fuchsia_gym",
+    "name": "Hideo",
+    "class": "Tamer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 24,
+        "level": 34
+      },
+      {
+        "speciesId": 28,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1224,
+    "beforeBattleDialog": [
+      "Koga trained me in the art of poison!"
+    ],
+    "afterBattleDialog": [
+      "I've been outpoisoned!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 374,
+    "areaId": "fuchsia_gym",
+    "name": "Atsushi",
+    "class": "Juggler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 97,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 1296,
+    "beforeBattleDialog": [
+      "My Hypno will put you to sleep!"
+    ],
+    "afterBattleDialog": [
+      "I'm wide awake from that defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 375,
+    "areaId": "fuchsia_gym",
+    "name": "Kirk",
+    "class": "Tamer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 110,
+        "level": 36
+      },
+      {
+        "speciesId": 89,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 1296,
+    "beforeBattleDialog": [
+      "Poison types are underappreciated!"
+    ],
+    "afterBattleDialog": [
+      "Maybe for good reason!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 376,
+    "areaId": "fuchsia_gym",
+    "name": "Edgar",
+    "class": "Juggler",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 64,
+        "level": 34
+      },
+      {
+        "speciesId": 122,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 1224,
+    "beforeBattleDialog": [
+      "I juggle Poke Balls for fun!"
+    ],
+    "afterBattleDialog": [
+      "Juggling a loss!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 377,
+    "areaId": "fuchsia_gym",
+    "name": "Takeshi",
+    "class": "Tamer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 24,
+        "level": 36
+      },
+      {
+        "speciesId": 110,
+        "level": 36
+      },
+      {
+        "speciesId": 42,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 1296,
+    "beforeBattleDialog": [
+      "The gym's traps can't stop you, but I can!"
+    ],
+    "afterBattleDialog": [
+      "Neither could I!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 378,
+    "areaId": "route_19",
+    "name": "Grant",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 86,
+        "level": 33
+      },
+      {
+        "speciesId": 87,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "The water here is freezing!"
+    ],
+    "afterBattleDialog": [
+      "I'm frozen in defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 379,
+    "areaId": "route_19",
+    "name": "Paula",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 116,
+        "level": 32
+      },
+      {
+        "speciesId": 117,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "I swim here every day!"
+    ],
+    "afterBattleDialog": [
+      "Swimming away!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 380,
+    "areaId": "route_19",
+    "name": "Kirk",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 90,
+        "level": 33
+      },
+      {
+        "speciesId": 91,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "Cloyster's shell is unbreakable!"
+    ],
+    "afterBattleDialog": [
+      "Shell shocked!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 381,
+    "areaId": "route_19",
+    "name": "Eve",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 120,
+        "level": 33
+      },
+      {
+        "speciesId": 121,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "Starmie is a gem of the sea!"
+    ],
+    "afterBattleDialog": [
+      "Gemstone cracked!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 382,
+    "areaId": "route_19",
+    "name": "Nate",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 30
+      },
+      {
+        "speciesId": 73,
+        "level": 30
+      },
+      {
+        "speciesId": 130,
+        "level": 32
+      }
+    ],
+    "rewardMoney": 640,
+    "beforeBattleDialog": [
+      "The currents are strong here!"
+    ],
+    "afterBattleDialog": [
+      "Swept away!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 383,
+    "areaId": "route_19",
+    "name": "Rita",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 55,
+        "level": 33
+      },
+      {
+        "speciesId": 62,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "Water Pokemon are the best!"
+    ],
+    "afterBattleDialog": [
+      "The best at losing today!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 384,
+    "areaId": "route_19",
+    "name": "Doug",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 130,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "My Gyarados rules these waters!"
+    ],
+    "afterBattleDialog": [
+      "Dethroned!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 385,
+    "areaId": "route_19",
+    "name": "May",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 131,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "Lapras carries me across the sea!"
+    ],
+    "afterBattleDialog": [
+      "Lapras carries my defeat too!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 386,
+    "areaId": "route_19",
+    "name": "Rex",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 73,
+        "level": 34
+      },
+      {
+        "speciesId": 117,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "Don't disturb the legendary bird!"
+    ],
+    "afterBattleDialog": [
+      "You're strong enough for it!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 387,
+    "areaId": "route_19",
+    "name": "Lily",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 87,
+        "level": 34
+      },
+      {
+        "speciesId": 121,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "The ice caves are beautiful!"
+    ],
+    "afterBattleDialog": [
+      "Beautiful defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 388,
+    "areaId": "route_20",
+    "name": "Jack",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 33
+      },
+      {
+        "speciesId": 73,
+        "level": 33
+      }
+    ],
+    "rewardMoney": 660,
+    "beforeBattleDialog": [
+      "The sea between the islands is treacherous!"
+    ],
+    "afterBattleDialog": [
+      "I'm the treacherous one!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 389,
+    "areaId": "route_20",
+    "name": "Sarah",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 120,
+        "level": 34
+      },
+      {
+        "speciesId": 121,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "Staryu and Starmie make a great team!"
+    ],
+    "afterBattleDialog": [
+      "Team broken!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 390,
+    "areaId": "route_20",
+    "name": "Barry",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 86,
+        "level": 35
+      },
+      {
+        "speciesId": 87,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "Ice types rule the water!"
+    ],
+    "afterBattleDialog": [
+      "Not today!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 391,
+    "areaId": "route_20",
+    "name": "Tina",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 116,
+        "level": 32
+      },
+      {
+        "speciesId": 118,
+        "level": 32
+      },
+      {
+        "speciesId": 117,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "Three water types for the price of one!"
+    ],
+    "afterBattleDialog": [
+      "Bargain defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 392,
+    "areaId": "route_20",
+    "name": "Dave",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 130,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 720,
+    "beforeBattleDialog": [
+      "My Gyarados is a beast!"
+    ],
+    "afterBattleDialog": [
+      "Beastly loss!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 393,
+    "areaId": "route_20",
+    "name": "Lynn",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 62,
+        "level": 34
+      },
+      {
+        "speciesId": 55,
+        "level": 34
+      }
+    ],
+    "rewardMoney": 680,
+    "beforeBattleDialog": [
+      "Poliwrath and Golduck - strong swimmers!"
+    ],
+    "afterBattleDialog": [
+      "Swimming to shore!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 394,
+    "areaId": "route_20",
+    "name": "Tom",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 91,
+        "level": 35
+      },
+      {
+        "speciesId": 73,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "The deep water Pokemon are the strongest!"
+    ],
+    "afterBattleDialog": [
+      "Depth charged!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 395,
+    "areaId": "route_20",
+    "name": "Wendy",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 131,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 720,
+    "beforeBattleDialog": [
+      "Lapras is gentle but powerful!"
+    ],
+    "afterBattleDialog": [
+      "Gentle defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 396,
+    "areaId": "route_20",
+    "name": "Mick",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 33
+      },
+      {
+        "speciesId": 116,
+        "level": 33
+      },
+      {
+        "speciesId": 130,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "I've been swimming for days!"
+    ],
+    "afterBattleDialog": [
+      "Time to rest!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 397,
+    "areaId": "route_20",
+    "name": "Kelly",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 87,
+        "level": 35
+      },
+      {
+        "speciesId": 121,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "The Seafoam Islands are nearby!"
+    ],
+    "afterBattleDialog": [
+      "I'll check them out... later."
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 398,
+    "areaId": "pokemon_mansion",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 109,
+        "level": 35
+      },
+      {
+        "speciesId": 110,
+        "level": 35
+      },
+      {
+        "speciesId": 20,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 1050,
+    "beforeBattleDialog": [
+      "Team Rocket was here first!"
+    ],
+    "afterBattleDialog": [
+      "And now we're leaving!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 399,
+    "areaId": "pokemon_mansion",
+    "name": "Dr. Fuji",
+    "class": "Scientist",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 88,
+        "level": 36
+      },
+      {
+        "speciesId": 89,
+        "level": 36
+      },
+      {
+        "speciesId": 110,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 1728,
+    "beforeBattleDialog": [
+      "I study the Pokemon that were created here!"
+    ],
+    "afterBattleDialog": [
+      "Fascinating data from our battle!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 400,
+    "areaId": "pokemon_mansion",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 24,
+        "level": 36
+      },
+      {
+        "speciesId": 42,
+        "level": 36
+      },
+      {
+        "speciesId": 110,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 1080,
+    "beforeBattleDialog": [
+      "We're looking for Mewtwo's data!"
+    ],
+    "afterBattleDialog": [
+      "You won't find it here!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 401,
+    "areaId": "pokemon_mansion",
+    "name": "Burglar",
+    "class": "Burglar",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 126,
+        "level": 38
+      },
+      {
+        "speciesId": 59,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "I'm raiding this abandoned mansion!"
+    ],
+    "afterBattleDialog": [
+      "I'll raid somewhere else!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 402,
+    "areaId": "pokemon_mansion",
+    "name": "Grunt",
+    "class": "RocketGrunt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 89,
+        "level": 36
+      },
+      {
+        "speciesId": 42,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 1080,
+    "beforeBattleDialog": [
+      "The secret lab is down here!"
+    ],
+    "afterBattleDialog": [
+      "It's not so secret anymore!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 403,
+    "areaId": "pokemon_mansion",
+    "name": "Burglar",
+    "class": "Burglar",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 58,
+        "level": 36
+      },
+      {
+        "speciesId": 77,
+        "level": 36
+      },
+      {
+        "speciesId": 59,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "Finders keepers!"
+    ],
+    "afterBattleDialog": [
+      "Losers weepers!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": "has_mansion_key"
+  },
+  {
+    "id": 404,
+    "areaId": "cinnabar_gym",
+    "name": "Erik",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 37,
+        "level": 36
+      },
+      {
+        "speciesId": 58,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 864,
+    "beforeBattleDialog": [
+      "Fire Pokemon are scientifically hot!"
+    ],
+    "afterBattleDialog": [
+      "Hot take: I lost!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 405,
+    "areaId": "cinnabar_gym",
+    "name": "Avery",
+    "class": "Burglar",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 126,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "I stole this Magmar fair and square!"
+    ],
+    "afterBattleDialog": [
+      "Maybe steal some skill next time!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 406,
+    "areaId": "cinnabar_gym",
+    "name": "Derek",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 77,
+        "level": 36
+      },
+      {
+        "speciesId": 78,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 912,
+    "beforeBattleDialog": [
+      "The quiz machines are my invention!"
+    ],
+    "afterBattleDialog": [
+      "Your invention couldn't save you!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 407,
+    "areaId": "cinnabar_gym",
+    "name": "Greta",
+    "class": "Burglar",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 58,
+        "level": 38
+      },
+      {
+        "speciesId": 59,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "Arcanine is the legendary Pokemon!"
+    ],
+    "afterBattleDialog": [
+      "Legendary defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 408,
+    "areaId": "cinnabar_gym",
+    "name": "Nolan",
+    "class": "SuperNerd",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 37,
+        "level": 36
+      },
+      {
+        "speciesId": 38,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 912,
+    "beforeBattleDialog": [
+      "Ninetales has mystical fire powers!"
+    ],
+    "afterBattleDialog": [
+      "Mystically defeated!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 409,
+    "areaId": "cinnabar_gym",
+    "name": "Pyro",
+    "class": "Burglar",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 126,
+        "level": 36
+      },
+      {
+        "speciesId": 59,
+        "level": 38
+      },
+      {
+        "speciesId": 78,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "Three fire types! Feel the heat!"
+    ],
+    "afterBattleDialog": [
+      "Cooled off!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 410,
+    "areaId": "route_21",
+    "name": "Jack",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 72,
+        "level": 34
+      },
+      {
+        "speciesId": 73,
+        "level": 36
+      }
+    ],
+    "rewardMoney": 720,
+    "beforeBattleDialog": [
+      "The waters between Cinnabar and Pallet are calm!"
+    ],
+    "afterBattleDialog": [
+      "The battle wasn't calm!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 411,
+    "areaId": "route_21",
+    "name": "Emma",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 120,
+        "level": 35
+      },
+      {
+        "speciesId": 121,
+        "level": 35
+      }
+    ],
+    "rewardMoney": 700,
+    "beforeBattleDialog": [
+      "I love swimming on this route!"
+    ],
+    "afterBattleDialog": [
+      "Swimming away from defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 412,
+    "areaId": "route_21",
+    "name": "Carl",
+    "class": "Fisherman",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 129,
+        "level": 20
+      },
+      {
+        "speciesId": 129,
+        "level": 20
+      },
+      {
+        "speciesId": 130,
+        "level": 38
+      }
+    ],
+    "rewardMoney": 1368,
+    "beforeBattleDialog": [
+      "My Gyarados was once a humble Magikarp!"
+    ],
+    "afterBattleDialog": [
+      "Humble in defeat!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 413,
+    "areaId": "route_21",
+    "name": "Maria",
+    "class": "Swimmer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 131,
+        "level": 37
+      },
+      {
+        "speciesId": 55,
+        "level": 37
+      }
+    ],
+    "rewardMoney": 740,
+    "beforeBattleDialog": [
+      "Almost to Pallet Town!"
+    ],
+    "afterBattleDialog": [
+      "I should turn back!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 414,
+    "areaId": "victory_road",
+    "name": "Naomi",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 45,
+        "level": 42
+      },
+      {
+        "speciesId": 49,
+        "level": 42
+      },
+      {
+        "speciesId": 113,
+        "level": 42
+      }
+    ],
+    "rewardMoney": 1260,
+    "beforeBattleDialog": [
+      "Only the best trainers reach Victory Road!"
+    ],
+    "afterBattleDialog": [
+      "You're one of the best!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 415,
+    "areaId": "victory_road",
+    "name": "Vincent",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 78,
+        "level": 42
+      },
+      {
+        "speciesId": 85,
+        "level": 42
+      },
+      {
+        "speciesId": 103,
+        "level": 42
+      }
+    ],
+    "rewardMoney": 1260,
+    "beforeBattleDialog": [
+      "Victory Road is the final test!"
+    ],
+    "afterBattleDialog": [
+      "You passed the test!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 416,
+    "areaId": "victory_road",
+    "name": "Stella",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 121,
+        "level": 42
+      },
+      {
+        "speciesId": 131,
+        "level": 42
+      }
+    ],
+    "rewardMoney": 1260,
+    "beforeBattleDialog": [
+      "The Pokemon League awaits the worthy!"
+    ],
+    "afterBattleDialog": [
+      "You are worthy!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 417,
+    "areaId": "victory_road",
+    "name": "George",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 34,
+        "level": 42
+      },
+      {
+        "speciesId": 59,
+        "level": 42
+      },
+      {
+        "speciesId": 68,
+        "level": 42
+      }
+    ],
+    "rewardMoney": 1260,
+    "beforeBattleDialog": [
+      "My Pokemon are the toughest!"
+    ],
+    "afterBattleDialog": [
+      "Tougher challengers exist!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 418,
+    "areaId": "victory_road",
+    "name": "Colette",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 65,
+        "level": 43
+      },
+      {
+        "speciesId": 31,
+        "level": 43
+      }
+    ],
+    "rewardMoney": 1290,
+    "beforeBattleDialog": [
+      "Psychic and Poison - a deadly combo!"
+    ],
+    "afterBattleDialog": [
+      "Not deadly enough!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 419,
+    "areaId": "victory_road",
+    "name": "Hank",
+    "class": "Blackbelt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 66,
+        "level": 40
+      },
+      {
+        "speciesId": 67,
+        "level": 40
+      },
+      {
+        "speciesId": 68,
+        "level": 43
+      }
+    ],
+    "rewardMoney": 960,
+    "beforeBattleDialog": [
+      "Fighting types break through anything!"
+    ],
+    "afterBattleDialog": [
+      "Anything but you!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 420,
+    "areaId": "victory_road",
+    "name": "Irene",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 94,
+        "level": 43
+      },
+      {
+        "speciesId": 112,
+        "level": 43
+      }
+    ],
+    "rewardMoney": 1290,
+    "beforeBattleDialog": [
+      "Ghost and Ground - try to hit both!"
+    ],
+    "afterBattleDialog": [
+      "You hit them both!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 421,
+    "areaId": "victory_road",
+    "name": "Keith",
+    "class": "Blackbelt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 57,
+        "level": 43
+      },
+      {
+        "speciesId": 106,
+        "level": 43
+      },
+      {
+        "speciesId": 107,
+        "level": 43
+      }
+    ],
+    "rewardMoney": 1032,
+    "beforeBattleDialog": [
+      "Three fighters! Can you handle it?"
+    ],
+    "afterBattleDialog": [
+      "You handled it!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": null,
+    "setsFlag": null
+  },
+  {
+    "id": 320,
+    "areaId": "viridian_gym",
+    "name": "Gio Jr",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 111,
+        "level": 40
+      },
+      {
+        "speciesId": 105,
+        "level": 40
+      }
+    ],
+    "rewardMoney": 1200,
+    "beforeBattleDialog": [
+      "The last gym! Think you can handle it?"
+    ],
+    "afterBattleDialog": [
+      "You handled it!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": "badge_earth_unlocked",
+    "setsFlag": null
+  },
+  {
+    "id": 321,
+    "areaId": "viridian_gym",
+    "name": "Tara",
+    "class": "CoolTrainer",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 28,
+        "level": 40
+      },
+      {
+        "speciesId": 34,
+        "level": 40
+      }
+    ],
+    "rewardMoney": 1200,
+    "beforeBattleDialog": [
+      "Giovanni is the strongest Gym Leader!"
+    ],
+    "afterBattleDialog": [
+      "Stronger than me at least!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": "badge_earth_unlocked",
+    "setsFlag": null
+  },
+  {
+    "id": 322,
+    "areaId": "viridian_gym",
+    "name": "Atlas",
+    "class": "Blackbelt",
+    "title": null,
+    "party": [
+      {
+        "speciesId": 57,
+        "level": 40
+      },
+      {
+        "speciesId": 68,
+        "level": 40
+      }
+    ],
+    "rewardMoney": 960,
+    "beforeBattleDialog": [
+      "My fighting spirit burns bright!"
+    ],
+    "afterBattleDialog": [
+      "The flame has dimmed!"
+    ],
+    "isGymLeader": false,
+    "badgeIndex": null,
+    "aiBehavior": "Smart",
+    "requiredFlag": "badge_earth_unlocked",
+    "setsFlag": null
+  }
+]

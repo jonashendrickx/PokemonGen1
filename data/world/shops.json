@@ -1,0 +1,164 @@
+[
+  {
+    "id": "viridian_city",
+    "name": "Viridian City Poke Mart",
+    "items": [
+      { "itemId": 4, "price": 200 },
+      { "itemId": 10, "price": 300 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 }
+    ],
+    "requiredBadges": 0
+  },
+  {
+    "id": "pewter_city",
+    "name": "Pewter City Poke Mart",
+    "items": [
+      { "itemId": 4, "price": 200 },
+      { "itemId": 10, "price": 300 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 },
+      { "itemId": 46, "price": 350 }
+    ],
+    "requiredBadges": 0
+  },
+  {
+    "id": "cerulean_city",
+    "name": "Cerulean City Poke Mart",
+    "items": [
+      { "itemId": 4, "price": 200 },
+      { "itemId": 3, "price": 600 },
+      { "itemId": 10, "price": 300 },
+      { "itemId": 11, "price": 700 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 }
+    ],
+    "requiredBadges": 1
+  },
+  {
+    "id": "vermilion_city",
+    "name": "Vermilion City Poke Mart",
+    "items": [
+      { "itemId": 4, "price": 200 },
+      { "itemId": 3, "price": 600 },
+      { "itemId": 11, "price": 700 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 }
+    ],
+    "requiredBadges": 2
+  },
+  {
+    "id": "lavender_town",
+    "name": "Lavender Town Poke Mart",
+    "items": [
+      { "itemId": 3, "price": 600 },
+      { "itemId": 11, "price": 700 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 },
+      { "itemId": 48, "price": 700 }
+    ],
+    "requiredBadges": 2
+  },
+  {
+    "id": "celadon_city",
+    "name": "Celadon Department Store",
+    "items": [
+      { "itemId": 4, "price": 200 },
+      { "itemId": 3, "price": 600 },
+      { "itemId": 2, "price": 1200 },
+      { "itemId": 10, "price": 300 },
+      { "itemId": 11, "price": 700 },
+      { "itemId": 12, "price": 1500 },
+      { "itemId": 13, "price": 2500 },
+      { "itemId": 14, "price": 3000 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 },
+      { "itemId": 19, "price": 250 },
+      { "itemId": 20, "price": 200 },
+      { "itemId": 21, "price": 200 },
+      { "itemId": 22, "price": 350 },
+      { "itemId": 23, "price": 500 },
+      { "itemId": 24, "price": 650 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 },
+      { "itemId": 48, "price": 700 },
+      { "itemId": 54, "price": 1500 },
+      { "itemId": 55, "price": 2100 },
+      { "itemId": 56, "price": 2100 },
+      { "itemId": 57, "price": 2100 },
+      { "itemId": 58, "price": 2100 }
+    ],
+    "requiredBadges": 3
+  },
+  {
+    "id": "fuchsia_city",
+    "name": "Fuchsia City Poke Mart",
+    "items": [
+      { "itemId": 2, "price": 1200 },
+      { "itemId": 3, "price": 600 },
+      { "itemId": 11, "price": 700 },
+      { "itemId": 12, "price": 1500 },
+      { "itemId": 13, "price": 2500 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 },
+      { "itemId": 48, "price": 700 }
+    ],
+    "requiredBadges": 4
+  },
+  {
+    "id": "saffron_city",
+    "name": "Saffron City Poke Mart",
+    "items": [
+      { "itemId": 3, "price": 600 },
+      { "itemId": 2, "price": 1200 },
+      { "itemId": 11, "price": 700 },
+      { "itemId": 12, "price": 1500 },
+      { "itemId": 13, "price": 2500 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 18, "price": 200 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 },
+      { "itemId": 48, "price": 700 }
+    ],
+    "requiredBadges": 5
+  },
+  {
+    "id": "cinnabar_island",
+    "name": "Cinnabar Island Poke Mart",
+    "items": [
+      { "itemId": 2, "price": 1200 },
+      { "itemId": 12, "price": 1500 },
+      { "itemId": 13, "price": 2500 },
+      { "itemId": 14, "price": 3000 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 },
+      { "itemId": 48, "price": 700 }
+    ],
+    "requiredBadges": 6
+  },
+  {
+    "id": "indigo_plateau",
+    "name": "Indigo Plateau Poke Mart",
+    "items": [
+      { "itemId": 2, "price": 1200 },
+      { "itemId": 12, "price": 1500 },
+      { "itemId": 13, "price": 2500 },
+      { "itemId": 14, "price": 3000 },
+      { "itemId": 15, "price": 1500 },
+      { "itemId": 16, "price": 2500 },
+      { "itemId": 25, "price": 100 },
+      { "itemId": 46, "price": 350 },
+      { "itemId": 47, "price": 500 },
+      { "itemId": 48, "price": 700 }
+    ],
+    "requiredBadges": 8
+  }
+]

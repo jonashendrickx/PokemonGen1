@@ -29,6 +29,7 @@ public class BattleScreen : IScreen
     private readonly BattleState _state;
     private readonly BattleEngine _engine;
     private readonly Random _rng = new();
+    private readonly Action<BattleOutcome>? _onBattleEnd;
 
     private BattlePhase _phase = BattlePhase.Animating;
     private int _menuCursor;
@@ -72,11 +73,12 @@ public class BattleScreen : IScreen
     public bool IsOverlay => false;
     public bool BlocksUpdate => true;
 
-    public BattleScreen(PokemonGame game, BattleState state)
+    public BattleScreen(PokemonGame game, BattleState state, Action<BattleOutcome>? onBattleEnd = null)
     {
         _game = game;
         _state = state;
         _engine = new BattleEngine(state, game.GameData, _rng);
+        _onBattleEnd = onBattleEnd;
 
         _playerHpDisplay = _playerHpTarget = GetHpPercent(state.PlayerActive);
         _opponentHpDisplay = _opponentHpTarget = GetHpPercent(state.OpponentActive);
@@ -89,8 +91,23 @@ public class BattleScreen : IScreen
         _manager = manager;
 
         // Queue intro animation - auto-advances, no button press needed
-        _animQueue.Enqueue(new TypeTextCmd(
-            $"A wild {_state.OpponentActive.Species.Name} appeared!", 0.7f));
+        if (_state.Type == BattleType.Trainer && _state.OpponentTrainer != null)
+        {
+            string trainerName = _state.OpponentTrainer.Title ?? _state.OpponentTrainer.Name;
+            _animQueue.Enqueue(new TypeTextCmd($"{trainerName} wants to fight!", 0.5f));
+            if (_state.OpponentTrainer.BeforeBattleDialog.Length > 0)
+            {
+                foreach (var line in _state.OpponentTrainer.BeforeBattleDialog)
+                    _animQueue.Enqueue(new TypeTextCmd(line, 0.5f));
+            }
+            _animQueue.Enqueue(new TypeTextCmd(
+                $"{trainerName} sent out {_state.OpponentActive.Species.Name}!", 0.5f));
+        }
+        else
+        {
+            _animQueue.Enqueue(new TypeTextCmd(
+                $"A wild {_state.OpponentActive.Species.Name} appeared!", 0.7f));
+        }
         _animQueue.Enqueue(new TypeTextCmd(
             $"Go! {GetPlayerName()}!", 0.5f));
         _phase = BattlePhase.Animating;
@@ -118,7 +135,17 @@ public class BattleScreen : IScreen
                 break;
             case BattlePhase.BattleOver:
                 if (input.IsPressed(InputAction.Confirm))
-                    _manager.Replace(new TitleScreen(_game));
+                {
+                    if (_onBattleEnd != null)
+                    {
+                        _manager.Pop();
+                        _onBattleEnd(_state.Outcome ?? BattleOutcome.PlayerWin);
+                    }
+                    else
+                    {
+                        _manager.Replace(new TitleScreen(_game));
+                    }
+                }
                 break;
         }
     }

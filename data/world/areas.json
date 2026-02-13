@@ -1,0 +1,1116 @@
+[
+  {
+    "id": "pallet_town",
+    "name": "Pallet Town",
+    "type": "Town",
+    "description": "A small, quiet town. Your Pokemon adventure begins here.",
+    "connections": [
+      { "areaId": "route_1", "direction": "North", "requiredFlag": "has_starter" },
+      { "areaId": "route_21", "direction": "South", "requiredFlag": "has_surf" }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_1",
+    "name": "Route 1",
+    "type": "Route",
+    "description": "A short path through grassy terrain between Pallet Town and Viridian City.",
+    "connections": [
+      { "areaId": "pallet_town", "direction": "South", "requiredFlag": null },
+      { "areaId": "viridian_city", "direction": "North", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [
+      { "itemId": 10, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "viridian_city",
+    "name": "Viridian City",
+    "type": "City",
+    "description": "A beautiful city with a Pokemon Gym that is mysteriously locked.",
+    "connections": [
+      { "areaId": "route_1", "direction": "South", "requiredFlag": null },
+      { "areaId": "route_2_south", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_22", "direction": "West", "requiredFlag": null },
+      { "areaId": "viridian_gym", "direction": "Enter", "requiredFlag": "badge_earth_unlocked" }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "viridian_city",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_22",
+    "name": "Route 22",
+    "type": "Route",
+    "description": "The road to Victory Road. Your rival may be training here.",
+    "connections": [
+      { "areaId": "viridian_city", "direction": "East", "requiredFlag": null },
+      { "areaId": "route_23", "direction": "West", "requiredFlag": "badge_earth" }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [100, 101],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "viridian_gym",
+    "name": "Viridian City Gym",
+    "type": "Building",
+    "description": "The Viridian Gym. Its Leader uses Ground-type Pokemon.",
+    "connections": [
+      { "areaId": "viridian_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [8, 320, 321, 322],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_2_south",
+    "name": "Route 2 (South)",
+    "type": "Route",
+    "description": "A path leading to Viridian Forest. A Cut tree blocks a side path.",
+    "connections": [
+      { "areaId": "viridian_city", "direction": "South", "requiredFlag": null },
+      { "areaId": "viridian_forest", "direction": "North", "requiredFlag": null },
+      { "areaId": "digletts_cave_south", "direction": "Enter", "requiredFlag": "has_cut" }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "viridian_forest",
+    "name": "Viridian Forest",
+    "type": "Cave",
+    "description": "A deep forest between Viridian City and Pewter City. Bug Pokemon lurk in the tall grass.",
+    "connections": [
+      { "areaId": "route_2_south", "direction": "South", "requiredFlag": null },
+      { "areaId": "route_2_north", "direction": "North", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [200, 201, 202],
+    "items": [
+      { "itemId": 10, "quantity": 1, "hidden": false, "requiredFlag": null },
+      { "itemId": 4, "quantity": 1, "hidden": false, "requiredFlag": null },
+      { "itemId": 25, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "route_2_north",
+    "name": "Route 2 (North)",
+    "type": "Route",
+    "description": "The northern section of Route 2, just south of Pewter City.",
+    "connections": [
+      { "areaId": "viridian_forest", "direction": "South", "requiredFlag": null },
+      { "areaId": "pewter_city", "direction": "North", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "pewter_city",
+    "name": "Pewter City",
+    "type": "City",
+    "description": "A stone-gray city nestled between rugged mountains and forests. Home to Brock's Gym.",
+    "connections": [
+      { "areaId": "route_2_north", "direction": "South", "requiredFlag": null },
+      { "areaId": "route_3", "direction": "East", "requiredFlag": "badge_boulder" },
+      { "areaId": "pewter_gym", "direction": "Enter", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "pewter_city",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "pewter_gym",
+    "name": "Pewter City Gym",
+    "type": "Building",
+    "description": "The Pewter Gym. Brock, the Rock-type specialist, awaits challengers.",
+    "connections": [
+      { "areaId": "pewter_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [1, 203],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_3",
+    "name": "Route 3",
+    "type": "Route",
+    "description": "A mountainous path east of Pewter City, full of trainers.",
+    "connections": [
+      { "areaId": "pewter_city", "direction": "West", "requiredFlag": null },
+      { "areaId": "mt_moon_1f", "direction": "East", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": true,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [204, 205, 206, 207, 208, 209, 210, 211],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "mt_moon_1f",
+    "name": "Mt. Moon 1F",
+    "type": "Cave",
+    "description": "A sprawling cave famous for Moon Stone discoveries. Team Rocket lurks inside.",
+    "connections": [
+      { "areaId": "route_3", "direction": "Exit", "requiredFlag": null },
+      { "areaId": "mt_moon_b2f", "direction": "Down", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [212, 213, 214, 215],
+    "items": [
+      { "itemId": 10, "quantity": 1, "hidden": false, "requiredFlag": null },
+      { "itemId": 26, "quantity": 1, "hidden": false, "requiredFlag": null },
+      { "itemId": 52, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "mt_moon_b2f",
+    "name": "Mt. Moon B2F",
+    "type": "DungeonFloor",
+    "description": "The deepest floor of Mt. Moon. A Super Nerd guards rare Fossils.",
+    "connections": [
+      { "areaId": "mt_moon_1f", "direction": "Up", "requiredFlag": null },
+      { "areaId": "route_4", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [216, 217, 218, 219],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "route_4",
+    "name": "Route 4",
+    "type": "Route",
+    "description": "A short path from Mt. Moon leading to Cerulean City.",
+    "connections": [
+      { "areaId": "mt_moon_b2f", "direction": "West", "requiredFlag": null },
+      { "areaId": "cerulean_city", "direction": "East", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "cerulean_city",
+    "name": "Cerulean City",
+    "type": "City",
+    "description": "A beautiful city with flowing water. Misty's Gym is here.",
+    "connections": [
+      { "areaId": "route_4", "direction": "West", "requiredFlag": null },
+      { "areaId": "route_24", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_5", "direction": "South", "requiredFlag": "badge_cascade" },
+      { "areaId": "route_9", "direction": "East", "requiredFlag": "badge_cascade" },
+      { "areaId": "cerulean_gym", "direction": "Enter", "requiredFlag": null },
+      { "areaId": "cerulean_cave", "direction": "Enter Cave", "requiredFlag": "champion_defeated" }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "cerulean_city",
+    "trainers": [102],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "cerulean_gym",
+    "name": "Cerulean City Gym",
+    "type": "Building",
+    "description": "The Cerulean Gym. Misty, the Water-type specialist, is the leader.",
+    "connections": [
+      { "areaId": "cerulean_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [2, 220, 221],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_24",
+    "name": "Route 24 (Nugget Bridge)",
+    "type": "Route",
+    "description": "A famous bridge where five trainers challenge all who cross. A Team Rocket agent waits at the end.",
+    "connections": [
+      { "areaId": "cerulean_city", "direction": "South", "requiredFlag": null },
+      { "areaId": "route_25", "direction": "East", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [222, 223, 224, 225, 226, 227],
+    "items": [
+      { "itemId": 52, "quantity": 1, "hidden": true, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "route_25",
+    "name": "Route 25",
+    "type": "Route",
+    "description": "A winding path leading to Bill's cottage on the cape.",
+    "connections": [
+      { "areaId": "route_24", "direction": "West", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [228, 229, 230, 231, 232, 233, 234, 235],
+    "items": [],
+    "flags": ["met_bill"]
+  },
+  {
+    "id": "route_5",
+    "name": "Route 5",
+    "type": "Route",
+    "description": "A path south of Cerulean City leading to the Underground Path.",
+    "connections": [
+      { "areaId": "cerulean_city", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_6", "direction": "South (Underground)", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_6",
+    "name": "Route 6",
+    "type": "Route",
+    "description": "A grassy path leading south to Vermilion City.",
+    "connections": [
+      { "areaId": "route_5", "direction": "North (Underground)", "requiredFlag": null },
+      { "areaId": "vermilion_city", "direction": "South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [236, 237, 238, 239, 240, 241],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "vermilion_city",
+    "name": "Vermilion City",
+    "type": "City",
+    "description": "A port city with ocean breezes. Home to Lt. Surge's Gym and the S.S. Anne dock.",
+    "connections": [
+      { "areaId": "route_6", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_11", "direction": "East", "requiredFlag": null },
+      { "areaId": "vermilion_gym", "direction": "Enter Gym", "requiredFlag": null },
+      { "areaId": "ss_anne", "direction": "Enter S.S. Anne", "requiredFlag": "has_ss_ticket" },
+      { "areaId": "digletts_cave_north", "direction": "Enter Diglett's Cave", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "vermilion_city",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "vermilion_gym",
+    "name": "Vermilion City Gym",
+    "type": "Building",
+    "description": "The Vermilion Gym. Lt. Surge, the Lightning American, uses Electric-type Pokemon.",
+    "connections": [
+      { "areaId": "vermilion_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [3, 242, 243, 244],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "ss_anne",
+    "name": "S.S. Anne",
+    "type": "Building",
+    "description": "A luxury cruise ship docked at Vermilion Harbor. Your rival is aboard.",
+    "connections": [
+      { "areaId": "vermilion_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [103, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255],
+    "items": [],
+    "flags": ["has_cut"]
+  },
+  {
+    "id": "digletts_cave_north",
+    "name": "Diglett's Cave",
+    "type": "Cave",
+    "description": "A tunnel full of Diglett and Dugtrio connecting Vermilion to Route 2.",
+    "connections": [
+      { "areaId": "vermilion_city", "direction": "Vermilion Exit", "requiredFlag": null },
+      { "areaId": "route_2_south", "direction": "Route 2 Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_11",
+    "name": "Route 11",
+    "type": "Route",
+    "description": "A path east of Vermilion City. Snorlax blocks the way further east.",
+    "connections": [
+      { "areaId": "vermilion_city", "direction": "West", "requiredFlag": null },
+      { "areaId": "route_12", "direction": "East", "requiredFlag": "has_poke_flute" }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [256, 257, 258, 259, 260, 261, 262, 263, 264, 265],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_9",
+    "name": "Route 9",
+    "type": "Route",
+    "description": "A rocky path east of Cerulean City leading to Rock Tunnel.",
+    "connections": [
+      { "areaId": "cerulean_city", "direction": "West", "requiredFlag": null },
+      { "areaId": "route_10_north", "direction": "East", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [266, 267, 268, 269, 270, 271, 272, 273, 274],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_10_north",
+    "name": "Route 10 (North)",
+    "type": "Route",
+    "description": "The entrance area to Rock Tunnel and the Power Plant.",
+    "connections": [
+      { "areaId": "route_9", "direction": "West", "requiredFlag": null },
+      { "areaId": "rock_tunnel_1f", "direction": "Enter Rock Tunnel", "requiredFlag": null },
+      { "areaId": "power_plant", "direction": "Enter Power Plant", "requiredFlag": "has_surf" }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": true,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "rock_tunnel_1f",
+    "name": "Rock Tunnel 1F",
+    "type": "Cave",
+    "description": "A pitch-dark cave. Flash would help illuminate the way.",
+    "connections": [
+      { "areaId": "route_10_north", "direction": "Exit North", "requiredFlag": null },
+      { "areaId": "rock_tunnel_b1f", "direction": "Down", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [275, 276, 277, 278],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "rock_tunnel_b1f",
+    "name": "Rock Tunnel B1F",
+    "type": "DungeonFloor",
+    "description": "The lower level of Rock Tunnel. Almost through to Lavender Town.",
+    "connections": [
+      { "areaId": "rock_tunnel_1f", "direction": "Up", "requiredFlag": null },
+      { "areaId": "route_10_south", "direction": "Exit South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [279, 280, 281, 282],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_10_south",
+    "name": "Route 10 (South)",
+    "type": "Route",
+    "description": "The southern exit of Rock Tunnel, leading to Lavender Town.",
+    "connections": [
+      { "areaId": "rock_tunnel_b1f", "direction": "Enter Rock Tunnel", "requiredFlag": null },
+      { "areaId": "lavender_town", "direction": "South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "lavender_town",
+    "name": "Lavender Town",
+    "type": "Town",
+    "description": "A small town known for its Pokemon Tower, a memorial for departed Pokemon.",
+    "connections": [
+      { "areaId": "route_10_south", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_8", "direction": "West", "requiredFlag": null },
+      { "areaId": "route_12", "direction": "South", "requiredFlag": null },
+      { "areaId": "pokemon_tower", "direction": "Enter Pokemon Tower", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "lavender_town",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "pokemon_tower",
+    "name": "Pokemon Tower",
+    "type": "Cave",
+    "description": "A tower where departed Pokemon are laid to rest. Ghost Pokemon haunt its halls.",
+    "connections": [
+      { "areaId": "lavender_town", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [104, 283, 284, 285, 286, 287],
+    "items": [],
+    "flags": ["has_poke_flute"]
+  },
+  {
+    "id": "route_8",
+    "name": "Route 8",
+    "type": "Route",
+    "description": "A path between Lavender Town and Celadon City through the Underground.",
+    "connections": [
+      { "areaId": "lavender_town", "direction": "East", "requiredFlag": null },
+      { "areaId": "route_7", "direction": "West (Underground)", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [288, 289, 290, 291, 292, 293, 294, 295],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_7",
+    "name": "Route 7",
+    "type": "Route",
+    "description": "A short route connecting Celadon City to the Underground Path.",
+    "connections": [
+      { "areaId": "route_8", "direction": "East (Underground)", "requiredFlag": null },
+      { "areaId": "celadon_city", "direction": "West", "requiredFlag": null },
+      { "areaId": "saffron_city", "direction": "North", "requiredFlag": "has_tea" }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "celadon_city",
+    "name": "Celadon City",
+    "type": "City",
+    "description": "The largest city in Kanto. Home to the Department Store, Game Corner, and Erika's Gym.",
+    "connections": [
+      { "areaId": "route_7", "direction": "East", "requiredFlag": null },
+      { "areaId": "route_16", "direction": "West", "requiredFlag": null },
+      { "areaId": "celadon_gym", "direction": "Enter Gym", "requiredFlag": null },
+      { "areaId": "rocket_hideout", "direction": "Enter Rocket Hideout", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "celadon_city",
+    "trainers": [],
+    "items": [
+      { "itemId": 83, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": ["has_tea"]
+  },
+  {
+    "id": "celadon_gym",
+    "name": "Celadon City Gym",
+    "type": "Building",
+    "description": "The Celadon Gym. Erika, the Grass-type specialist, is the leader.",
+    "connections": [
+      { "areaId": "celadon_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [4, 296, 297, 298, 299, 300, 301],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "rocket_hideout",
+    "name": "Rocket Hideout",
+    "type": "DungeonFloor",
+    "description": "Team Rocket's secret base beneath the Celadon Game Corner.",
+    "connections": [
+      { "areaId": "celadon_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [302, 303, 304, 305, 306],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null },
+      { "itemId": 46, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": ["has_silph_scope"]
+  },
+  {
+    "id": "saffron_city",
+    "name": "Saffron City",
+    "type": "City",
+    "description": "A bustling city in the center of Kanto. Silph Co. HQ and Sabrina's Gym are here.",
+    "connections": [
+      { "areaId": "route_7", "direction": "South", "requiredFlag": null },
+      { "areaId": "route_5", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_6", "direction": "South to Vermilion", "requiredFlag": null },
+      { "areaId": "route_8", "direction": "East", "requiredFlag": null },
+      { "areaId": "saffron_gym", "direction": "Enter Gym", "requiredFlag": "silph_co_cleared" },
+      { "areaId": "silph_co", "direction": "Enter Silph Co.", "requiredFlag": "has_tea" }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "saffron_city",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "saffron_gym",
+    "name": "Saffron City Gym",
+    "type": "Building",
+    "description": "The Saffron Gym. Sabrina, the Psychic-type specialist, is the leader.",
+    "connections": [
+      { "areaId": "saffron_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [6, 307, 308, 309, 310, 311, 312, 313],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "silph_co",
+    "name": "Silph Co.",
+    "type": "DungeonFloor",
+    "description": "Silph Co. headquarters, taken over by Team Rocket. Your rival and Giovanni await.",
+    "connections": [
+      { "areaId": "saffron_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [105, 314, 315, 316, 317, 318, 319],
+    "items": [
+      { "itemId": 52, "quantity": 3, "hidden": false, "requiredFlag": null },
+      { "itemId": 13, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": ["silph_co_cleared", "has_ss_ticket"]
+  },
+  {
+    "id": "route_12",
+    "name": "Route 12",
+    "type": "Route",
+    "description": "A long path south of Lavender Town along the sea. Snorlax sleeps on the road.",
+    "connections": [
+      { "areaId": "lavender_town", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_13", "direction": "South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [323, 324, 325, 326, 327, 328],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_13",
+    "name": "Route 13",
+    "type": "Route",
+    "description": "A maze-like route with many fences and trainers.",
+    "connections": [
+      { "areaId": "route_12", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_14", "direction": "South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [329, 330, 331, 332, 333, 334, 335, 336, 337, 338],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_14",
+    "name": "Route 14",
+    "type": "Route",
+    "description": "A southward route leading toward Fuchsia City.",
+    "connections": [
+      { "areaId": "route_13", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_15", "direction": "South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [339, 340, 341, 342, 343, 344, 345, 346, 347, 348],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_15",
+    "name": "Route 15",
+    "type": "Route",
+    "description": "The final stretch before Fuchsia City from the east.",
+    "connections": [
+      { "areaId": "route_14", "direction": "North", "requiredFlag": null },
+      { "areaId": "fuchsia_city", "direction": "West", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [349, 350, 351, 352, 353, 354, 355, 356, 357, 358],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_16",
+    "name": "Route 16",
+    "type": "Route",
+    "description": "The entrance to Cycling Road west of Celadon City. Snorlax blocks the way.",
+    "connections": [
+      { "areaId": "celadon_city", "direction": "East", "requiredFlag": null },
+      { "areaId": "route_17", "direction": "South (Cycling Road)", "requiredFlag": "has_poke_flute" }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_17",
+    "name": "Route 17 (Cycling Road)",
+    "type": "Route",
+    "description": "A long downhill road for cyclists, full of Bikers looking for a fight.",
+    "connections": [
+      { "areaId": "route_16", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_18", "direction": "South", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [359, 360, 361, 362, 363, 364, 365, 366, 367, 368],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_18",
+    "name": "Route 18",
+    "type": "Route",
+    "description": "The southern end of Cycling Road, connecting to Fuchsia City.",
+    "connections": [
+      { "areaId": "route_17", "direction": "North", "requiredFlag": null },
+      { "areaId": "fuchsia_city", "direction": "East", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [369, 370, 371],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "fuchsia_city",
+    "name": "Fuchsia City",
+    "type": "City",
+    "description": "A city surrounded by nature. Home to Koga's Gym and the Safari Zone.",
+    "connections": [
+      { "areaId": "route_15", "direction": "East", "requiredFlag": null },
+      { "areaId": "route_18", "direction": "West", "requiredFlag": null },
+      { "areaId": "route_19", "direction": "South", "requiredFlag": "has_surf" },
+      { "areaId": "fuchsia_gym", "direction": "Enter Gym", "requiredFlag": null },
+      { "areaId": "safari_zone", "direction": "Enter Safari Zone", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "fuchsia_city",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "fuchsia_gym",
+    "name": "Fuchsia City Gym",
+    "type": "Building",
+    "description": "The Fuchsia Gym. Koga, the Poison-type specialist and ninja, is the leader.",
+    "connections": [
+      { "areaId": "fuchsia_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [5, 372, 373, 374, 375, 376, 377],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "safari_zone",
+    "name": "Safari Zone",
+    "type": "Special",
+    "description": "A nature preserve where rare Pokemon roam. Use Safari Balls to catch them!",
+    "connections": [
+      { "areaId": "fuchsia_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": ["has_surf", "has_strength"]
+  },
+  {
+    "id": "route_19",
+    "name": "Route 19",
+    "type": "Route",
+    "description": "A water route south of Fuchsia City. Swimmers train here.",
+    "connections": [
+      { "areaId": "fuchsia_city", "direction": "North", "requiredFlag": null },
+      { "areaId": "route_20", "direction": "West", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [378, 379, 380, 381, 382, 383, 384, 385, 386, 387],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_20",
+    "name": "Route 20",
+    "type": "Route",
+    "description": "A water route leading to the Seafoam Islands and Cinnabar Island.",
+    "connections": [
+      { "areaId": "route_19", "direction": "East", "requiredFlag": null },
+      { "areaId": "seafoam_islands", "direction": "Enter Seafoam Islands", "requiredFlag": null },
+      { "areaId": "cinnabar_island", "direction": "West", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [388, 389, 390, 391, 392, 393, 394, 395, 396, 397],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "seafoam_islands",
+    "name": "Seafoam Islands",
+    "type": "Cave",
+    "description": "Icy caverns on the sea route. The legendary Articuno dwells in the deepest chamber.",
+    "connections": [
+      { "areaId": "route_20", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "cinnabar_island",
+    "name": "Cinnabar Island",
+    "type": "City",
+    "description": "A volcanic island far to the south. Home to Blaine's Gym and the Pokemon Mansion.",
+    "connections": [
+      { "areaId": "route_20", "direction": "East", "requiredFlag": null },
+      { "areaId": "route_21", "direction": "North", "requiredFlag": null },
+      { "areaId": "cinnabar_gym", "direction": "Enter Gym", "requiredFlag": "has_mansion_key" },
+      { "areaId": "pokemon_mansion", "direction": "Enter Pokemon Mansion", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "cinnabar_island",
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "pokemon_mansion",
+    "name": "Pokemon Mansion",
+    "type": "Cave",
+    "description": "An abandoned mansion where Pokemon research was once conducted. The Secret Key is hidden here.",
+    "connections": [
+      { "areaId": "cinnabar_island", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [398, 399, 400, 401, 402, 403],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null },
+      { "itemId": 13, "quantity": 1, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": ["has_mansion_key"]
+  },
+  {
+    "id": "cinnabar_gym",
+    "name": "Cinnabar Island Gym",
+    "type": "Building",
+    "description": "The Cinnabar Gym. Blaine, the Fire-type specialist, quizzes challengers.",
+    "connections": [
+      { "areaId": "cinnabar_island", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [7, 404, 405, 406, 407, 408, 409],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "route_21",
+    "name": "Route 21",
+    "type": "Route",
+    "description": "A water route connecting Cinnabar Island to Pallet Town.",
+    "connections": [
+      { "areaId": "cinnabar_island", "direction": "South", "requiredFlag": null },
+      { "areaId": "pallet_town", "direction": "North", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [410, 411, 412, 413],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "power_plant",
+    "name": "Power Plant",
+    "type": "Cave",
+    "description": "An abandoned power plant east of Cerulean. Electric Pokemon thrive here. Zapdos awaits.",
+    "connections": [
+      { "areaId": "route_10_north", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "route_23",
+    "name": "Route 23",
+    "type": "Route",
+    "description": "The road to the Pokemon League. Badge checks gate your progress.",
+    "connections": [
+      { "areaId": "route_22", "direction": "East", "requiredFlag": null },
+      { "areaId": "victory_road", "direction": "Enter Victory Road", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "victory_road",
+    "name": "Victory Road",
+    "type": "Cave",
+    "description": "The final challenge before the Pokemon League. A treacherous cave full of strong trainers.",
+    "connections": [
+      { "areaId": "route_23", "direction": "Exit", "requiredFlag": null },
+      { "areaId": "indigo_plateau", "direction": "To Indigo Plateau", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [414, 415, 416, 417, 418, 419, 420, 421],
+    "items": [
+      { "itemId": 52, "quantity": 2, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "indigo_plateau",
+    "name": "Indigo Plateau",
+    "type": "Building",
+    "description": "The Pokemon League headquarters. The Elite Four and Champion await within.",
+    "connections": [
+      { "areaId": "victory_road", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": false,
+    "hasPokemonCenter": true,
+    "hasPokeMart": true,
+    "shopId": "indigo_plateau",
+    "trainers": [9, 10, 11, 12, 13],
+    "items": [],
+    "flags": []
+  },
+  {
+    "id": "cerulean_cave",
+    "name": "Cerulean Cave",
+    "type": "Cave",
+    "description": "A mysterious cave accessible only to the Champion. The most powerful Pokemon dwells within.",
+    "connections": [
+      { "areaId": "cerulean_city", "direction": "Exit", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [
+      { "itemId": 52, "quantity": 3, "hidden": false, "requiredFlag": null }
+    ],
+    "flags": []
+  },
+  {
+    "id": "digletts_cave_south",
+    "name": "Diglett's Cave (Route 2 Side)",
+    "type": "Cave",
+    "description": "The southern entrance to Diglett's Cave from Route 2.",
+    "connections": [
+      { "areaId": "route_2_south", "direction": "Exit", "requiredFlag": null },
+      { "areaId": "digletts_cave_north", "direction": "Through Cave", "requiredFlag": null }
+    ],
+    "hasWildEncounters": true,
+    "hasPokemonCenter": false,
+    "hasPokeMart": false,
+    "shopId": null,
+    "trainers": [],
+    "items": [],
+    "flags": []
+  }
+]

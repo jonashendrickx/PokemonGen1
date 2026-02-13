@@ -1,0 +1,774 @@
+[
+  {
+    "areaId": "route_1",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 2, "maxLevel": 5, "weight": 50 },
+      { "speciesId": 19, "minLevel": 2, "maxLevel": 4, "weight": 50 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_2_south",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 3, "maxLevel": 5, "weight": 20 },
+      { "speciesId": 19, "minLevel": 3, "maxLevel": 5, "weight": 20 },
+      { "speciesId": 10, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 13, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 29, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 32, "minLevel": 3, "maxLevel": 5, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_2_north",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 3, "maxLevel": 5, "weight": 20 },
+      { "speciesId": 19, "minLevel": 3, "maxLevel": 5, "weight": 20 },
+      { "speciesId": 10, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 13, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 29, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 32, "minLevel": 3, "maxLevel": 5, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "viridian_forest",
+    "encounterRate": 30,
+    "grass": [
+      { "speciesId": 10, "minLevel": 3, "maxLevel": 5, "weight": 25 },
+      { "speciesId": 11, "minLevel": 4, "maxLevel": 6, "weight": 10 },
+      { "speciesId": 13, "minLevel": 3, "maxLevel": 5, "weight": 25 },
+      { "speciesId": 14, "minLevel": 4, "maxLevel": 6, "weight": 10 },
+      { "speciesId": 25, "minLevel": 3, "maxLevel": 5, "weight": 5 },
+      { "speciesId": 16, "minLevel": 4, "maxLevel": 6, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_3",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 6, "maxLevel": 9, "weight": 20 },
+      { "speciesId": 21, "minLevel": 5, "maxLevel": 8, "weight": 20 },
+      { "speciesId": 29, "minLevel": 6, "maxLevel": 10, "weight": 15 },
+      { "speciesId": 32, "minLevel": 6, "maxLevel": 10, "weight": 15 },
+      { "speciesId": 39, "minLevel": 5, "maxLevel": 12, "weight": 15 },
+      { "speciesId": 56, "minLevel": 7, "maxLevel": 11, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "mt_moon_1f",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 41, "minLevel": 6, "maxLevel": 10, "weight": 40 },
+      { "speciesId": 74, "minLevel": 7, "maxLevel": 10, "weight": 30 },
+      { "speciesId": 46, "minLevel": 8, "maxLevel": 10, "weight": 20 },
+      { "speciesId": 35, "minLevel": 8, "maxLevel": 12, "weight": 10 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "mt_moon_b2f",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 41, "minLevel": 7, "maxLevel": 12, "weight": 35 },
+      { "speciesId": 74, "minLevel": 8, "maxLevel": 12, "weight": 30 },
+      { "speciesId": 46, "minLevel": 9, "maxLevel": 12, "weight": 20 },
+      { "speciesId": 35, "minLevel": 9, "maxLevel": 12, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_4",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 19, "minLevel": 8, "maxLevel": 12, "weight": 25 },
+      { "speciesId": 21, "minLevel": 8, "maxLevel": 12, "weight": 25 },
+      { "speciesId": 23, "minLevel": 8, "maxLevel": 12, "weight": 15 },
+      { "speciesId": 27, "minLevel": 8, "maxLevel": 12, "weight": 15 },
+      { "speciesId": 56, "minLevel": 10, "maxLevel": 12, "weight": 20 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_24",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 10, "minLevel": 7, "maxLevel": 12, "weight": 10 },
+      { "speciesId": 13, "minLevel": 7, "maxLevel": 12, "weight": 10 },
+      { "speciesId": 16, "minLevel": 8, "maxLevel": 13, "weight": 15 },
+      { "speciesId": 43, "minLevel": 12, "maxLevel": 14, "weight": 20 },
+      { "speciesId": 69, "minLevel": 12, "maxLevel": 14, "weight": 20 },
+      { "speciesId": 63, "minLevel": 8, "maxLevel": 12, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_25",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 10, "minLevel": 7, "maxLevel": 12, "weight": 10 },
+      { "speciesId": 13, "minLevel": 7, "maxLevel": 12, "weight": 10 },
+      { "speciesId": 16, "minLevel": 8, "maxLevel": 13, "weight": 15 },
+      { "speciesId": 43, "minLevel": 12, "maxLevel": 14, "weight": 20 },
+      { "speciesId": 69, "minLevel": 12, "maxLevel": 14, "weight": 20 },
+      { "speciesId": 63, "minLevel": 9, "maxLevel": 14, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_5",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 43, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 69, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 52, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 56, "minLevel": 14, "maxLevel": 16, "weight": 20 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_6",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 43, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 69, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 52, "minLevel": 13, "maxLevel": 16, "weight": 20 },
+      { "speciesId": 56, "minLevel": 14, "maxLevel": 16, "weight": 20 }
+    ],
+    "surf": null,
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 50 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 15, "weight": 25 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 15, "weight": 25 }
+    ]
+  },
+  {
+    "areaId": "route_11",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 96, "minLevel": 13, "maxLevel": 17, "weight": 30 },
+      { "speciesId": 23, "minLevel": 13, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 27, "minLevel": 13, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 21, "minLevel": 15, "maxLevel": 17, "weight": 30 }
+    ],
+    "surf": null,
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 },
+      { "speciesId": 116, "minLevel": 10, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 98, "minLevel": 10, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 90, "minLevel": 10, "maxLevel": 15, "weight": 20 }
+    ]
+  },
+  {
+    "areaId": "route_9",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 19, "minLevel": 14, "maxLevel": 17, "weight": 15 },
+      { "speciesId": 21, "minLevel": 13, "maxLevel": 17, "weight": 20 },
+      { "speciesId": 23, "minLevel": 11, "maxLevel": 15, "weight": 15 },
+      { "speciesId": 27, "minLevel": 11, "maxLevel": 15, "weight": 15 },
+      { "speciesId": 29, "minLevel": 13, "maxLevel": 17, "weight": 15 },
+      { "speciesId": 32, "minLevel": 13, "maxLevel": 17, "weight": 20 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_10_north",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 100, "minLevel": 14, "maxLevel": 17, "weight": 30 },
+      { "speciesId": 21, "minLevel": 13, "maxLevel": 17, "weight": 25 },
+      { "speciesId": 23, "minLevel": 11, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 27, "minLevel": 11, "maxLevel": 15, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_10_south",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 100, "minLevel": 14, "maxLevel": 17, "weight": 30 },
+      { "speciesId": 21, "minLevel": 13, "maxLevel": 17, "weight": 25 },
+      { "speciesId": 23, "minLevel": 11, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 27, "minLevel": 11, "maxLevel": 15, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "rock_tunnel_1f",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 41, "minLevel": 15, "maxLevel": 18, "weight": 30 },
+      { "speciesId": 74, "minLevel": 15, "maxLevel": 17, "weight": 30 },
+      { "speciesId": 66, "minLevel": 15, "maxLevel": 18, "weight": 25 },
+      { "speciesId": 95, "minLevel": 15, "maxLevel": 17, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "rock_tunnel_b1f",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 41, "minLevel": 15, "maxLevel": 18, "weight": 30 },
+      { "speciesId": 74, "minLevel": 16, "maxLevel": 18, "weight": 30 },
+      { "speciesId": 66, "minLevel": 16, "maxLevel": 18, "weight": 25 },
+      { "speciesId": 95, "minLevel": 15, "maxLevel": 17, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_8",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 18, "maxLevel": 20, "weight": 10 },
+      { "speciesId": 23, "minLevel": 18, "maxLevel": 22, "weight": 12 },
+      { "speciesId": 27, "minLevel": 18, "maxLevel": 22, "weight": 12 },
+      { "speciesId": 52, "minLevel": 18, "maxLevel": 22, "weight": 15 },
+      { "speciesId": 56, "minLevel": 18, "maxLevel": 22, "weight": 15 },
+      { "speciesId": 58, "minLevel": 18, "maxLevel": 22, "weight": 18 },
+      { "speciesId": 37, "minLevel": 18, "maxLevel": 22, "weight": 18 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_7",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 17, "maxLevel": 22, "weight": 10 },
+      { "speciesId": 43, "minLevel": 19, "maxLevel": 22, "weight": 15 },
+      { "speciesId": 69, "minLevel": 19, "maxLevel": 22, "weight": 15 },
+      { "speciesId": 52, "minLevel": 17, "maxLevel": 20, "weight": 15 },
+      { "speciesId": 56, "minLevel": 17, "maxLevel": 20, "weight": 15 },
+      { "speciesId": 58, "minLevel": 18, "maxLevel": 22, "weight": 15 },
+      { "speciesId": 37, "minLevel": 18, "maxLevel": 22, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_12",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 23, "maxLevel": 27, "weight": 15 },
+      { "speciesId": 43, "minLevel": 22, "maxLevel": 26, "weight": 18 },
+      { "speciesId": 69, "minLevel": 22, "maxLevel": 26, "weight": 18 },
+      { "speciesId": 44, "minLevel": 26, "maxLevel": 30, "weight": 10 },
+      { "speciesId": 70, "minLevel": 26, "maxLevel": 30, "weight": 10 },
+      { "speciesId": 48, "minLevel": 24, "maxLevel": 28, "weight": 29 }
+    ],
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 40, "weight": 60 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 25, "weight": 20 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 116, "minLevel": 15, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 98, "minLevel": 15, "maxLevel": 25, "weight": 10 },
+      { "speciesId": 120, "minLevel": 15, "maxLevel": 25, "weight": 10 }
+    ]
+  },
+  {
+    "areaId": "route_13",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 23, "maxLevel": 27, "weight": 10 },
+      { "speciesId": 43, "minLevel": 22, "maxLevel": 26, "weight": 20 },
+      { "speciesId": 69, "minLevel": 22, "maxLevel": 26, "weight": 20 },
+      { "speciesId": 48, "minLevel": 24, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 132, "minLevel": 25, "maxLevel": 30, "weight": 30 }
+    ],
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 40, "weight": 60 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 116, "minLevel": 15, "maxLevel": 25, "weight": 25 },
+      { "speciesId": 98, "minLevel": 15, "maxLevel": 25, "weight": 25 },
+      { "speciesId": 118, "minLevel": 15, "maxLevel": 25, "weight": 20 }
+    ]
+  },
+  {
+    "areaId": "route_14",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 24, "maxLevel": 28, "weight": 10 },
+      { "speciesId": 43, "minLevel": 23, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 69, "minLevel": 23, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 48, "minLevel": 24, "maxLevel": 30, "weight": 20 },
+      { "speciesId": 132, "minLevel": 23, "maxLevel": 30, "weight": 30 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_15",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 16, "minLevel": 24, "maxLevel": 28, "weight": 10 },
+      { "speciesId": 43, "minLevel": 23, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 69, "minLevel": 23, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 48, "minLevel": 24, "maxLevel": 30, "weight": 20 },
+      { "speciesId": 132, "minLevel": 23, "maxLevel": 30, "weight": 30 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_16",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 19, "minLevel": 18, "maxLevel": 22, "weight": 25 },
+      { "speciesId": 21, "minLevel": 20, "maxLevel": 22, "weight": 30 },
+      { "speciesId": 84, "minLevel": 18, "maxLevel": 22, "weight": 45 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_17",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 20, "minLevel": 25, "maxLevel": 29, "weight": 15 },
+      { "speciesId": 21, "minLevel": 20, "maxLevel": 22, "weight": 15 },
+      { "speciesId": 22, "minLevel": 25, "maxLevel": 29, "weight": 15 },
+      { "speciesId": 84, "minLevel": 24, "maxLevel": 28, "weight": 35 },
+      { "speciesId": 77, "minLevel": 26, "maxLevel": 28, "weight": 20 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_18",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 20, "minLevel": 25, "maxLevel": 29, "weight": 25 },
+      { "speciesId": 21, "minLevel": 20, "maxLevel": 22, "weight": 20 },
+      { "speciesId": 22, "minLevel": 25, "maxLevel": 29, "weight": 25 },
+      { "speciesId": 84, "minLevel": 24, "maxLevel": 28, "weight": 30 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "digletts_cave_north",
+    "encounterRate": 15,
+    "grass": [
+      { "speciesId": 50, "minLevel": 15, "maxLevel": 22, "weight": 75 },
+      { "speciesId": 51, "minLevel": 29, "maxLevel": 31, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "digletts_cave_south",
+    "encounterRate": 15,
+    "grass": [
+      { "speciesId": 50, "minLevel": 15, "maxLevel": 22, "weight": 75 },
+      { "speciesId": 51, "minLevel": 29, "maxLevel": 31, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_22",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 29, "minLevel": 2, "maxLevel": 5, "weight": 25 },
+      { "speciesId": 32, "minLevel": 2, "maxLevel": 5, "weight": 25 },
+      { "speciesId": 21, "minLevel": 2, "maxLevel": 5, "weight": 20 },
+      { "speciesId": 56, "minLevel": 3, "maxLevel": 5, "weight": 15 },
+      { "speciesId": 19, "minLevel": 2, "maxLevel": 4, "weight": 15 }
+    ],
+    "surf": null,
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 50 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 15, "weight": 25 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 15, "weight": 25 }
+    ]
+  },
+  {
+    "areaId": "pokemon_tower",
+    "encounterRate": 15,
+    "grass": [
+      { "speciesId": 92, "minLevel": 13, "maxLevel": 25, "weight": 55 },
+      { "speciesId": 93, "minLevel": 20, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 104, "minLevel": 15, "maxLevel": 22, "weight": 25 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "route_19",
+    "encounterRate": 25,
+    "grass": null,
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 40, "weight": 100 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 72, "minLevel": 10, "maxLevel": 30, "weight": 20 },
+      { "speciesId": 116, "minLevel": 15, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 90, "minLevel": 15, "maxLevel": 25, "weight": 10 },
+      { "speciesId": 120, "minLevel": 15, "maxLevel": 25, "weight": 10 },
+      { "speciesId": 98, "minLevel": 15, "maxLevel": 25, "weight": 15 }
+    ]
+  },
+  {
+    "areaId": "route_20",
+    "encounterRate": 25,
+    "grass": null,
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 40, "weight": 100 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 25 },
+      { "speciesId": 98, "minLevel": 15, "maxLevel": 25, "weight": 20 },
+      { "speciesId": 116, "minLevel": 15, "maxLevel": 25, "weight": 20 },
+      { "speciesId": 90, "minLevel": 15, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 120, "minLevel": 15, "maxLevel": 25, "weight": 20 }
+    ]
+  },
+  {
+    "areaId": "route_21",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 114, "minLevel": 21, "maxLevel": 28, "weight": 35 },
+      { "speciesId": 19, "minLevel": 21, "maxLevel": 25, "weight": 35 },
+      { "speciesId": 16, "minLevel": 21, "maxLevel": 30, "weight": 30 }
+    ],
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 40, "weight": 100 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 116, "minLevel": 15, "maxLevel": 25, "weight": 20 },
+      { "speciesId": 90, "minLevel": 15, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 120, "minLevel": 15, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 54, "minLevel": 15, "maxLevel": 25, "weight": 20 }
+    ]
+  },
+  {
+    "areaId": "seafoam_islands",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 41, "minLevel": 26, "maxLevel": 30, "weight": 15 },
+      { "speciesId": 42, "minLevel": 30, "maxLevel": 34, "weight": 10 },
+      { "speciesId": 54, "minLevel": 28, "maxLevel": 32, "weight": 12 },
+      { "speciesId": 79, "minLevel": 28, "maxLevel": 32, "weight": 12 },
+      { "speciesId": 86, "minLevel": 28, "maxLevel": 32, "weight": 15 },
+      { "speciesId": 90, "minLevel": 28, "maxLevel": 32, "weight": 10 },
+      { "speciesId": 98, "minLevel": 28, "maxLevel": 32, "weight": 10 },
+      { "speciesId": 116, "minLevel": 28, "maxLevel": 32, "weight": 10 },
+      { "speciesId": 144, "minLevel": 50, "maxLevel": 50, "weight": 1 }
+    ],
+    "surf": [
+      { "speciesId": 116, "minLevel": 20, "maxLevel": 35, "weight": 30 },
+      { "speciesId": 90, "minLevel": 20, "maxLevel": 35, "weight": 20 },
+      { "speciesId": 86, "minLevel": 25, "maxLevel": 35, "weight": 20 },
+      { "speciesId": 79, "minLevel": 25, "maxLevel": 35, "weight": 15 },
+      { "speciesId": 54, "minLevel": 25, "maxLevel": 35, "weight": 15 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 25 },
+      { "speciesId": 116, "minLevel": 20, "maxLevel": 30, "weight": 20 },
+      { "speciesId": 90, "minLevel": 20, "maxLevel": 30, "weight": 15 },
+      { "speciesId": 98, "minLevel": 20, "maxLevel": 30, "weight": 15 },
+      { "speciesId": 120, "minLevel": 20, "maxLevel": 30, "weight": 15 },
+      { "speciesId": 54, "minLevel": 20, "maxLevel": 30, "weight": 10 }
+    ]
+  },
+  {
+    "areaId": "power_plant",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 100, "minLevel": 21, "maxLevel": 28, "weight": 30 },
+      { "speciesId": 81, "minLevel": 21, "maxLevel": 28, "weight": 30 },
+      { "speciesId": 25, "minLevel": 22, "maxLevel": 28, "weight": 20 },
+      { "speciesId": 125, "minLevel": 30, "maxLevel": 35, "weight": 14 },
+      { "speciesId": 145, "minLevel": 50, "maxLevel": 50, "weight": 1 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "pokemon_mansion",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 58, "minLevel": 26, "maxLevel": 34, "weight": 14 },
+      { "speciesId": 37, "minLevel": 26, "maxLevel": 34, "weight": 14 },
+      { "speciesId": 77, "minLevel": 28, "maxLevel": 34, "weight": 14 },
+      { "speciesId": 88, "minLevel": 28, "maxLevel": 32, "weight": 14 },
+      { "speciesId": 89, "minLevel": 34, "maxLevel": 38, "weight": 8 },
+      { "speciesId": 109, "minLevel": 28, "maxLevel": 32, "weight": 14 },
+      { "speciesId": 110, "minLevel": 34, "maxLevel": 38, "weight": 8 },
+      { "speciesId": 126, "minLevel": 32, "maxLevel": 36, "weight": 14 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "victory_road",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 66, "minLevel": 22, "maxLevel": 28, "weight": 12 },
+      { "speciesId": 74, "minLevel": 24, "maxLevel": 30, "weight": 12 },
+      { "speciesId": 41, "minLevel": 22, "maxLevel": 26, "weight": 12 },
+      { "speciesId": 95, "minLevel": 36, "maxLevel": 42, "weight": 10 },
+      { "speciesId": 105, "minLevel": 32, "maxLevel": 38, "weight": 12 },
+      { "speciesId": 42, "minLevel": 32, "maxLevel": 38, "weight": 12 },
+      { "speciesId": 67, "minLevel": 36, "maxLevel": 42, "weight": 12 },
+      { "speciesId": 75, "minLevel": 36, "maxLevel": 42, "weight": 12 },
+      { "speciesId": 146, "minLevel": 50, "maxLevel": 50, "weight": 1 }
+    ],
+    "surf": null,
+    "fishing": null
+  },
+  {
+    "areaId": "cerulean_cave",
+    "encounterRate": 10,
+    "grass": [
+      { "speciesId": 42, "minLevel": 46, "maxLevel": 52, "weight": 15 },
+      { "speciesId": 97, "minLevel": 46, "maxLevel": 52, "weight": 14 },
+      { "speciesId": 82, "minLevel": 46, "maxLevel": 52, "weight": 12 },
+      { "speciesId": 101, "minLevel": 46, "maxLevel": 52, "weight": 12 },
+      { "speciesId": 112, "minLevel": 46, "maxLevel": 52, "weight": 12 },
+      { "speciesId": 113, "minLevel": 46, "maxLevel": 56, "weight": 5 },
+      { "speciesId": 132, "minLevel": 46, "maxLevel": 55, "weight": 15 },
+      { "speciesId": 47, "minLevel": 46, "maxLevel": 52, "weight": 14 },
+      { "speciesId": 150, "minLevel": 70, "maxLevel": 70, "weight": 1 }
+    ],
+    "surf": [
+      { "speciesId": 54, "minLevel": 40, "maxLevel": 55, "weight": 30 },
+      { "speciesId": 79, "minLevel": 40, "maxLevel": 55, "weight": 30 },
+      { "speciesId": 130, "minLevel": 50, "maxLevel": 55, "weight": 10 },
+      { "speciesId": 55, "minLevel": 50, "maxLevel": 55, "weight": 15 },
+      { "speciesId": 80, "minLevel": 50, "maxLevel": 55, "weight": 15 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 20 },
+      { "speciesId": 60, "minLevel": 30, "maxLevel": 50, "weight": 20 },
+      { "speciesId": 118, "minLevel": 30, "maxLevel": 50, "weight": 15 },
+      { "speciesId": 54, "minLevel": 30, "maxLevel": 50, "weight": 15 },
+      { "speciesId": 79, "minLevel": 30, "maxLevel": 50, "weight": 15 },
+      { "speciesId": 130, "minLevel": 40, "maxLevel": 50, "weight": 5 },
+      { "speciesId": 99, "minLevel": 35, "maxLevel": 50, "weight": 10 }
+    ]
+  },
+  {
+    "areaId": "safari_zone",
+    "encounterRate": 20,
+    "grass": [
+      { "speciesId": 29, "minLevel": 22, "maxLevel": 28, "weight": 8 },
+      { "speciesId": 32, "minLevel": 22, "maxLevel": 28, "weight": 8 },
+      { "speciesId": 30, "minLevel": 24, "maxLevel": 30, "weight": 5 },
+      { "speciesId": 33, "minLevel": 24, "maxLevel": 30, "weight": 5 },
+      { "speciesId": 46, "minLevel": 22, "maxLevel": 28, "weight": 8 },
+      { "speciesId": 47, "minLevel": 28, "maxLevel": 33, "weight": 3 },
+      { "speciesId": 48, "minLevel": 22, "maxLevel": 28, "weight": 8 },
+      { "speciesId": 102, "minLevel": 24, "maxLevel": 30, "weight": 8 },
+      { "speciesId": 111, "minLevel": 24, "maxLevel": 30, "weight": 8 },
+      { "speciesId": 115, "minLevel": 25, "maxLevel": 30, "weight": 5 },
+      { "speciesId": 113, "minLevel": 23, "maxLevel": 28, "weight": 4 },
+      { "speciesId": 123, "minLevel": 25, "maxLevel": 28, "weight": 7 },
+      { "speciesId": 127, "minLevel": 25, "maxLevel": 28, "weight": 7 },
+      { "speciesId": 128, "minLevel": 25, "maxLevel": 28, "weight": 6 },
+      { "speciesId": 147, "minLevel": 25, "maxLevel": 28, "weight": 5 }
+    ],
+    "surf": [
+      { "speciesId": 54, "minLevel": 20, "maxLevel": 35, "weight": 35 },
+      { "speciesId": 79, "minLevel": 20, "maxLevel": 35, "weight": 35 },
+      { "speciesId": 118, "minLevel": 20, "maxLevel": 30, "weight": 30 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 118, "minLevel": 15, "maxLevel": 25, "weight": 20 },
+      { "speciesId": 60, "minLevel": 15, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 54, "minLevel": 15, "maxLevel": 25, "weight": 10 },
+      { "speciesId": 147, "minLevel": 15, "maxLevel": 25, "weight": 10 },
+      { "speciesId": 148, "minLevel": 25, "maxLevel": 30, "weight": 5 },
+      { "speciesId": 98, "minLevel": 15, "maxLevel": 25, "weight": 10 }
+    ]
+  },
+  {
+    "areaId": "route_23",
+    "encounterRate": 25,
+    "grass": [
+      { "speciesId": 132, "minLevel": 33, "maxLevel": 42, "weight": 15 },
+      { "speciesId": 22, "minLevel": 36, "maxLevel": 42, "weight": 15 },
+      { "speciesId": 23, "minLevel": 26, "maxLevel": 36, "weight": 10 },
+      { "speciesId": 24, "minLevel": 36, "maxLevel": 42, "weight": 10 },
+      { "speciesId": 27, "minLevel": 26, "maxLevel": 36, "weight": 10 },
+      { "speciesId": 28, "minLevel": 36, "maxLevel": 42, "weight": 10 },
+      { "speciesId": 30, "minLevel": 33, "maxLevel": 38, "weight": 15 },
+      { "speciesId": 33, "minLevel": 33, "maxLevel": 38, "weight": 15 }
+    ],
+    "surf": [
+      { "speciesId": 54, "minLevel": 30, "maxLevel": 40, "weight": 35 },
+      { "speciesId": 79, "minLevel": 30, "maxLevel": 40, "weight": 35 },
+      { "speciesId": 129, "minLevel": 15, "maxLevel": 25, "weight": 30 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 60, "minLevel": 20, "maxLevel": 35, "weight": 25 },
+      { "speciesId": 118, "minLevel": 20, "maxLevel": 35, "weight": 25 },
+      { "speciesId": 54, "minLevel": 20, "maxLevel": 35, "weight": 20 }
+    ]
+  },
+  {
+    "areaId": "vermilion_city",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 35, "weight": 60 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 20, "weight": 15 },
+      { "speciesId": 116, "minLevel": 10, "maxLevel": 20, "weight": 15 },
+      { "speciesId": 90, "minLevel": 10, "maxLevel": 20, "weight": 15 },
+      { "speciesId": 98, "minLevel": 10, "maxLevel": 20, "weight": 15 }
+    ]
+  },
+  {
+    "areaId": "cerulean_city",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 54, "minLevel": 10, "maxLevel": 30, "weight": 40 },
+      { "speciesId": 79, "minLevel": 10, "maxLevel": 30, "weight": 30 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 20, "weight": 20 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 20, "weight": 20 },
+      { "speciesId": 98, "minLevel": 10, "maxLevel": 20, "weight": 20 }
+    ]
+  },
+  {
+    "areaId": "celadon_city",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 88, "minLevel": 20, "maxLevel": 35, "weight": 50 },
+      { "speciesId": 109, "minLevel": 20, "maxLevel": 35, "weight": 50 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 20, "weight": 25 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 20, "weight": 20 },
+      { "speciesId": 88, "minLevel": 15, "maxLevel": 25, "weight": 15 }
+    ]
+  },
+  {
+    "areaId": "fuchsia_city",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 54, "minLevel": 15, "maxLevel": 30, "weight": 35 },
+      { "speciesId": 79, "minLevel": 15, "maxLevel": 30, "weight": 35 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 25, "weight": 20 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 98, "minLevel": 10, "maxLevel": 25, "weight": 15 },
+      { "speciesId": 116, "minLevel": 10, "maxLevel": 25, "weight": 10 },
+      { "speciesId": 86, "minLevel": 15, "maxLevel": 25, "weight": 10 }
+    ]
+  },
+  {
+    "areaId": "cinnabar_island",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 40, "weight": 60 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 },
+      { "speciesId": 116, "minLevel": 15, "maxLevel": 30, "weight": 20 },
+      { "speciesId": 90, "minLevel": 15, "maxLevel": 30, "weight": 15 },
+      { "speciesId": 120, "minLevel": 15, "maxLevel": 30, "weight": 15 },
+      { "speciesId": 72, "minLevel": 10, "maxLevel": 30, "weight": 10 },
+      { "speciesId": 130, "minLevel": 25, "maxLevel": 35, "weight": 5 },
+      { "speciesId": 54, "minLevel": 15, "maxLevel": 25, "weight": 5 }
+    ]
+  },
+  {
+    "areaId": "pallet_town",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 72, "minLevel": 5, "maxLevel": 35, "weight": 60 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 50 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 20, "weight": 25 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 20, "weight": 25 }
+    ]
+  },
+  {
+    "areaId": "viridian_city",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": [
+      { "speciesId": 54, "minLevel": 10, "maxLevel": 25, "weight": 35 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 25, "weight": 35 },
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 30 }
+    ],
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 20, "weight": 30 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 20, "weight": 30 }
+    ]
+  },
+  {
+    "areaId": "lavender_town",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": null,
+    "fishing": [
+      { "speciesId": 129, "minLevel": 5, "maxLevel": 15, "weight": 40 },
+      { "speciesId": 60, "minLevel": 10, "maxLevel": 20, "weight": 30 },
+      { "speciesId": 118, "minLevel": 10, "maxLevel": 20, "weight": 30 }
+    ]
+  },
+  {
+    "areaId": "saffron_city",
+    "encounterRate": 0,
+    "grass": null,
+    "surf": null,
+    "fishing": null
+  }
+]
