@@ -10,40 +10,52 @@ namespace PokemonGen1.Game.Screens;
 
 public enum BattlePhase
 {
-    Intro,
+    Animating,
     ActionSelect,
     MoveSelect,
-    Animating,
-    EventDisplay,
-    BattleOver,
-    WaitingForSwitch
+    BattleOver
 }
 
 public class BattleScreen : IScreen
 {
+    // Animation command types - queued and played sequentially
+    private abstract record AnimCmd;
+    private record TypeTextCmd(string Text, float PostDelay) : AnimCmd;
+    private record HitEffectCmd(BattleSide Target, float Duration) : AnimCmd;
+    private record AnimateHpCmd(BattleSide Side, float TargetPercent) : AnimCmd;
+    private record PauseCmd(float Duration) : AnimCmd;
+
     private readonly PokemonGame _game;
     private readonly BattleState _state;
     private readonly BattleEngine _engine;
     private readonly Random _rng = new();
 
-    private BattlePhase _phase = BattlePhase.Intro;
+    private BattlePhase _phase = BattlePhase.Animating;
     private int _menuCursor;
     private int _moveCursor;
-    private float _introTimer;
 
-    // Event animation
-    private Queue<BattleEvent> _eventQueue = new();
-    private BattleEvent? _currentEvent;
+    // Animation queue
+    private readonly Queue<AnimCmd> _animQueue = new();
+    private AnimCmd? _activeCmd;
+    private float _animTimer;
+
+    // Text display
     private string _currentText = "";
     private int _textCharIndex;
     private float _textTimer;
-    private const float TextSpeed = 0.03f;
+    private const float TextSpeed = 0.02f;
     private bool _textComplete;
-    private float _eventDisplayTimer;
 
     // HP bar animation
     private float _playerHpDisplay;
     private float _opponentHpDisplay;
+    private float _playerHpTarget;
+    private float _opponentHpTarget;
+    private const float HpBarSpeed = 1.5f;
+
+    // Sprite hit effects (flash + shake)
+    private float _playerFlashTimer;
+    private float _opponentFlashTimer;
 
     // Colors
     private static readonly Color BgColor = new(248, 248, 248);
@@ -56,7 +68,6 @@ public class BattleScreen : IScreen
     private static readonly Color ArrowColor = new(40, 40, 40);
     private static readonly Color EnemyPlatform = new(120, 180, 120);
     private static readonly Color PlayerPlatform = new(100, 160, 100);
-    private static readonly Color TypeBoxColor = new(200, 200, 200);
 
     public bool IsOverlay => false;
     public bool BlocksUpdate => true;
@@ -67,17 +78,22 @@ public class BattleScreen : IScreen
         _state = state;
         _engine = new BattleEngine(state, game.GameData, _rng);
 
-        _playerHpDisplay = GetHpPercent(state.PlayerActive);
-        _opponentHpDisplay = GetHpPercent(state.OpponentActive);
+        _playerHpDisplay = _playerHpTarget = GetHpPercent(state.PlayerActive);
+        _opponentHpDisplay = _opponentHpTarget = GetHpPercent(state.OpponentActive);
     }
 
     private ScreenManager _manager = null!;
+
     public void Enter(ScreenManager manager)
     {
         _manager = manager;
-        _phase = BattlePhase.Intro;
-        _introTimer = 0;
-        SetText($"A wild {_state.OpponentActive.Species.Name} appeared!");
+
+        // Queue intro animation - auto-advances, no button press needed
+        _animQueue.Enqueue(new TypeTextCmd(
+            $"A wild {_state.OpponentActive.Species.Name} appeared!", 0.7f));
+        _animQueue.Enqueue(new TypeTextCmd(
+            $"Go! {GetPlayerName()}!", 0.5f));
+        _phase = BattlePhase.Animating;
     }
 
     public void Exit() { }
@@ -86,55 +102,185 @@ public class BattleScreen : IScreen
     {
         float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        // Animate HP bars
         AnimateHpBars(dt);
+        UpdateSpriteEffects(dt);
 
         switch (_phase)
         {
-            case BattlePhase.Intro:
-                UpdateText(dt);
-                if (_textComplete && input.IsPressed(InputAction.Confirm))
-                {
-                    SetText($"Go! {GetPlayerName()}!");
-                    _phase = BattlePhase.EventDisplay;
-                    _eventQueue.Clear();
-                }
+            case BattlePhase.Animating:
+                UpdateAnimating(dt, input);
                 break;
-
-            case BattlePhase.EventDisplay:
-                UpdateText(dt);
-                if (_textComplete)
-                {
-                    if (input.IsPressed(InputAction.Confirm))
-                    {
-                        if (_eventQueue.Count > 0)
-                            ProcessNextEvent();
-                        else if (_state.IsOver)
-                            _phase = BattlePhase.BattleOver;
-                        else if (_state.PlayerActive.Pokemon.IsFainted)
-                            _phase = BattlePhase.BattleOver; // Simplified: no switch support yet
-                        else
-                            _phase = BattlePhase.ActionSelect;
-                    }
-                }
-                break;
-
             case BattlePhase.ActionSelect:
                 UpdateActionSelect(input);
                 break;
-
             case BattlePhase.MoveSelect:
                 UpdateMoveSelect(input);
                 break;
-
             case BattlePhase.BattleOver:
                 if (input.IsPressed(InputAction.Confirm))
-                {
                     _manager.Replace(new TitleScreen(_game));
-                }
                 break;
         }
     }
+
+    #region Animation System
+
+    private void UpdateAnimating(float dt, InputManager input)
+    {
+        UpdateText(dt);
+
+        if (_activeCmd == null)
+        {
+            if (_animQueue.Count == 0)
+            {
+                // All animations complete - transition to next phase
+                if (_state.IsOver || _state.PlayerActive.Pokemon.IsFainted)
+                    _phase = BattlePhase.BattleOver;
+                else
+                    _phase = BattlePhase.ActionSelect;
+                return;
+            }
+
+            _activeCmd = _animQueue.Dequeue();
+            _animTimer = 0;
+            InitCommand(_activeCmd);
+        }
+
+        if (UpdateCommand(_activeCmd, dt, input))
+            _activeCmd = null;
+    }
+
+    private void InitCommand(AnimCmd cmd)
+    {
+        switch (cmd)
+        {
+            case TypeTextCmd txt:
+                SetText(txt.Text);
+                break;
+            case HitEffectCmd hit:
+                if (hit.Target == BattleSide.Player)
+                    _playerFlashTimer = hit.Duration;
+                else
+                    _opponentFlashTimer = hit.Duration;
+                break;
+            case AnimateHpCmd hp:
+                if (hp.Side == BattleSide.Player)
+                    _playerHpTarget = hp.TargetPercent;
+                else
+                    _opponentHpTarget = hp.TargetPercent;
+                break;
+        }
+    }
+
+    private bool UpdateCommand(AnimCmd cmd, float dt, InputManager input)
+    {
+        bool confirm = input.IsPressed(InputAction.Confirm);
+
+        switch (cmd)
+        {
+            case TypeTextCmd txt:
+                if (!_textComplete)
+                {
+                    if (confirm)
+                    {
+                        _textCharIndex = _currentText.Length;
+                        _textComplete = true;
+                    }
+                    return false;
+                }
+                // Text done - count post-delay before auto-advancing
+                _animTimer += dt;
+                return confirm || _animTimer >= txt.PostDelay;
+
+            case HitEffectCmd hit:
+                if (confirm)
+                {
+                    _playerFlashTimer = 0;
+                    _opponentFlashTimer = 0;
+                    return true;
+                }
+                float flashTimer = hit.Target == BattleSide.Player
+                    ? _playerFlashTimer : _opponentFlashTimer;
+                return flashTimer <= 0;
+
+            case AnimateHpCmd hp:
+                if (confirm)
+                {
+                    // Skip HP animation to target
+                    if (hp.Side == BattleSide.Player)
+                        _playerHpDisplay = hp.TargetPercent;
+                    else
+                        _opponentHpDisplay = hp.TargetPercent;
+                    return true;
+                }
+                float current = hp.Side == BattleSide.Player
+                    ? _playerHpDisplay : _opponentHpDisplay;
+                return Math.Abs(current - hp.TargetPercent) < 0.005f;
+
+            case PauseCmd pause:
+                _animTimer += dt;
+                return confirm || _animTimer >= pause.Duration;
+        }
+        return true;
+    }
+
+    private void EnqueueBattleEvents(IEnumerable<BattleEvent> events)
+    {
+        foreach (var evt in events)
+        {
+            switch (evt)
+            {
+                case MoveUsedEvent moveUsed:
+                    string who = moveUsed.Attacker == BattleSide.Player
+                        ? GetPlayerName()
+                        : $"Enemy {_state.OpponentActive.Species.Name}";
+                    _animQueue.Enqueue(new TypeTextCmd($"{who} used {moveUsed.MoveName}!", 0.2f));
+                    break;
+
+                case DamageDealtEvent dmg:
+                    _animQueue.Enqueue(new HitEffectCmd(dmg.Target, 0.3f));
+                    break;
+
+                case HpChangedEvent hp:
+                    float pct = hp.MaxHp > 0 ? (float)hp.NewHp / hp.MaxHp : 0;
+                    _animQueue.Enqueue(new AnimateHpCmd(hp.Side, pct));
+                    break;
+
+                case TextEvent text:
+                    _animQueue.Enqueue(new TypeTextCmd(text.Message, 0.3f));
+                    break;
+
+                case FaintedEvent fainted:
+                    _animQueue.Enqueue(new TypeTextCmd($"{fainted.PokemonName} fainted!", 0.5f));
+                    break;
+
+                case BattleEndedEvent ended:
+                    string msg = ended.Outcome switch
+                    {
+                        BattleOutcome.PlayerWin => "You won the battle!",
+                        BattleOutcome.PlayerLose => "You blacked out!",
+                        BattleOutcome.PlayerFled => "Got away safely!",
+                        _ => "Battle over!"
+                    };
+                    _animQueue.Enqueue(new TypeTextCmd(msg, 0f));
+                    break;
+
+                case MoveMissedEvent missed:
+                    string atkr = missed.Attacker == BattleSide.Player
+                        ? GetPlayerName()
+                        : $"Enemy {_state.OpponentActive.Species.Name}";
+                    _animQueue.Enqueue(new TypeTextCmd($"{atkr}'s attack missed!", 0.3f));
+                    break;
+
+                // All other events (StatChangedEvent, RecoilEvent, DrainEvent, etc.)
+                // are covered by the TextEvents the engine generates alongside them
+            }
+        }
+    }
+
+    #endregion
+
+    #region Input Handling
 
     private void UpdateActionSelect(InputManager input)
     {
@@ -152,12 +298,12 @@ public class BattleScreen : IScreen
                     _moveCursor = 0;
                     break;
                 case 1: // BAG
-                    SetText("No items in bag!");
-                    _phase = BattlePhase.EventDisplay;
+                    _animQueue.Enqueue(new TypeTextCmd("No items in bag!", 0.3f));
+                    _phase = BattlePhase.Animating;
                     break;
                 case 2: // POKEMON
-                    SetText("No other Pokemon!");
-                    _phase = BattlePhase.EventDisplay;
+                    _animQueue.Enqueue(new TypeTextCmd("No other Pokemon!", 0.3f));
+                    _phase = BattlePhase.Animating;
                     break;
                 case 3: // RUN
                     ExecuteTurn(new RunAction());
@@ -190,107 +336,76 @@ public class BattleScreen : IScreen
             }
             else
             {
-                SetText("No PP left!");
-                _phase = BattlePhase.EventDisplay;
+                _animQueue.Enqueue(new TypeTextCmd("No PP left!", 0.3f));
+                _phase = BattlePhase.Animating;
             }
         }
     }
 
     private void ExecuteTurn(BattleAction playerAction)
     {
-        // AI chooses action
         var aiAction = TrainerAI.ChooseAction(_state, _game.GameData,
             _state.OpponentTrainer?.AiBehavior ?? AIBehavior.Random, _rng);
 
         var events = _engine.ExecuteTurn(playerAction, aiAction);
-
-        _eventQueue = new Queue<BattleEvent>(events);
-        _phase = BattlePhase.EventDisplay;
-
-        if (_eventQueue.Count > 0)
-            ProcessNextEvent();
-        else
-            SetText("...");
+        EnqueueBattleEvents(events);
+        _phase = BattlePhase.Animating;
     }
 
-    private void ProcessNextEvent()
+    #endregion
+
+    #region Text & HP Animation
+
+    private void SetText(string text)
     {
-        while (_eventQueue.Count > 0)
-        {
-            _currentEvent = _eventQueue.Dequeue();
-
-            switch (_currentEvent)
-            {
-                case HpChangedEvent hp:
-                    // Update target HP display
-                    if (hp.Side == BattleSide.Player)
-                        _playerHpDisplay = hp.MaxHp > 0 ? (float)hp.NewHp / hp.MaxHp : 0;
-                    else
-                        _opponentHpDisplay = hp.MaxHp > 0 ? (float)hp.NewHp / hp.MaxHp : 0;
-                    continue; // Don't show text, process next event
-
-                case DamageDealtEvent:
-                case StatChangedEvent:
-                case MultiHitEvent:
-                case RecoilEvent:
-                case DrainEvent:
-                    continue; // Skip these, the text events that follow are enough
-
-                case MoveUsedEvent moveUsed:
-                    string who = moveUsed.Attacker == BattleSide.Player
-                        ? GetPlayerName() : $"Enemy {_state.OpponentActive.Species.Name}";
-                    SetText($"{who} used {moveUsed.MoveName}!");
-                    return;
-
-                case TextEvent text:
-                    SetText(text.Message);
-                    return;
-
-                case FaintedEvent fainted:
-                    SetText($"{fainted.PokemonName} fainted!");
-                    return;
-
-                case BattleEndedEvent ended:
-                    SetText(ended.Outcome switch
-                    {
-                        BattleOutcome.PlayerWin => "You won the battle!",
-                        BattleOutcome.PlayerLose => "You blacked out!",
-                        BattleOutcome.PlayerFled => "Got away safely!",
-                        _ => "Battle over!"
-                    });
-                    return;
-
-                case MoveMissedEvent missed:
-                    string attacker = missed.Attacker == BattleSide.Player
-                        ? GetPlayerName() : $"Enemy {_state.OpponentActive.Species.Name}";
-                    SetText($"{attacker}'s attack missed!");
-                    return;
-
-                case StatusAppliedEvent:
-                case StatusPreventedMoveEvent:
-                case StatusDamageEvent:
-                case SwitchEvent:
-                case ExperienceGainedEvent:
-                case ChargingEvent:
-                case RechargeEvent:
-                case ConfusionHitSelfEvent:
-                case SubstituteCreatedEvent:
-                case SubstituteBrokeEvent:
-                case OhkoEvent:
-                case MoveFailedEvent:
-                    continue; // Text events handle the messaging
-
-                default:
-                    continue;
-            }
-        }
-
-        // No more events with text
-        if (_state.IsOver)
-        {
-            _phase = BattlePhase.BattleOver;
-        }
+        _currentText = text;
+        _textCharIndex = 0;
+        _textTimer = 0;
+        _textComplete = false;
     }
+
+    private void UpdateText(float dt)
+    {
+        if (_textComplete) return;
+
+        _textTimer += dt;
+        while (_textTimer >= TextSpeed && _textCharIndex < _currentText.Length)
+        {
+            _textCharIndex++;
+            _textTimer -= TextSpeed;
+        }
+
+        if (_textCharIndex >= _currentText.Length)
+            _textComplete = true;
+    }
+
+    private void AnimateHpBars(float dt)
+    {
+        _playerHpDisplay = MoveToward(_playerHpDisplay, _playerHpTarget, dt * HpBarSpeed);
+        _opponentHpDisplay = MoveToward(_opponentHpDisplay, _opponentHpTarget, dt * HpBarSpeed);
+    }
+
+    private void UpdateSpriteEffects(float dt)
+    {
+        if (_playerFlashTimer > 0) _playerFlashTimer = Math.Max(0, _playerFlashTimer - dt);
+        if (_opponentFlashTimer > 0) _opponentFlashTimer = Math.Max(0, _opponentFlashTimer - dt);
+    }
+
+    private static float MoveToward(float current, float target, float maxDelta)
+    {
+        if (Math.Abs(target - current) <= maxDelta) return target;
+        return current + Math.Sign(target - current) * maxDelta;
+    }
+
+    private float GetHpPercent(BattlePokemon pokemon)
+    {
+        int max = pokemon.MaxHp;
+        return max > 0 ? (float)pokemon.Pokemon.CurrentHp / max : 0;
+    }
+
+    #endregion
+
+    #region Drawing
 
     public void Draw(SpriteBatch sb)
     {
@@ -303,8 +418,7 @@ public class BattleScreen : IScreen
         // Bottom area depends on phase
         switch (_phase)
         {
-            case BattlePhase.Intro:
-            case BattlePhase.EventDisplay:
+            case BattlePhase.Animating:
             case BattlePhase.BattleOver:
                 DrawTextBox(sb);
                 break;
@@ -321,34 +435,49 @@ public class BattleScreen : IScreen
     {
         int fieldHeight = 96;
 
-        // Battle area background - light grassy color
+        // Battle area background
         _game.DrawRect(sb, new Rectangle(0, 0, PokemonGame.VirtualWidth, fieldHeight),
             new Color(200, 228, 200));
 
-        // Enemy platform (top-right)
+        // Platforms
         DrawPlatform(sb, 140, 32, 80, 12, EnemyPlatform);
-
-        // Player platform (bottom-left)
         DrawPlatform(sb, 20, 72, 80, 12, PlayerPlatform);
 
-        // Enemy Pokemon sprite (front-facing, top-right area)
-        DrawPokemonSprite(sb, _state.OpponentActive.Species.DexNumber, isFront: true,
-            destRect: new Rectangle(152, -8, 48, 48));
+        // Enemy Pokemon sprite with hit effects (flash + shake)
+        {
+            bool visible = _opponentFlashTimer <= 0 ||
+                ((int)(_opponentFlashTimer / 0.05f) % 2 == 0);
+            int shakeX = _opponentFlashTimer > 0
+                ? (int)(Math.Sin(_opponentFlashTimer * 40) * 3) : 0;
 
-        // Player Pokemon sprite (back-facing, bottom-left area, larger since closer)
-        DrawPokemonSprite(sb, _state.PlayerActive.Species.DexNumber, isFront: false,
-            destRect: new Rectangle(24, 28, 56, 56));
+            if (visible)
+            {
+                DrawPokemonSprite(sb, _state.OpponentActive.Species.DexNumber, isFront: true,
+                    destRect: new Rectangle(152 + shakeX, -8, 48, 48));
+            }
+        }
 
-        // Enemy info box (top-left area)
+        // Player Pokemon sprite with hit effects
+        {
+            bool visible = _playerFlashTimer <= 0 ||
+                ((int)(_playerFlashTimer / 0.05f) % 2 == 0);
+            int shakeX = _playerFlashTimer > 0
+                ? (int)(Math.Sin(_playerFlashTimer * 40) * 3) : 0;
+
+            if (visible)
+            {
+                DrawPokemonSprite(sb, _state.PlayerActive.Species.DexNumber, isFront: false,
+                    destRect: new Rectangle(24 + shakeX, 28, 56, 56));
+            }
+        }
+
+        // Info boxes
         DrawEnemyInfoBox(sb);
-
-        // Player info box (bottom-right area)
         DrawPlayerInfoBox(sb);
     }
 
     private void DrawPlatform(SpriteBatch sb, int x, int y, int width, int height, Color color)
     {
-        // Simple ellipse-like platform
         _game.DrawRect(sb, new Rectangle(x, y, width, height / 2), color);
         _game.DrawRect(sb, new Rectangle(x + 2, y + height / 2, width - 4, height / 2),
             new Color(color.R * 3 / 4, color.G * 3 / 4, color.B * 3 / 4));
@@ -380,7 +509,6 @@ public class BattleScreen : IScreen
         _game.DrawRect(sb, box, BoxColor);
         _game.DrawBorder(sb, box, BorderColor, 2);
 
-        // Name and level
         string name = _state.OpponentActive.Species.Name;
         sb.DrawString(_game.Font, name, new Vector2(6, 4), TextColor);
 
@@ -388,10 +516,7 @@ public class BattleScreen : IScreen
         var lvSize = _game.Font.MeasureString(level);
         sb.DrawString(_game.Font, level, new Vector2(box.Right - lvSize.X - 4, 4), TextColor);
 
-        // HP bar
         DrawHpBar(sb, 6, 16, 100, 6, _opponentHpDisplay);
-
-        // Status condition
         DrawStatusBadge(sb, 6, 24, _state.OpponentActive.Pokemon.Status);
     }
 
@@ -401,7 +526,6 @@ public class BattleScreen : IScreen
         _game.DrawRect(sb, box, BoxColor);
         _game.DrawBorder(sb, box, BorderColor, 2);
 
-        // Name and level
         string name = _state.PlayerActive.Pokemon.Nickname ?? _state.PlayerActive.Species.Name;
         sb.DrawString(_game.Font, name, new Vector2(122, 58), TextColor);
 
@@ -409,32 +533,28 @@ public class BattleScreen : IScreen
         var lvSize = _game.Font.MeasureString(level);
         sb.DrawString(_game.Font, level, new Vector2(box.Right - lvSize.X - 4, 58), TextColor);
 
-        // HP bar
         DrawHpBar(sb, 122, 70, 112, 6, _playerHpDisplay);
 
-        // HP numbers
-        int currentHp = _state.PlayerActive.Pokemon.CurrentHp;
+        // HP numbers animate with bar
         int maxHp = _state.PlayerActive.MaxHp;
-        string hpText = $"{currentHp}/{maxHp}";
+        int displayHp = (int)Math.Ceiling(_playerHpDisplay * maxHp);
+        displayHp = Math.Clamp(displayHp, 0, maxHp);
+        string hpText = $"{displayHp}/{maxHp}";
         var hpSize = _game.Font.MeasureString(hpText);
         sb.DrawString(_game.Font, hpText, new Vector2(box.Right - hpSize.X - 4, 80), TextColor);
 
-        // Status condition
         DrawStatusBadge(sb, 122, 80, _state.PlayerActive.Pokemon.Status);
     }
 
     private void DrawHpBar(SpriteBatch sb, int x, int y, int width, int height, float percent)
     {
-        // Background
         _game.DrawRect(sb, new Rectangle(x, y, width, height), new Color(80, 80, 80));
 
-        // HP fill
         int fillWidth = (int)(width * Math.Clamp(percent, 0, 1));
         Color hpColor = percent > 0.5f ? HpGreen : (percent > 0.2f ? HpYellow : HpRed);
         if (fillWidth > 0)
             _game.DrawRect(sb, new Rectangle(x, y, fillWidth, height), hpColor);
 
-        // Label
         sb.DrawString(_game.Font, "HP", new Vector2(x - 18, y - 2), TextColor);
     }
 
@@ -476,31 +596,27 @@ public class BattleScreen : IScreen
         _game.DrawRect(sb, box, BoxColor);
         _game.DrawBorder(sb, box, BorderColor, 2);
 
-        // Draw current text with character reveal
-        string displayText = _currentText.Substring(0, Math.Min(_textCharIndex, _currentText.Length));
+        // Text with character reveal
+        string displayText = _currentText[..Math.Min(_textCharIndex, _currentText.Length)];
         sb.DrawString(_game.Font, displayText, new Vector2(8, 104), TextColor);
 
-        // Blinking advance arrow
-        if (_textComplete)
+        // Blinking advance arrow only when waiting for player input
+        if (_phase == BattlePhase.BattleOver && _textComplete)
         {
             float blink = (float)Math.Sin(DateTime.Now.Millisecond / 200.0 * Math.PI);
             if (blink > 0)
-            {
                 sb.DrawString(_game.Font, "v", new Vector2(224, 148), ArrowColor);
-            }
         }
     }
 
     private void DrawActionMenu(SpriteBatch sb)
     {
-        // Text box on left
         var textBox = new Rectangle(0, 96, 120, 64);
         _game.DrawRect(sb, textBox, BoxColor);
         _game.DrawBorder(sb, textBox, BorderColor, 2);
         sb.DrawString(_game.Font, $"What will\n{GetPlayerName()} do?",
             new Vector2(8, 104), TextColor);
 
-        // Action menu on right
         var menuBox = new Rectangle(120, 96, 120, 64);
         _game.DrawRect(sb, menuBox, BoxColor);
         _game.DrawBorder(sb, menuBox, BorderColor, 2);
@@ -513,11 +629,9 @@ public class BattleScreen : IScreen
         {
             int col = i % 2;
             int row = i / 2;
-            Color color = TextColor;
-            sb.DrawString(_game.Font, options[i], new Vector2(colX[col], rowY[row]), color);
+            sb.DrawString(_game.Font, options[i], new Vector2(colX[col], rowY[row]), TextColor);
         }
 
-        // Draw cursor arrow
         int curCol = _menuCursor % 2;
         int curRow = _menuCursor / 2;
         sb.DrawString(_game.Font, ">", new Vector2(colX[curCol] - 10, rowY[curRow]), ArrowColor);
@@ -527,7 +641,6 @@ public class BattleScreen : IScreen
     {
         var moves = _state.PlayerActive.Pokemon.Moves;
 
-        // Move list box (left side)
         var moveBox = new Rectangle(0, 96, 160, 64);
         _game.DrawRect(sb, moveBox, BoxColor);
         _game.DrawBorder(sb, moveBox, BorderColor, 2);
@@ -544,12 +657,10 @@ public class BattleScreen : IScreen
             sb.DrawString(_game.Font, move.Name, new Vector2(colX[col], rowY[row]), color);
         }
 
-        // Cursor
         int curCol = _moveCursor % 2;
         int curRow = _moveCursor / 2;
         sb.DrawString(_game.Font, ">", new Vector2(colX[curCol] - 10, rowY[curRow]), ArrowColor);
 
-        // PP and type info box (right side)
         if (_moveCursor < moves.Length)
         {
             var ppBox = new Rectangle(160, 96, 80, 64);
@@ -559,62 +670,17 @@ public class BattleScreen : IScreen
             var moveData = _game.GameData.GetMove(moves[_moveCursor].MoveId);
             var moveInst = moves[_moveCursor];
 
-            // Type
-            sb.DrawString(_game.Font, $"TYPE/", new Vector2(166, 104), TextColor);
+            sb.DrawString(_game.Font, "TYPE/", new Vector2(166, 104), TextColor);
             Color typeColor = GetTypeColor(moveData.Type);
             _game.DrawRect(sb, new Rectangle(166, 116, 68, 10), typeColor);
             sb.DrawString(_game.Font, moveData.Type.ToString(), new Vector2(168, 116), Color.White);
 
-            // PP
             sb.DrawString(_game.Font, $"PP {moveInst.CurrentPP}/{moveInst.MaxPP}",
                 new Vector2(166, 140), TextColor);
         }
     }
 
-    // Text rendering helpers
-    private void SetText(string text)
-    {
-        _currentText = text;
-        _textCharIndex = 0;
-        _textTimer = 0;
-        _textComplete = false;
-    }
-
-    private void UpdateText(float dt)
-    {
-        if (_textComplete) return;
-
-        _textTimer += dt;
-        while (_textTimer >= TextSpeed && _textCharIndex < _currentText.Length)
-        {
-            _textCharIndex++;
-            _textTimer -= TextSpeed;
-        }
-
-        if (_textCharIndex >= _currentText.Length)
-            _textComplete = true;
-    }
-
-    private void AnimateHpBars(float dt)
-    {
-        float targetPlayer = GetHpPercent(_state.PlayerActive);
-        float targetOpp = GetHpPercent(_state.OpponentActive);
-
-        _playerHpDisplay = MoveToward(_playerHpDisplay, targetPlayer, dt * 2f);
-        _opponentHpDisplay = MoveToward(_opponentHpDisplay, targetOpp, dt * 2f);
-    }
-
-    private static float MoveToward(float current, float target, float maxDelta)
-    {
-        if (Math.Abs(target - current) <= maxDelta) return target;
-        return current + Math.Sign(target - current) * maxDelta;
-    }
-
-    private float GetHpPercent(BattlePokemon pokemon)
-    {
-        int max = pokemon.MaxHp;
-        return max > 0 ? (float)pokemon.Pokemon.CurrentHp / max : 0;
-    }
+    #endregion
 
     private string GetPlayerName()
     {
