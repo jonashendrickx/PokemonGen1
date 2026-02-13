@@ -6,48 +6,57 @@ using PokemonGen1.Core.Pokemon;
 using PokemonGen1.Core.Save;
 using PokemonGen1.Core.Trainers;
 using PokemonGen1.Core.World;
+using PokemonGen1.Game.Entities;
 using PokemonGen1.Game.Input;
+using PokemonGen1.Game.Rendering;
 
 namespace PokemonGen1.Game.Screens;
 
-public enum OverworldMode
+public enum OverworldState
 {
-    Navigation,    // Choosing where to go
-    AreaMenu,      // In-area actions (trainers, items, etc.)
-    Message        // Showing a message
+    Walking,
+    Dialog,
+    AreaTransition
 }
 
 public class OverworldScreen : IScreen
 {
-    private static readonly Color BgColor = new(248, 248, 248);
     private static readonly Color TextColor = new(40, 40, 40);
-    private static readonly Color BorderColor = new(40, 40, 40);
     private static readonly Color BoxColor = new(248, 248, 248);
-    private static readonly Color HighlightColor = new(200, 228, 200);
-    private static readonly Color LockedColor = new(180, 180, 180);
-    private static readonly Color TownColor = new(120, 160, 220);
-    private static readonly Color RouteColor = new(120, 200, 80);
-    private static readonly Color CaveColor = new(160, 140, 120);
-    private static readonly Color BuildingColor = new(200, 180, 140);
+    private static readonly Color BorderColor = new(40, 40, 40);
+    private static readonly Color StatusBarBg = new(40, 40, 40);
 
     private readonly PokemonGame _game;
     private readonly SaveData _save;
     private readonly EncounterSystem _encounters;
+    private readonly MapGenerator _mapGenerator;
     private readonly Random _rng = new();
     private ScreenManager _manager = null!;
 
-    private OverworldMode _mode = OverworldMode.Navigation;
-    private int _navCursor;
-    private int _menuCursor;
-    private int _navScroll;
+    // Rendering
+    private readonly ProceduralTileset _tileset;
+    private readonly ProceduralSprites _sprites;
+    private readonly TileRenderer _tileRenderer;
 
-    // Message display
-    private string _message = "";
-    private float _messageTimer;
+    // World state
+    private MapData _currentMap = null!;
+    private PlayerEntity _player = null!;
 
-    // Area menu items
-    private readonly List<string> _menuOptions = new();
-    private readonly List<Action> _menuActions = new();
+    // Dialog
+    private OverworldState _state = OverworldState.Walking;
+    private readonly List<string> _dialogLines = new();
+    private int _dialogIndex;
+    private Action? _dialogCallback;
+
+    // Area transition
+    private float _transitionTimer;
+    private float _transitionAlpha;
+    private string? _pendingMapId;
+    private int _pendingX = -1, _pendingY = -1;
+
+    // Area name popup
+    private float _areaNameTimer;
+    private string _areaName = "";
 
     public bool IsOverlay => false;
     public bool BlocksUpdate => true;
@@ -57,223 +66,456 @@ public class OverworldScreen : IScreen
         _game = game;
         _save = save;
         _encounters = new EncounterSystem(game.GameData, _rng);
+        _mapGenerator = new MapGenerator(_rng);
+        _tileset = new ProceduralTileset(game.GraphicsDevice);
+        _sprites = new ProceduralSprites(game.GraphicsDevice);
+        _tileRenderer = new TileRenderer(_tileset, _sprites);
     }
 
     public void Enter(ScreenManager manager)
     {
         _manager = manager;
-        _mode = OverworldMode.AreaMenu;
-        _menuCursor = 0;
-        BuildAreaMenu();
+        LoadMap(_save.CurrentMapId, _save.PlayerX, _save.PlayerY);
     }
 
     public void Exit() { }
 
-    private AreaData? CurrentArea => _game.GameData.GetArea(_save.CurrentMapId);
+    private void LoadMap(string mapId, int playerX, int playerY)
+    {
+        var area = _game.GameData.GetArea(mapId);
+        if (area == null) return;
+
+        _save.CurrentMapId = mapId;
+        _currentMap = _mapGenerator.Generate(area, _game.GameData);
+
+        // Resolve player position — also check collision so we don't spawn inside walls
+        bool needsSpawn = playerX < 0 || playerY < 0
+            || playerX >= _currentMap.Width || playerY >= _currentMap.Height
+            || _currentMap.CollisionLayer[playerY * _currentMap.Width + playerX];
+        if (needsSpawn)
+        {
+            var pos = FindSpawnPoint(_currentMap);
+            playerX = pos.x;
+            playerY = pos.y;
+        }
+
+        _player = new PlayerEntity(playerX, playerY, _save.PlayerFacing);
+        _save.PlayerX = playerX;
+        _save.PlayerY = playerY;
+
+        _areaName = area.Name;
+        _areaNameTimer = 3f;
+
+        GrantAreaFlags(area);
+    }
+
+    private (int x, int y) FindSpawnPoint(MapData map)
+    {
+        // Try center path tiles
+        int cx = map.Width / 2, cy = map.Height / 2;
+        for (int r = 0; r < Math.Max(map.Width, map.Height); r++)
+        {
+            for (int dy = -r; dy <= r; dy++)
+                for (int dx = -r; dx <= r; dx++)
+                {
+                    int x = cx + dx, y = cy + dy;
+                    if (x < 0 || x >= map.Width || y < 0 || y >= map.Height) continue;
+                    int idx = y * map.Width + x;
+                    if (!map.CollisionLayer[idx])
+                        return (x, y);
+                }
+        }
+        return (cx, cy);
+    }
+
+    #region Update
 
     public void Update(GameTime gameTime, InputManager input)
     {
         float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        switch (_mode)
+        if (_areaNameTimer > 0) _areaNameTimer -= dt;
+
+        switch (_state)
         {
-            case OverworldMode.Navigation:
-                UpdateNavigation(input);
+            case OverworldState.Walking:
+                UpdateWalking(dt, input);
                 break;
-            case OverworldMode.AreaMenu:
-                UpdateAreaMenu(input);
+            case OverworldState.Dialog:
+                UpdateDialog(input);
                 break;
-            case OverworldMode.Message:
-                _messageTimer += dt;
-                if (_messageTimer > 0.5f && input.IsPressed(InputAction.Confirm))
-                {
-                    _mode = OverworldMode.AreaMenu;
-                    BuildAreaMenu();
-                }
+            case OverworldState.AreaTransition:
+                UpdateTransition(dt);
                 break;
         }
     }
 
-    private void UpdateNavigation(InputManager input)
+    private void UpdateWalking(float dt, InputManager input)
     {
-        var area = CurrentArea;
-        if (area == null) return;
+        _player.Update(dt);
 
-        var connections = GetAccessibleConnections(area);
-        if (connections.Count == 0) return;
-
-        if (input.IsPressed(InputAction.Up))
+        if (!_player.IsMoving)
         {
-            _navCursor = Math.Max(0, _navCursor - 1);
-            if (_navCursor < _navScroll) _navScroll = _navCursor;
+            // Process input
+            Direction? moveDir = null;
+            if (input.IsHeld(InputAction.Up)) moveDir = Direction.Up;
+            else if (input.IsHeld(InputAction.Down)) moveDir = Direction.Down;
+            else if (input.IsHeld(InputAction.Left)) moveDir = Direction.Left;
+            else if (input.IsHeld(InputAction.Right)) moveDir = Direction.Right;
+
+            if (moveDir.HasValue)
+            {
+                if (_player.TryMove(moveDir.Value, _currentMap))
+                {
+                    // Movement started - will check triggers on arrival
+                }
+                else
+                {
+                    // Blocked - just face direction
+                    _player.Facing = moveDir.Value;
+                }
+            }
+
+            // Interact with facing tile
+            if (input.IsPressed(InputAction.Confirm))
+            {
+                TryInteract();
+            }
+
+            // Party summary
+            if (input.IsPressed(InputAction.Start))
+            {
+                ShowParty();
+            }
         }
-        if (input.IsPressed(InputAction.Down))
+        // Check if movement just completed
+        if (!_player.IsMoving && (_player.TileX != _save.PlayerX || _player.TileY != _save.PlayerY))
         {
-            _navCursor = Math.Min(connections.Count - 1, _navCursor + 1);
-            if (_navCursor >= _navScroll + 6) _navScroll = _navCursor - 5;
+            _save.PlayerX = _player.TileX;
+            _save.PlayerY = _player.TileY;
+            _save.PlayerFacing = _player.Facing;
+            OnStepComplete();
+        }
+    }
+
+    private void OnStepComplete()
+    {
+        // Check warps
+        foreach (var warp in _currentMap.Warps)
+        {
+            if (warp.X == _player.TileX && warp.Y == _player.TileY)
+            {
+                StartTransition(warp.TargetMapId, warp.TargetX, warp.TargetY);
+                return;
+            }
+        }
+
+        // Check edge transitions
+        if (_player.TileX <= 0 || _player.TileX >= _currentMap.Width - 1 ||
+            _player.TileY <= 0 || _player.TileY >= _currentMap.Height - 1)
+        {
+            foreach (var conn in _currentMap.Connections)
+            {
+                bool matches = conn.Direction switch
+                {
+                    Direction.Up => _player.TileY <= 0,
+                    Direction.Down => _player.TileY >= _currentMap.Height - 1,
+                    Direction.Left => _player.TileX <= 0,
+                    Direction.Right => _player.TileX >= _currentMap.Width - 1,
+                    _ => false
+                };
+
+                if (matches)
+                {
+                    // Check required flag
+                    var area = _game.GameData.GetArea(_save.CurrentMapId);
+                    if (area != null)
+                    {
+                        var areaConn = area.Connections.FirstOrDefault(c => c.AreaId == conn.TargetMapId);
+                        if (areaConn?.RequiredFlag != null && !_save.StoryFlags.Contains(areaConn.RequiredFlag))
+                        {
+                            ShowDialog(new[] { $"The way is blocked! ({areaConn.RequiredFlag})" });
+                            return;
+                        }
+                    }
+
+                    int targetX = -1, targetY = -1;
+                    // Place at opposite edge of target map
+                    switch (conn.Direction)
+                    {
+                        case Direction.Up: targetY = -2; break;    // will resolve to bottom
+                        case Direction.Down: targetY = -3; break;  // will resolve to top
+                        case Direction.Left: targetX = -2; break;  // will resolve to right
+                        case Direction.Right: targetX = -3; break; // will resolve to left
+                    }
+                    StartTransition(conn.TargetMapId, targetX, targetY);
+                    return;
+                }
+            }
+        }
+
+        // Check wild encounters
+        int idx = _player.TileY * _currentMap.Width + _player.TileX;
+        if (idx >= 0 && idx < _currentMap.EncounterLayer.Length && _currentMap.EncounterLayer[idx])
+        {
+            var table = _game.GameData.GetEncounterTable(_save.CurrentMapId);
+            if (table != null)
+            {
+                var wild = _encounters.TryEncounter(table);
+                if (wild != null)
+                {
+                    StartWildBattle(wild);
+                    return;
+                }
+            }
+        }
+
+        // Check item pickups (step on)
+        foreach (var evt in _currentMap.Events)
+        {
+            if (evt.X == _player.TileX && evt.Y == _player.TileY && evt.Type == "item")
+            {
+                if (evt.ItemId.HasValue && !_save.CollectedItemIds.Contains(evt.ItemId.Value))
+                {
+                    PickUpItem(evt);
+                    return;
+                }
+            }
+        }
+    }
+
+    private void TryInteract()
+    {
+        var (fx, fy) = _player.GetFacingTile();
+
+        foreach (var evt in _currentMap.Events)
+        {
+            if (evt.X != fx || evt.Y != fy) continue;
+
+            switch (evt.Type)
+            {
+                case "npc":
+                    InteractNPC(evt);
+                    return;
+                case "sign":
+                    if (evt.Dialog.Length > 0)
+                        ShowDialog(evt.Dialog);
+                    return;
+                case "item":
+                    if (evt.ItemId.HasValue && !_save.CollectedItemIds.Contains(evt.ItemId.Value))
+                        PickUpItem(evt);
+                    return;
+            }
+        }
+    }
+
+    private void InteractNPC(EventTrigger npc)
+    {
+        // Skip defeated trainers
+        if (npc.TrainerId.HasValue && _save.DefeatedTrainerIds.Contains(npc.TrainerId.Value))
+        {
+            // Show after-battle dialog if available
+            if (npc.TrainerId.HasValue)
+            {
+                var trainer = _game.GameData.GetTrainer(npc.TrainerId.Value);
+                if (trainer?.AfterBattleDialog.Length > 0)
+                {
+                    ShowDialog(trainer.AfterBattleDialog);
+                    return;
+                }
+            }
+            ShowDialog(new[] { "..." });
+            return;
+        }
+
+        // Nurse heals
+        if (npc.SpriteColor == "pink" && npc.ScriptId == null)
+        {
+            ShowDialog(npc.Dialog, () =>
+            {
+                HealAllPokemon();
+                ShowDialog(new[] { "Your Pokemon have been fully healed!" });
+            });
+            return;
+        }
+
+        // Shop clerk
+        if (npc.ScriptId == "shop")
+        {
+            var area = _game.GameData.GetArea(_save.CurrentMapId);
+            if (area?.ShopId != null)
+            {
+                ShowDialog(npc.Dialog, () =>
+                {
+                    var shop = _game.GameData.GetShop(area.ShopId);
+                    if (shop != null)
+                        _manager.Push(new ShopScreen(_game, _save, shop));
+                });
+                return;
+            }
+        }
+
+        // Trainer battle
+        if (npc.TrainerId.HasValue)
+        {
+            var trainer = _game.GameData.GetTrainer(npc.TrainerId.Value);
+            if (trainer != null)
+            {
+                // Check required flag
+                if (trainer.RequiredFlag != null && !_save.StoryFlags.Contains(trainer.RequiredFlag))
+                {
+                    ShowDialog(new[] { $"Can't challenge {trainer.Name} yet." });
+                    return;
+                }
+
+                ShowDialog(npc.Dialog, () => StartTrainerBattle(trainer));
+                return;
+            }
+        }
+
+        // Regular NPC dialog
+        if (npc.Dialog.Length > 0)
+            ShowDialog(npc.Dialog);
+    }
+
+    private void PickUpItem(EventTrigger evt)
+    {
+        if (!evt.ItemId.HasValue) return;
+
+        var itemData = _game.GameData.GetItem(evt.ItemId.Value);
+        if (itemData == null) return;
+
+        // Find matching area item for quantity
+        var area = _game.GameData.GetArea(_save.CurrentMapId);
+        int qty = 1;
+        if (area != null)
+        {
+            var areaItem = area.Items.FirstOrDefault(i => i.ItemId == evt.ItemId.Value);
+            if (areaItem != null) qty = areaItem.Quantity;
+        }
+
+        _save.Inventory.AddItem(evt.ItemId.Value, qty);
+        _save.CollectedItemIds.Add(evt.ItemId.Value);
+        ShowDialog(new[] { $"Found {itemData.Name}" + (qty > 1 ? $" x{qty}" : "") + "!" });
+    }
+
+    #endregion
+
+    #region Dialog
+
+    private void ShowDialog(string[] lines, Action? callback = null)
+    {
+        _dialogLines.Clear();
+        _dialogLines.AddRange(lines);
+        _dialogIndex = 0;
+        _dialogCallback = callback;
+        _state = OverworldState.Dialog;
+    }
+
+    private void UpdateDialog(InputManager input)
+    {
+        if (input.IsPressed(InputAction.Confirm))
+        {
+            _dialogIndex++;
+            if (_dialogIndex >= _dialogLines.Count)
+            {
+                _state = OverworldState.Walking;
+                _dialogCallback?.Invoke();
+                _dialogCallback = null;
+            }
         }
 
         if (input.IsPressed(InputAction.Cancel))
         {
-            _mode = OverworldMode.AreaMenu;
-            BuildAreaMenu();
-            return;
-        }
-
-        if (input.IsPressed(InputAction.Confirm))
-        {
-            var conn = connections[_navCursor];
-            if (conn.locked)
-            {
-                ShowMessage($"The way is blocked! ({conn.conn.RequiredFlag})");
-            }
-            else
-            {
-                TravelTo(conn.conn.AreaId);
-            }
+            _state = OverworldState.Walking;
+            _dialogCallback?.Invoke();
+            _dialogCallback = null;
         }
     }
 
-    private void UpdateAreaMenu(InputManager input)
+    #endregion
+
+    #region Transitions
+
+    private void StartTransition(string mapId, int targetX, int targetY)
     {
-        if (_menuOptions.Count == 0) return;
-
-        if (input.IsPressed(InputAction.Up)) _menuCursor = Math.Max(0, _menuCursor - 1);
-        if (input.IsPressed(InputAction.Down)) _menuCursor = Math.Min(_menuOptions.Count - 1, _menuCursor + 1);
-
-        if (input.IsPressed(InputAction.Confirm))
-        {
-            if (_menuCursor < _menuActions.Count)
-                _menuActions[_menuCursor]();
-        }
+        _pendingMapId = mapId;
+        _pendingX = targetX;
+        _pendingY = targetY;
+        _transitionTimer = 0;
+        _transitionAlpha = 0;
+        _state = OverworldState.AreaTransition;
     }
 
-    private void BuildAreaMenu()
+    private void UpdateTransition(float dt)
     {
-        _menuOptions.Clear();
-        _menuActions.Clear();
-        _menuCursor = 0;
+        _transitionTimer += dt;
 
-        var area = CurrentArea;
-        if (area == null) return;
-
-        // Travel
-        _menuOptions.Add("Travel");
-        _menuActions.Add(() =>
+        if (_transitionTimer < 0.3f)
         {
-            _mode = OverworldMode.Navigation;
-            _navCursor = 0;
-            _navScroll = 0;
-        });
-
-        // Walk (wild encounters)
-        if (area.HasWildEncounters)
-        {
-            _menuOptions.Add("Walk in grass");
-            _menuActions.Add(WalkInGrass);
+            // Fade out
+            _transitionAlpha = _transitionTimer / 0.3f;
         }
-
-        // Trainers
-        var undefeatedTrainers = GetUndefeatedTrainers(area);
-        if (undefeatedTrainers.Count > 0)
+        else if (_transitionTimer < 0.35f && _pendingMapId != null)
         {
-            _menuOptions.Add($"Trainers ({undefeatedTrainers.Count})");
-            _menuActions.Add(() => ChallengeNextTrainer(undefeatedTrainers));
+            // Load new map at midpoint
+            ResolveTransition();
+            _pendingMapId = null;
         }
-
-        // Items
-        var availableItems = GetAvailableItems(area);
-        if (availableItems.Count > 0)
+        else if (_transitionTimer < 0.65f)
         {
-            _menuOptions.Add($"Pick up items ({availableItems.Count})");
-            _menuActions.Add(() => PickUpItem(availableItems));
-        }
-
-        // Pokemon Center
-        if (area.HasPokemonCenter)
-        {
-            _menuOptions.Add("Pokemon Center");
-            _menuActions.Add(HealParty);
-        }
-
-        // Poke Mart
-        if (area.HasPokeMart && area.ShopId != null)
-        {
-            _menuOptions.Add("Poke Mart");
-            _menuActions.Add(() =>
-            {
-                var shop = _game.GameData.GetShop(area.ShopId);
-                if (shop != null)
-                    _manager.Push(new ShopScreen(_game, _save, shop));
-            });
-        }
-
-        // Party
-        _menuOptions.Add("Party");
-        _menuActions.Add(ShowParty);
-
-        // Area story flags (auto-grant on first visit)
-        GrantAreaFlags(area);
-    }
-
-    private void TravelTo(string areaId)
-    {
-        _save.CurrentMapId = areaId;
-        _mode = OverworldMode.AreaMenu;
-        _menuCursor = 0;
-        BuildAreaMenu();
-
-        var newArea = CurrentArea;
-        if (newArea != null)
-        {
-            // Check for wild encounter during travel
-            if (newArea.HasWildEncounters)
-            {
-                var table = _game.GameData.GetEncounterTable(areaId);
-                if (table != null)
-                {
-                    var wild = _encounters.TryEncounter(table);
-                    if (wild != null)
-                    {
-                        StartWildBattle(wild);
-                        return;
-                    }
-                }
-            }
-
-            ShowMessage($"Arrived at {newArea.Name}.");
-        }
-    }
-
-    private void WalkInGrass()
-    {
-        var area = CurrentArea;
-        if (area == null) return;
-
-        var table = _game.GameData.GetEncounterTable(_save.CurrentMapId);
-        if (table == null)
-        {
-            ShowMessage("No wild Pokemon here.");
-            return;
-        }
-
-        var wild = _encounters.TryEncounter(table);
-        if (wild != null)
-        {
-            StartWildBattle(wild);
+            // Fade in
+            _transitionAlpha = 1f - (_transitionTimer - 0.35f) / 0.3f;
         }
         else
         {
-            ShowMessage("Nothing appeared... Keep walking!");
+            _transitionAlpha = 0;
+            _state = OverworldState.Walking;
         }
     }
+
+    private void ResolveTransition()
+    {
+        if (_pendingMapId == null) return;
+
+        var area = _game.GameData.GetArea(_pendingMapId);
+        if (area == null) return;
+
+        int px = _pendingX, py = _pendingY;
+
+        // Generate target map to resolve positions
+        var targetMap = _mapGenerator.Generate(area, _game.GameData);
+
+        // Resolve special position codes
+        if (px == -2) px = targetMap.Width - 2;  // came from left → place at right
+        if (px == -3) px = 1;                     // came from right → place at left
+        if (py == -2) py = targetMap.Height - 2;  // came from top → place at bottom
+        if (py == -3) py = 1;                     // came from bottom → place at top
+
+        if (px < 0 || py < 0)
+        {
+            var spawn = FindSpawnPoint(targetMap);
+            px = spawn.x;
+            py = spawn.y;
+        }
+
+        // Clamp
+        px = Math.Clamp(px, 0, targetMap.Width - 1);
+        py = Math.Clamp(py, 0, targetMap.Height - 1);
+
+        LoadMap(_pendingMapId, px, py);
+    }
+
+    #endregion
+
+    #region Battle
 
     private void StartWildBattle(PokemonInstance wild)
     {
         var playerPokemon = GetFirstAlivePokemon();
         if (playerPokemon == null)
         {
-            ShowMessage("All your Pokemon have fainted!");
+            ShowDialog(new[] { "All your Pokemon have fainted!" });
             return;
         }
 
@@ -301,11 +543,10 @@ public class OverworldScreen : IScreen
         var playerPokemon = GetFirstAlivePokemon();
         if (playerPokemon == null)
         {
-            ShowMessage("All your Pokemon have fainted!");
+            ShowDialog(new[] { "All your Pokemon have fainted!" });
             return;
         }
 
-        // Build trainer party
         var trainerParty = new List<PokemonInstance>();
         foreach (var tp in trainer.Party)
         {
@@ -333,7 +574,6 @@ public class OverworldScreen : IScreen
             }
             pokemon.CurrentHp = pokemon.MaxHp(species);
             trainerParty.Add(pokemon);
-
             _save.PokedexSeen.Add(tp.SpeciesId);
         }
 
@@ -361,18 +601,12 @@ public class OverworldScreen : IScreen
         switch (outcome)
         {
             case BattleOutcome.PlayerWin:
-                _mode = OverworldMode.AreaMenu;
-                BuildAreaMenu();
+            case BattleOutcome.PlayerFled:
                 break;
             case BattleOutcome.PlayerLose:
-                // Heal party and return to last Pokemon Center
                 HealAllPokemon();
                 ReturnToLastPokemonCenter();
-                ShowMessage("You blacked out! Returned to the last Pokemon Center.");
-                break;
-            case BattleOutcome.PlayerFled:
-                _mode = OverworldMode.AreaMenu;
-                BuildAreaMenu();
+                ShowDialog(new[] { "You blacked out!", "Returned to the last Pokemon Center." });
                 break;
         }
     }
@@ -384,11 +618,9 @@ public class OverworldScreen : IScreen
             _save.DefeatedTrainerIds.Add(trainer.Id);
             _save.Money += trainer.RewardMoney;
 
-            // Set story flags
             if (trainer.SetsFlag != null)
                 _save.StoryFlags.Add(trainer.SetsFlag);
 
-            // Track badges
             if (trainer.IsGymLeader && trainer.BadgeIndex.HasValue)
             {
                 int idx = trainer.BadgeIndex.Value;
@@ -398,72 +630,37 @@ public class OverworldScreen : IScreen
                     _save.BadgeCount = _save.BadgesObtained.Count(b => b);
                 }
 
-                // Check if all 7 non-Earth badges → unlock Viridian Gym
                 if (_save.BadgeCount >= 7 && !_save.StoryFlags.Contains("badge_earth_unlocked"))
                     _save.StoryFlags.Add("badge_earth_unlocked");
             }
 
-            // Champion defeated
             if (trainer.SetsFlag == "champion_defeated")
             {
-                ShowMessage("Congratulations! You are the new Pokemon Champion!");
+                ShowDialog(new[] { "Congratulations!", "You are the new Pokemon Champion!" });
             }
             else
             {
                 string reward = trainer.RewardMoney > 0 ? $" Got ${trainer.RewardMoney}!" : "";
-                ShowMessage($"Defeated {trainer.Name}!{reward}");
+                ShowDialog(new[] { $"Defeated {trainer.Name}!{reward}" });
             }
         }
         else
         {
             HealAllPokemon();
             ReturnToLastPokemonCenter();
-            ShowMessage("You blacked out! Returned to the last Pokemon Center.");
+            ShowDialog(new[] { "You blacked out!", "Returned to the last Pokemon Center." });
         }
-
-        BuildAreaMenu();
     }
 
-    private void ChallengeNextTrainer(List<TrainerData> trainers)
-    {
-        if (trainers.Count == 0) return;
-        var trainer = trainers[0];
+    #endregion
 
-        // Check required flags
-        if (trainer.RequiredFlag != null && !_save.StoryFlags.Contains(trainer.RequiredFlag))
-        {
-            ShowMessage($"Can't challenge {trainer.Name} yet.");
-            return;
-        }
-
-        StartTrainerBattle(trainer);
-    }
-
-    private void PickUpItem(List<AreaItem> items)
-    {
-        if (items.Count == 0) return;
-
-        var item = items[0];
-        var itemData = _game.GameData.GetItem(item.ItemId);
-
-        _save.Inventory.AddItem(item.ItemId, item.Quantity);
-        _save.CollectedItemIds.Add(item.ItemId);
-
-        ShowMessage($"Found {itemData.Name} x{item.Quantity}!");
-        BuildAreaMenu();
-    }
-
-    private void HealParty()
-    {
-        HealAllPokemon();
-        ShowMessage("Your Pokemon have been healed!");
-    }
+    #region Helpers
 
     private void ShowParty()
     {
         if (_save.Party.Length == 0)
         {
-            ShowMessage("No Pokemon in party!");
+            ShowDialog(new[] { "No Pokemon in party!" });
             return;
         }
 
@@ -472,18 +669,11 @@ public class OverworldScreen : IScreen
         {
             var sp = _game.GameData.GetSpecies(p.SpeciesId);
             string name = p.Nickname ?? sp.Name;
-            string status = p.Status != Core.Battle.StatusCondition.None ? $" [{p.Status}]" : "";
+            string status = p.Status != StatusCondition.None ? $" [{p.Status}]" : "";
             lines.Add($"{name} Lv{p.Level} {p.CurrentHp}/{p.MaxHp(sp)}HP{status}");
         }
 
-        ShowMessage(string.Join("\n", lines));
-    }
-
-    private void ShowMessage(string msg)
-    {
-        _message = msg;
-        _messageTimer = 0;
-        _mode = OverworldMode.Message;
+        ShowDialog(lines.ToArray());
     }
 
     private void HealAllPokemon()
@@ -492,7 +682,7 @@ public class OverworldScreen : IScreen
         {
             var species = _game.GameData.GetSpecies(pokemon.SpeciesId);
             pokemon.CurrentHp = pokemon.MaxHp(species);
-            pokemon.Status = Core.Battle.StatusCondition.None;
+            pokemon.Status = StatusCondition.None;
             foreach (var move in pokemon.Moves)
                 move.CurrentPP = move.MaxPP;
         }
@@ -500,24 +690,20 @@ public class OverworldScreen : IScreen
 
     private void ReturnToLastPokemonCenter()
     {
-        // Find the nearest visited Pokemon Center area
-        string fallback = "pallet_town";
         string[] centerAreas = { "indigo_plateau", "cinnabar_island", "fuchsia_city", "saffron_city",
             "celadon_city", "lavender_town", "vermilion_city", "cerulean_city",
             "pewter_city", "viridian_city", "pallet_town" };
 
-        // Return to the last one the player has likely been to
         foreach (var areaId in centerAreas)
         {
             var area = _game.GameData.GetArea(areaId);
             if (area != null && area.HasPokemonCenter)
             {
-                // Simple heuristic: return to pallet_town or last city with center
-                _save.CurrentMapId = areaId;
+                LoadMap(areaId, -1, -1);
                 return;
             }
         }
-        _save.CurrentMapId = fallback;
+        LoadMap("pallet_town", -1, -1);
     }
 
     private PokemonInstance? GetFirstAlivePokemon()
@@ -525,182 +711,80 @@ public class OverworldScreen : IScreen
         return _save.Party.FirstOrDefault(p => !p.IsFainted);
     }
 
-    private List<(AreaConnection conn, bool locked)> GetAccessibleConnections(AreaData area)
-    {
-        var result = new List<(AreaConnection, bool)>();
-        foreach (var conn in area.Connections)
-        {
-            bool locked = conn.RequiredFlag != null && !_save.StoryFlags.Contains(conn.RequiredFlag);
-            result.Add((conn, locked));
-        }
-        return result;
-    }
-
-    private List<TrainerData> GetUndefeatedTrainers(AreaData area)
-    {
-        var result = new List<TrainerData>();
-        foreach (var trainerId in area.Trainers)
-        {
-            if (_save.DefeatedTrainerIds.Contains(trainerId)) continue;
-            var trainer = _game.GameData.GetTrainer(trainerId);
-            if (trainer != null)
-                result.Add(trainer);
-        }
-        return result;
-    }
-
-    private List<AreaItem> GetAvailableItems(AreaData area)
-    {
-        var result = new List<AreaItem>();
-        foreach (var item in area.Items)
-        {
-            if (_save.CollectedItemIds.Contains(item.ItemId)) continue;
-            if (item.RequiredFlag != null && !_save.StoryFlags.Contains(item.RequiredFlag)) continue;
-            result.Add(item);
-        }
-        return result;
-    }
-
     private void GrantAreaFlags(AreaData area)
     {
-        // Some areas grant flags on visit (like getting Tea in Celadon)
-        // This is handled by progression.json story events
-        // For simplicity, check if the area has implicit flags defined in areas.json
-        // (The "flags" array in areas.json is for auto-granted flags)
+        // Auto-grant visit flags
     }
+
+    #endregion
 
     #region Drawing
 
     public void Draw(SpriteBatch sb)
     {
-        _game.DrawRect(sb, new Rectangle(0, 0, PokemonGame.VirtualWidth, PokemonGame.VirtualHeight), BgColor);
+        // Draw tile map with player
+        _tileRenderer.Draw(sb, _currentMap, _player, _save);
 
-        DrawAreaHeader(sb);
-
-        switch (_mode)
+        // Area name popup
+        if (_areaNameTimer > 0)
         {
-            case OverworldMode.Navigation:
-                DrawNavigation(sb);
-                break;
-            case OverworldMode.AreaMenu:
-                DrawAreaMenu(sb);
-                break;
-            case OverworldMode.Message:
-                DrawMessage(sb);
-                break;
+            float alpha = _areaNameTimer > 2.5f
+                ? (3f - _areaNameTimer) * 2f  // fade in
+                : Math.Min(1f, _areaNameTimer / 0.5f); // fade out
+
+            var nameSize = _game.Font.MeasureString(_areaName);
+            int boxW = (int)nameSize.X + 16;
+            int boxX = (PokemonGame.VirtualWidth - boxW) / 2;
+            int boxY = 8;
+
+            _game.DrawRect(sb, new Rectangle(boxX, boxY, boxW, 18),
+                new Color(0, 0, 0, (int)(180 * alpha)));
+            sb.DrawString(_game.Font, _areaName,
+                new Vector2(boxX + 8, boxY + 3),
+                new Color(255, 255, 255, (int)(255 * alpha)));
         }
 
+        // Dialog box
+        if (_state == OverworldState.Dialog && _dialogIndex < _dialogLines.Count)
+        {
+            DrawDialogBox(sb);
+        }
+
+        // Transition fade
+        if (_state == OverworldState.AreaTransition && _transitionAlpha > 0)
+        {
+            _game.DrawRect(sb, new Rectangle(0, 0, PokemonGame.VirtualWidth, PokemonGame.VirtualHeight),
+                new Color(0, 0, 0, (int)(255 * _transitionAlpha)));
+        }
+
+        // Status bar
         DrawStatusBar(sb);
     }
 
-    private void DrawAreaHeader(SpriteBatch sb)
+    private void DrawDialogBox(SpriteBatch sb)
     {
-        var area = CurrentArea;
-        if (area == null) return;
-
-        // Area type color bar
-        Color typeColor = area.Type switch
-        {
-            AreaType.Town or AreaType.City => TownColor,
-            AreaType.Route => RouteColor,
-            AreaType.Cave or AreaType.DungeonFloor => CaveColor,
-            AreaType.Building => BuildingColor,
-            _ => new Color(180, 180, 180)
-        };
-
-        _game.DrawRect(sb, new Rectangle(0, 0, PokemonGame.VirtualWidth, 30), typeColor);
-        _game.DrawBorder(sb, new Rectangle(0, 0, PokemonGame.VirtualWidth, 30), BorderColor, 1);
-
-        // Area name
-        sb.DrawString(_game.Font, area.Name, new Vector2(6, 2), Color.White);
-
-        // Area type tag
-        string typeTag = area.Type.ToString();
-        var tagSize = _game.Font.MeasureString(typeTag);
-        sb.DrawString(_game.Font, typeTag, new Vector2(PokemonGame.VirtualWidth - tagSize.X - 6, 2), Color.White);
-
-        // Description
-        sb.DrawString(_game.Font, area.Description, new Vector2(6, 16), new Color(240, 240, 240));
-    }
-
-    private void DrawNavigation(SpriteBatch sb)
-    {
-        var area = CurrentArea;
-        if (area == null) return;
-
-        var connections = GetAccessibleConnections(area);
-
-        // Title
-        sb.DrawString(_game.Font, "Where to go?", new Vector2(6, 34), TextColor);
-
-        // Connection list
-        int y = 48;
-        int maxVisible = 6;
-        for (int i = _navScroll; i < Math.Min(connections.Count, _navScroll + maxVisible); i++)
-        {
-            var (conn, locked) = connections[i];
-            var targetArea = _game.GameData.GetArea(conn.AreaId);
-            string areaName = targetArea?.Name ?? conn.AreaId;
-            string direction = conn.Direction;
-
-            bool selected = i == _navCursor;
-            Color textCol = locked ? LockedColor : (selected ? TextColor : new Color(80, 80, 80));
-
-            if (selected)
-                _game.DrawRect(sb, new Rectangle(4, y - 1, PokemonGame.VirtualWidth - 8, 14), HighlightColor);
-
-            string lockIcon = locked ? " [LOCKED]" : "";
-            string prefix = selected ? "> " : "  ";
-            sb.DrawString(_game.Font, $"{prefix}{direction}: {areaName}{lockIcon}", new Vector2(6, y), textCol);
-            y += 15;
-        }
-
-        // Scroll indicators
-        if (_navScroll > 0)
-            sb.DrawString(_game.Font, "^", new Vector2(PokemonGame.VirtualWidth - 14, 48), TextColor);
-        if (_navScroll + maxVisible < connections.Count)
-            sb.DrawString(_game.Font, "v", new Vector2(PokemonGame.VirtualWidth - 14, y - 15), TextColor);
-
-        // Hint
-        sb.DrawString(_game.Font, "X:Back  Z:Go", new Vector2(6, 140), new Color(120, 120, 120));
-    }
-
-    private void DrawAreaMenu(SpriteBatch sb)
-    {
-        int y = 36;
-        for (int i = 0; i < _menuOptions.Count; i++)
-        {
-            bool selected = i == _menuCursor;
-            if (selected)
-                _game.DrawRect(sb, new Rectangle(4, y - 1, PokemonGame.VirtualWidth - 8, 14), HighlightColor);
-
-            string prefix = selected ? "> " : "  ";
-            sb.DrawString(_game.Font, $"{prefix}{_menuOptions[i]}", new Vector2(6, y), TextColor);
-            y += 15;
-        }
-    }
-
-    private void DrawMessage(SpriteBatch sb)
-    {
-        var box = new Rectangle(4, 36, PokemonGame.VirtualWidth - 8, PokemonGame.VirtualHeight - 56);
+        int boxH = 40;
+        int boxY = PokemonGame.VirtualHeight - boxH - 14; // above status bar
+        var box = new Rectangle(4, boxY, PokemonGame.VirtualWidth - 8, boxH);
         _game.DrawRect(sb, box, BoxColor);
         _game.DrawBorder(sb, box, BorderColor, 2);
 
-        sb.DrawString(_game.Font, _message, new Vector2(12, 42), TextColor);
+        string text = _dialogIndex < _dialogLines.Count ? _dialogLines[_dialogIndex] : "";
+        sb.DrawString(_game.Font, text, new Vector2(12, boxY + 6), TextColor);
 
-        // Advance prompt
-        if (_messageTimer > 0.5f)
+        // Advance indicator
+        if (_dialogIndex < _dialogLines.Count - 1)
         {
             float blink = (float)Math.Sin(DateTime.Now.Millisecond / 200.0 * Math.PI);
             if (blink > 0)
-                sb.DrawString(_game.Font, "v", new Vector2(PokemonGame.VirtualWidth - 16, PokemonGame.VirtualHeight - 24), TextColor);
+                sb.DrawString(_game.Font, "v", new Vector2(PokemonGame.VirtualWidth - 16, boxY + boxH - 14), TextColor);
         }
     }
 
     private void DrawStatusBar(SpriteBatch sb)
     {
         int y = PokemonGame.VirtualHeight - 14;
-        _game.DrawRect(sb, new Rectangle(0, y, PokemonGame.VirtualWidth, 14), new Color(40, 40, 40));
+        _game.DrawRect(sb, new Rectangle(0, y, PokemonGame.VirtualWidth, 14), StatusBarBg);
 
         // Badges
         string badges = $"Badges:{_save.BadgeCount}";

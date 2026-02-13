@@ -46,4 +46,6 @@ public class EventTrigger
     public Direction? Facing { get; set; }
     public string? ScriptId { get; set; }
     public int? ItemId { get; set; }
+    public int? TrainerId { get; set; }
+    public string? SpriteColor { get; set; }
 }
